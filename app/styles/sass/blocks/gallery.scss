@@ -1,0 +1,20 @@
+.gallery {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -22px;
+
+    &-photo {
+        width: 25%;
+        margin-bottom: 15px;
+        padding: 0 22px;
+        box-sizing: border-box;
+    }
+
+    &-title {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #333333;
+        text-align: center;
+    }
+}

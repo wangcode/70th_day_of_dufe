@@ -1,0 +1,31 @@
+.tabs {
+    margin: 0px 200px;
+    background-image:
+        url(/images/src/tabs_bg_left.png),
+        url(/images/src/tabs_bg_right.png);
+    background-position: center left, center right;
+    background-size: contain, contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+
+    &-item {
+        margin: 0px 5px;
+        width: 108px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        font-size: 21px;
+        border-radius: 8px;
+        color: #999999;
+
+        &.current,
+        &:hover {
+            font-size: 24px;
+            color: white;
+            background-image: url(/images/src/tab_item_bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}

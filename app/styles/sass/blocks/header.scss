@@ -1,0 +1,126 @@
+.header {
+
+    $pc-header-height: 100px;
+    $mobile-header-height: 100mpx;
+
+    height: $pc-header-height;
+    width: 100vw;
+    background-image: url(/images/src/header_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 23mpx 30mpx;
+        height: $mobile-header-height;
+        background-image: linear-gradient(to bottom, #cb0202, #8a0000);
+    }
+
+    &-mobile {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+
+        &-logo {
+            width: 296mpx;
+            height: 54mpx;
+        }
+
+        &-menu {
+            width: 42mpx;
+            height: 48mpx;
+        }
+
+        @media (max-width: $mobile-breakpoint) {
+            display: flex;
+        }
+    }
+
+    &-logo {
+        position: relative;
+        width: 210px;
+        height: 235px;
+
+        @media (max-width: $mobile-breakpoint) {
+            width: 210mpx;
+            height: 235mpx;
+            margin: 0 35mpx;
+        }
+    }
+
+    &-wrap {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        visibility: visible;
+
+        @media (max-width: $mobile-breakpoint) {
+            visibility: hidden;
+            flex-direction: column;
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            background-color: rgba(#AB0202, 0.93);
+        }
+    }
+
+    &-menu {
+        display: flex;
+        height: $pc-header-height;
+
+        @media (max-width: $mobile-breakpoint) {
+            flex-direction: column;
+            flex: 1;
+            margin: 0 85mpx;
+        }
+
+        &-item {
+            line-height: $pc-header-height;
+            margin-right: 15px;
+            color: white;
+            font-size: 20px;
+            width: 110px;
+            text-align: center;
+            // text-decoration: none;
+
+            @media (max-width: $mobile-breakpoint) {
+                line-height: $mobile-header-height;
+                margin: 0;
+                width: 100%;
+                font-size: 36mpx;
+                padding-bottom: 1px;
+                background: linear-gradient(to right,
+                        white,
+                        transparent) left bottom transparent no-repeat;
+                background-size: 100% 1px;
+                text-align: left;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover,
+            &.current {
+
+                background-image: url(/images/src/header_menu_hover_bg.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                color: #FABC05;
+
+                // border-bottom: 6px solid #dfdfdf;
+                // background-color: black;
+                @media (max-width: $mobile-breakpoint) {
+                    background-image: none;
+                }
+            }
+
+
+
+        }
+    }
+
+}

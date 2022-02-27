@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-item {
+        width: 22px;
+        height: 22px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 22px;
+        background-color: #E2E0E0;
+        font-size: 16px;
+        display: block;
+        text-decoration: none;
+        transition: .3s ease-in;
+        color: #B4B4B4;
+        margin-right: 25px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover,
+        &.current {
+            color: white;
+            background-color: #922000;
+        }
+    }
+}

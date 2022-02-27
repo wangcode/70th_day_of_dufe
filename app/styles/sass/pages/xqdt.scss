@@ -1,0 +1,37 @@
+.xqdt {
+    &-content {
+        margin: 0 -15px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-card {
+        flex: 1 1 500px;
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 2px 8px 2px rgba(204, 203, 203, 0.30);
+        margin: 15px;
+        height: 350px;
+
+        &-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 25px 0px 25px;
+
+
+            &-extends {
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &-body {
+            padding: 0 15px;
+        }
+
+    }
+
+}

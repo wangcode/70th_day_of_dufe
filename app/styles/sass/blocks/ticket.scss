@@ -1,0 +1,66 @@
+.ticket {
+    background-color: rgba($color: #ffffff, $alpha: 0.86);
+    box-shadow: 0px 2px 4px 0px rgba(199, 199, 199, 0.50);
+    width: 100%;
+    background-image: url(/images/src/ticket_bg.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    height: 165px;
+
+    &-info {
+        padding-left: 70px;
+    }
+
+    &-title {
+        color: $primary-color;
+        font-size: 18px;
+        background-image: url(/images/src/ticket_title.png);
+        background-repeat: no-repeat;
+        padding-bottom: 10px;
+        margin-bottom: -10px;
+        padding-top: 18px;
+        margin-top: -18px;
+        padding-left: 21px;
+        margin-left: -21px;
+
+    }
+
+    &-divider {
+        border-bottom: 1px solid #979797;
+        margin: 15px 0;
+        width: 210px;
+    }
+
+    &-desc {
+        font-size: 14px;
+        color: #999999;
+    }
+
+    &-scan {
+        padding-top: 6px;
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: flex-end;
+        margin-right: 120px;
+    }
+
+    &-tip {
+        color: #999999;
+        font-size: 14px;
+        background-image: url(/images/src/ticket_tip.png);
+        background-repeat: no-repeat;
+        padding-left: 41px;
+        background-position: center left;
+        margin-right: 70px;
+    }
+
+
+    &-qrcode {
+        width: 77px;
+        height: 77px;
+    }
+}
