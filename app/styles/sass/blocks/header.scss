@@ -5,7 +5,7 @@
 
     height: $pc-header-height;
     width: 100vw;
-    background-image: url(/images/src/header_bg.jpg);
+    background-image: url(/images/dist/header_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -106,7 +106,7 @@
             &:hover,
             &.current {
 
-                background-image: url(/images/src/header_menu_hover_bg.png);
+                background-image: url(/images/dist/header_menu_hover_bg.png);
                 background-repeat: no-repeat;
                 background-size: contain;
                 color: #FABC05;
