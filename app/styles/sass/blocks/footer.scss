@@ -8,16 +8,30 @@
     justify-content: center;
     align-items: center;
 
-    .logo {
+    @media (max-width: $mobile-breakpoint) {
+        height: 230mpx;
+    }
+
+
+    &-logo {
         width: 337px;
         height: 94px;
+
+        @media (max-width: $mobile-breakpoint) {
+            width: 337mpx;
+            height: 94mpx;
+        }
     }
 
-    .copyright {
+    &-copyright {
         margin: 0 135px;
+
+        @media (max-width: $mobile-breakpoint) {
+            margin: 0 30px;
+        }
     }
 
-    .year {
+    &-year {
         font-size: 200px;
         opacity: 0.15;
         // line-height: 0.5;

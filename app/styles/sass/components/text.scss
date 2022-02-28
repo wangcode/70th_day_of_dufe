@@ -1,16 +1,37 @@
 // Font-Size
-.text-sm {
-    font-size: 12px
-}
+.text {
+    &-sm {
+        font-size: 12px;
 
-.text-base {
-    font-size: 14px
-}
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 12mpx;
+        }
+    }
 
-.text-md {
-    font-size: 16px;
-}
+    &-base {
+        font-size: 14px;
 
-.text-lg {
-    font-size: 18px;
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 14mpx;
+        }
+
+    }
+
+    &-md {
+        font-size: 16px;
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 16mpx;
+        }
+    }
+
+    &-lg {
+        font-size: 18px;
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 18mpx;
+        }
+    }
+
+
 }
