@@ -1,16 +1,14 @@
-<!--#set var="title" value="OptimizedHTML 5" -->
-<!--#include virtual="/parts/head.html" -->
-<!--#include virtual="/parts/header.html" -->
-
+{% extends "templates/main.html" %}
+{% block content %}
 <div class="yxq">
     <div class="container">
 
         <div class="yxq-spacer">
-            <!--#include virtual="/parts/spacer_flower.html" -->
+            {% include "parts/spacer_flower.html" %}
         </div>
 
         <div class="yxq-tab">
-            <!--#include virtual="/parts/tabs.html" -->
+            {% include "parts/tabs.html" %}
         </div>
 
         <div class="yxq-block">
@@ -27,19 +25,17 @@
             </div>
         </div>
 
-
         <div class="yxq-ticket">
-            <!--#include virtual="/parts/ticket.html" -->
+            {% include "parts/ticket.html" %}
         </div>
         <div class="yxq-ticket">
-            <!--#include virtual="/parts/ticket.html" -->
+            {% include "parts/ticket.html" %}
         </div>
         <div class="yxq-ticket">
-            <!--#include virtual="/parts/ticket.html" -->
+            {% include "parts/ticket.html" %}
         </div>
 
     </div>
 </div>
 
-
-<!--#include virtual="/parts/footer.html" -->
+{% endblock %}

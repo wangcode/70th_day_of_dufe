@@ -1,13 +1,10 @@
-<!--#set var="title" value="OptimizedHTML 5" -->
-<!--#include virtual="/parts/head.html" -->
-<!--#include virtual="/parts/header.html" -->
-
-
+{% extends "templates/main.html" %}
+{% block content %}
 <div class="container news">
 
     <div class="content_card">
 
-        <!--#include virtual="/parts/crumbs.html" -->
+        {% include "parts/crumbs.html" %}
 
         <div class="news-content">
 
@@ -38,14 +35,10 @@
                 </li>
             </ul>
 
-            <!--#include virtual="/parts/pagination.html" -->
+            {% include "parts/pagination.html" %}
         </div>
 
     </div>
 
 </div>
-
-
-
-
-<!--#include virtual="/parts/footer.html" -->
+{% endblock %}

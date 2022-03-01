@@ -1,12 +1,10 @@
-<!--#set var="title" value="校庆标识" -->
-<!--#include virtual="/parts/head.html" -->
-<!--#include virtual="/parts/header.html" -->
-
+{% extends "templates/main.html" %}
+{% block content %}
 <div class="xqbs">
     <div class="container">
 
         <div class="xqbs-spacer">
-            <!--#include virtual="/parts/spacer_flower.html" -->
+            {% include "parts/spacer_flower.html" %}
         </div>
 
         <div class="xqbs-content">
@@ -24,6 +22,4 @@
 
     </div>
 </div>
-
-
-<!--#include virtual="/parts/footer.html" -->
+{% endblock %}

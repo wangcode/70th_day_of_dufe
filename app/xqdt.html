@@ -1,11 +1,9 @@
-<!--#set var="title" value="校庆标识" -->
-<!--#include virtual="/parts/head.html" -->
-<!--#include virtual="/parts/header.html" -->
-
+{% extends "templates/main.html" %}
+{% block content %}
 <div class="xqdt">
     <div class="container">
 
-        <!--#include virtual="/parts/spacer_flower.html" -->
+        {% include "parts/spacer_flower.html" %}
 
         <div class="xqdt-content">
 
@@ -18,13 +16,11 @@
                     </div>
                 </div>
             </div>
-            <!--#include virtual="/parts/xqdt_news_card.html" -->
-            <!--#include virtual="/parts/xqdt_news_card.html" -->
-            <!--#include virtual="/parts/xqdt_news_card.html" -->
-
+            {% include "parts/xqdt_news_card.html" %}
+            {% include "parts/xqdt_news_card.html" %}
+            {% include "parts/xqdt_news_card.html" %}
         </div>
 
     </div>
 </div>
-
-<!--#include virtual="/parts/footer.html" -->
+{% endblock %}

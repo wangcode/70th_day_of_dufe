@@ -1,12 +1,11 @@
-<!-- #set var="title" value="活动一览" -->
-<!--#include virtual="/parts/head.html" -->
-<!--#include virtual="/parts/header.html" -->
+{% extends "templates/main.html" %}
 
+{% block content %}
 <div class="hdyl">
     <div class="container">
 
         <div class="hdyl-spacer">
-            <!--#include virtual="/parts/spacer_flower.html" -->
+            {% include "parts/spacer_flower.html" %}
         </div>
 
         <div class="hdyl-heading">
@@ -19,16 +18,16 @@
 
             <div class="hdyl-schedule">
                 <div class="hdyl-schedule-item">
-                    <!--#include virtual="/parts/schedule.html" -->
+                    {% include "parts/schedule.html" %}
                 </div>
                 <div class="hdyl-schedule-item">
-                    <!--#include virtual="/parts/schedule.html" -->
+                    {% include "parts/schedule.html" %}
                 </div>
                 <div class="hdyl-schedule-item">
-                    <!--#include virtual="/parts/schedule.html" -->
+                    {% include "parts/schedule.html" %}
                 </div>
                 <div class="hdyl-schedule-item">
-                    <!--#include virtual="/parts/schedule.html" -->
+                    {% include "parts/schedule.html" %}
                 </div>
             </div>
         </div>
@@ -53,9 +52,6 @@
             </a>
         </div>
 
-
     </div>
 </div>
-
-
-<!--#include virtual="/parts/footer.html" -->
+{% endblock %}
