@@ -35,6 +35,7 @@ import rsync from 'gulp-rsync'
 import del from 'del'
 import tailwindcss from 'tailwindcss'
 import pxtoviewport from 'postcss-px-to-viewport'
+import nunjucks from 'gulp-nunjucks'
 
 function browsersync() {
   browserSync.init({
@@ -157,11 +158,14 @@ function buildcopy() {
 }
 
 async function buildhtml() {
-  let includes = new ssi('app/', 'dist/', '/**/*.html')
-  includes.compile()
-  del('dist/parts', {
-    force: true
-  })
+  // let includes = new ssi('app/', 'dist/', '/**/*.html')
+  // includes.compile()
+  // del('dist/parts', {
+  //   force: true
+  // })
+  return src('app/**/*.html')
+  .pipe(nunjucks.compile({name: 'Sindre'}))
+  .pipe(gulp.dest('dist'))
 }
 
 async function cleandist() {
