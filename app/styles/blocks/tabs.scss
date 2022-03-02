@@ -1,5 +1,5 @@
 .tabs {
-    margin: 0px 200px;
+    margin: 0 200rpx;
     background-image:
         url(/images/tabs_bg_left.png),
         url(/images/tabs_bg_right.png);
@@ -10,18 +10,18 @@
     justify-content: center;
 
     &-item {
-        margin: 0px 5px;
-        width: 108px;
-        height: 44px;
-        line-height: 44px;
+        margin: 0 5rpx;
+        width: 108rpx;
+        height: 44rpx;
+        line-height: 44rpx;
         text-align: center;
-        font-size: 21px;
-        border-radius: 8px;
+        font-size: 21rpx;
+        border-radius: 8rpx;
         color: #999999;
 
         &.current,
         &:hover {
-            font-size: 24px;
+            font-size: 24rpx;
             color: white;
             background-image: url(/images/tab_item_bg.png);
             background-repeat: no-repeat;

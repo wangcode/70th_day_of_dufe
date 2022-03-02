@@ -3,9 +3,9 @@
     align-items: center;
 
     &-icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
+        width: 30rpx;
+        height: 30rpx;
+        margin-right: 10rpx;
         background-repeat: no-repeat;
         background-position: center;
 
@@ -35,13 +35,13 @@
     }
 
     &-title {
-        font-size: 18px;
+        font-size: 18rpx;
         color: $primary-color;
     }
 
     &-subtitle {
-        margin-left: 15px;
-        font-size: 12px;
+        margin-left: 15rpx;
+        font-size: 12rpx;
         color: #A7A7A7
     }
 

@@ -4,18 +4,18 @@
     align-items: center;
 
     &-item {
-        width: 22px;
-        height: 22px;
+        width: 22rpx;
+        height: 22rpx;
         border-radius: 100%;
         text-align: center;
-        line-height: 22px;
+        line-height: 22rpx;
         background-color: #E2E0E0;
-        font-size: 16px;
+        font-size: 16rpx;
         display: block;
         text-decoration: none;
         transition: .3s ease-in;
         color: #B4B4B4;
-        margin-right: 25px;
+        margin-right: 25rpx;
 
         &:last-child {
             margin-right: 0;

@@ -10,11 +10,18 @@
         <div class="xqdt-content">
 
             <div class="xqdt-card">
-                <div class="xqdt-swiper">
+                <div class="swiper xqdt-swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">
+                            <img src="https://source.unsplash.com/500x300/?airplane" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://source.unsplash.com/500x300/?car" />
+                        </div>
+                    </div>
+                    <div class="xqdt-swiper-title">
+                        <a href="#">东北财经大学70周年庆典大会成功举行</a>
+                        <div class="xqdt-swiper-pagination"></div>
                     </div>
                 </div>
             </div>
@@ -25,4 +32,7 @@
 
     </div>
 </div>
+{% endblock %}
+{% block script %}
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 {% endblock %}

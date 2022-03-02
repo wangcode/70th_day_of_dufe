@@ -1,16 +1,14 @@
 @use 'sass:math';
 @use 'sass:color';
 // @import 'normalize.css';
-
-// @tailwind base;
-// @tailwind components;
-// @tailwind utilities;
-
 @import 'config';
 @import 'blocks/**/*';
 @import 'components/**/*';
 @import 'pages/**/*';
 
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -37,8 +35,14 @@ a {
 }
 
 .container {
-    width: 1200px;
+    box-sizing: border-box;
+    width: 1200rpx;
     margin: 0 auto;
+
+    @media (max-width: $mobile-breakpoint) {
+        width: 100%;
+        padding: 0 30mrpx;
+    }
 }
 
 .flex {

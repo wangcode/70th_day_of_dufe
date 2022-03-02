@@ -1,7 +1,7 @@
 .header {
 
-    $pc-header-height: 100px;
-    $mobile-header-height: 100mpx;
+    $pc-header-height: 100rpx;
+    $mobile-header-height: 100mrpx;
 
     height: $pc-header-height;
     width: 100vw;
@@ -11,7 +11,7 @@
     box-sizing: border-box;
 
     @media (max-width: $mobile-breakpoint) {
-        padding: 23mpx 30mpx;
+        padding: 23mrpx 30mrpx;
         height: $mobile-header-height;
         background-image: linear-gradient(to bottom, #cb0202, #8a0000);
     }
@@ -23,13 +23,13 @@
         height: 100%;
 
         &-logo {
-            width: 296mpx;
-            height: 54mpx;
+            width: 296mrpx;
+            height: 54mrpx;
         }
 
         &-menu {
-            width: 42mpx;
-            height: 48mpx;
+            width: 42mrpx;
+            height: 48mrpx;
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -39,19 +39,20 @@
 
     &-logo {
         position: relative;
-        width: 210px;
-        height: 235px;
+        width: 210rpx;
+        height: 235rpx;
+        z-index: 10;
 
         @media (max-width: $mobile-breakpoint) {
-            width: 210mpx;
-            height: 235mpx;
-            margin: 0 35mpx;
+            width: 210mrpx;
+            height: 235mrpx;
+            margin: 0 35mrpx;
         }
     }
 
     &-wrap {
         display: flex;
-        width: 1200px;
+        width: 1200rpx;
         margin: 0 auto;
         visibility: visible;
 
@@ -74,15 +75,15 @@
         @media (max-width: $mobile-breakpoint) {
             flex-direction: column;
             flex: 1;
-            margin: 0 85mpx;
+            margin: 0 85mrpx;
         }
 
         &-item {
             line-height: $pc-header-height;
-            margin-right: 15px;
+            margin-right: 15rpx;
             color: white;
-            font-size: 20px;
-            width: 110px;
+            font-size: 20rpx;
+            width: 110rpx;
             text-align: center;
             // text-decoration: none;
 
@@ -90,12 +91,12 @@
                 line-height: $mobile-header-height;
                 margin: 0;
                 width: 100%;
-                font-size: 36mpx;
-                padding-bottom: 1px;
+                font-size: 36mrpx;
+                padding-bottom: 1rpx;
                 background: linear-gradient(to right,
                         white,
                         transparent) left bottom transparent no-repeat;
-                background-size: 100% 1px;
+                background-size: 100% 1rpx;
                 text-align: left;
             }
 
@@ -111,7 +112,7 @@
                 background-size: contain;
                 color: #FABC05;
 
-                // border-bottom: 6px solid #dfdfdf;
+                // border-bottom: 6rpx solid #dfdfdf;
                 // background-color: black;
                 @media (max-width: $mobile-breakpoint) {
                     background-image: none;

@@ -1,42 +1,77 @@
 .hdyl {
+
     &-spacer {
-        padding-top: 20px;
+        padding-top: 20rpx;
+
+        @media (max-width: $mobile-breakpoint) {
+            display: none;
+        }
     }
 
     &-heading {
         display: flex;
         justify-content: flex-end;
+
+        @media (max-width: $mobile-breakpoint) {
+            display: none;
+        }
     }
 
     &-schedule {
-        padding-top: 30px;
-        margin: 0 -30px;
+        padding-top: 30rpx;
+        margin: 0 -30rpx;
         display: flex;
         flex-flow: wrap;
+
+        @media (max-width: $mobile-breakpoint) {
+            padding-top: 25mrpx;
+            flex-direction: column;
+
+        }
 
         &-item {
             flex: 1 1 50%;
             width: 50%;
-            padding: 0 15px;
-            margin-bottom: 50px;
+            padding: 0 15rpx;
+            margin-bottom: 50rpx;
             box-sizing: border-box;
+
+            @media (max-width: $mobile-breakpoint) {
+                flex: auto;
+                width: 100%;
+                padding: 0;
+                margin-bottom: 45mrpx;
+            }
         }
     }
 
     &-links {
-        margin: 0 -30px;
+        margin: 0 -30rpx;
         display: flex;
-        margin-bottom: 135px;
+        margin-bottom: 135rpx;
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-bottom: 60mrpx;
+            flex-direction: column;
+        }
+
 
         &-item {
             position: relative;
             display: inline-block;
             width: 25%;
-            height: 150px;
-            border-radius: 10px;
+            height: 150rpx;
+            border-radius: 10rpx;
             box-shadow: 0px 2px 4px 0px rgba(149, 149, 149, 0.50);
             overflow: hidden;
-            margin: 0 15px;
+            margin: 0 15rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                width: 100%;
+                height: 300mrpx;
+                margin-bottom: 40mrpx;
+                border-radius: 10mrpx;
+            }
         }
 
         &-bg {
@@ -48,12 +83,19 @@
         }
 
         &-title {
-            line-height: 150px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
             position: relative;
-            font-size: 21px;
+            font-size: 21rpx;
             font-weight: bold;
             color: white;
-            text-align: center;
+            justify-content: center;
+
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 48mrpx;
+            }
         }
     }
 

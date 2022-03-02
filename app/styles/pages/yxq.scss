@@ -1,40 +1,40 @@
 .yxq {
 
     &-tab {
-        margin: 27px 0;
+        margin: 27rpx 0;
     }
 
     &-video {}
 
     &-spacer {
-        padding-top: 10px;
-        padding-bottom: 20px;
+        padding-top: 10rpx;
+        padding-bottom: 20rpx;
     }
 
     &-qrcodes {
         &-title {
             color: #515151;
-            font-size: 14px;
-            margin-bottom: 8px;
+            font-size: 14rpx;
+            margin-bottom: 8rpx;
         }
 
         &-qrcode {
-            width: 77px;
-            height: 77px;
+            width: 77rpx;
+            height: 77rpx;
         }
     }
 
     &-block {
-        height: 360px;
+        height: 360rpx;
         width: 100%;
         background-color: white;
         box-shadow: 0px 2px 4px 0px rgba(199, 199, 199, 0.50);
 
-        margin-bottom: 15px;
+        margin-bottom: 15rpx;
     }
 
     &-ticket {
-        margin-bottom: 15px;
+        margin-bottom: 15rpx;
     }
 
     &-yzf {
@@ -43,18 +43,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
-            padding: 0 20px
+            margin-bottom: 20rpx;
+            padding: 0 20rpx
         }
 
         &-gallery {
-            margin-bottom: 30px;
+            margin-bottom: 30rpx;
         }
     }
 
     &-yhd {
         &-tickets {
-            margin-bottom: 50px;
+            margin-bottom: 50rpx;
         }
     }
 

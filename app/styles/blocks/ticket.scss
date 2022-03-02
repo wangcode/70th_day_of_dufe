@@ -8,59 +8,59 @@
     background-size: contain;
     display: flex;
     align-items: center;
-    height: 165px;
+    height: 165rpx;
 
     &-info {
-        padding-left: 70px;
+        padding-left: 70rpx;
     }
 
     &-title {
         color: $primary-color;
-        font-size: 18px;
+        font-size: 18rpx;
         background-image: url(/images/ticket_title.png);
         background-repeat: no-repeat;
-        padding-bottom: 10px;
-        margin-bottom: -10px;
-        padding-top: 18px;
-        margin-top: -18px;
-        padding-left: 21px;
-        margin-left: -21px;
+        padding-bottom: 10rpx;
+        margin-bottom: -10rpx;
+        padding-top: 18rpx;
+        margin-top: -18rpx;
+        padding-left: 21rpx;
+        margin-left: -21rpx;
 
     }
 
     &-divider {
-        border-bottom: 1px solid #979797;
-        margin: 15px 0;
-        width: 210px;
+        border-bottom: 1rpx solid #979797;
+        margin: 15rpx 0;
+        width: 210rpx;
     }
 
     &-desc {
-        font-size: 14px;
+        font-size: 14rpx;
         color: #999999;
     }
 
     &-scan {
-        padding-top: 6px;
+        padding-top: 6rpx;
         display: flex;
         align-items: center;
         flex: 1;
         justify-content: flex-end;
-        margin-right: 120px;
+        margin-right: 120rpx;
     }
 
     &-tip {
         color: #999999;
-        font-size: 14px;
+        font-size: 14rpx;
         background-image: url(/images/ticket_tip.png);
         background-repeat: no-repeat;
-        padding-left: 41px;
+        padding-left: 41rpx;
         background-position: center left;
-        margin-right: 70px;
+        margin-right: 70rpx;
     }
 
 
     &-qrcode {
-        width: 77px;
-        height: 77px;
+        width: 77rpx;
+        height: 77rpx;
     }
 }

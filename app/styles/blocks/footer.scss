@@ -1,5 +1,5 @@
 .footer {
-    $footer-height: 200px;
+    $footer-height: 200rpx;
     height: $footer-height;
     background-image: linear-gradient(180deg, #cb0202, #8a0000);
     color: white;
@@ -9,30 +9,30 @@
     align-items: center;
 
     @media (max-width: $mobile-breakpoint) {
-        height: 230mpx;
+        height: 230mrpx;
     }
 
 
     &-logo {
-        width: 337px;
-        height: 94px;
+        width: 337rpx;
+        height: 94rpx;
 
         @media (max-width: $mobile-breakpoint) {
-            width: 337mpx;
-            height: 94mpx;
+            width: 337mrpx;
+            height: 94mrpx;
         }
     }
 
     &-copyright {
-        margin: 0 135px;
+        margin: 0 135rpx;
 
         @media (max-width: $mobile-breakpoint) {
-            margin: 0 30px;
+            margin: 0 30mrpx;
         }
     }
 
     &-year {
-        font-size: 200px;
+        font-size: 200rpx;
         opacity: 0.15;
         // line-height: 0.5;
     }

@@ -1,35 +1,35 @@
 // Font-Size
 .text {
     &-sm {
-        font-size: 12px;
+        font-size: 12rpx;
 
         @media (max-width: $mobile-breakpoint) {
-            font-size: 12mpx;
+            font-size: 12mrpx;
         }
     }
 
     &-base {
-        font-size: 14px;
+        font-size: 14rpx;
 
         @media (max-width: $mobile-breakpoint) {
-            font-size: 14mpx;
+            font-size: 14mrpx;
         }
 
     }
 
     &-md {
-        font-size: 16px;
+        font-size: 16rpx;
 
         @media (max-width: $mobile-breakpoint) {
-            font-size: 16mpx;
+            font-size: 16mrpx;
         }
     }
 
     &-lg {
-        font-size: 18px;
+        font-size: 18rpx;
 
         @media (max-width: $mobile-breakpoint) {
-            font-size: 18mpx;
+            font-size: 18mrpx;
         }
     }
 
