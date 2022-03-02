@@ -34,11 +34,7 @@ const sass = gulpSass(dartSass)
 function browsersync() {
   browserSync.init({
     server: {
-      baseDir: 'app/',
-      middleware: bssi({
-        baseDir: 'app/',
-        ext: '.html'
-      })
+      baseDir: 'dist/'
     },
     ghostMode: {
       clicks: false
@@ -93,7 +89,7 @@ function scripts() {
       this.emit('end')
     })
     .pipe(concat('app.min.js'))
-    .pipe(dest('app/js'))
+    .pipe(dest('dist/js'))
     .pipe(browserSync.stream())
 }
 
@@ -126,36 +122,37 @@ function styles() {
       })
     ]))
     .pipe(concat('app.min.css'))
-    .pipe(dest('app/css'))
+    .pipe(dest('dist/css'))
     .pipe(browserSync.stream())
 }
 
 function images() {
   return src(['app/images/src/**/*'])
-    .pipe(changed('app/images/dist'))
+    // .pipe(changed('app/images/dist'))
     // .pipe(imagemin())
-    .pipe(dest('app/images/dist'))
+    .pipe(dest('dist/images/dist'))
     .pipe(browserSync.stream())
 }
 
 function buildcopy() {
-  return src([
-      '{app/js,app/css}/*.min.*',
-      'app/images/**/*.*',
-      '!app/images/src/**/*',
-      'app/fonts/**/*'
-    ], {
-      base: 'app/'
-    })
-    .pipe(dest('dist'))
+  // return src([
+  //     '{app/js,app/css}/*.min.*',
+  //     'app/images/**/*.*',
+  //     '!app/images/src/**/*',
+  //     'app/fonts/**/*'
+  //   ], {
+  //     base: 'app/'
+  //   })
+  //   .pipe(dest('dist'))
 }
 
 async function html() {
-  return src('app/**/*.html')
+  return src('app/*.html')
     .pipe(nunjucksRender({
-      path: ['app'] // String or Array
+      path: ['app']
     }))
-    .pipe(dest('dist'));
+    .pipe(dest('dist/'))
+    .pipe(browserSync.stream())
 }
 
 async function cleandist() {
@@ -199,7 +196,6 @@ export {
   scripts,
   styles,
   images,
-  html,
   deploy
 }
 export let assets = series(scripts, styles, images, html)
