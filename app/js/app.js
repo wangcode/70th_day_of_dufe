@@ -10,6 +10,13 @@ import Swiper from 'swiper';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Header
+    const header = document.querySelector('.header');
+    $(".header-mobile-menu").on("click", function () {
+        $(".header-wrap").toggle()
+    })
+    // Header
+
     // 校庆动态
     const swiper = new Swiper('.xqdt-swiper', {
         loop: true,

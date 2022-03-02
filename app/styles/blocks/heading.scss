@@ -8,6 +8,13 @@
         margin-right: 10rpx;
         background-repeat: no-repeat;
         background-position: center;
+        background-size: contain;
+
+        @media (max-width: $mobile-breakpoint) {
+            width: 42mrpx;
+            height: 42mrpx;
+            margin-right: 14mrpx;
+        }
 
         &-camera {
             background-image: url(/images/icon_camera.png);
@@ -37,12 +44,21 @@
     &-title {
         font-size: 18rpx;
         color: $primary-color;
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 28mrpx;
+        }
     }
 
     &-subtitle {
         margin-left: 15rpx;
         font-size: 12rpx;
-        color: #A7A7A7
+        color: #A7A7A7;
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-left: 15mrpx;
+        }
+
     }
 
 }

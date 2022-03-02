@@ -7,6 +7,43 @@
     box-shadow: 0px 2px 8px 2px rgba(211, 211, 211, 0.30);
     margin-bottom: 100rpx;
 
+    @media (max-width: $mobile-breakpoint) {
+        background-size: 145%;
+        background-position: top center;
+    }
+
+    &-crumbs {
+        @media (max-width: $mobile-breakpoint) {
+            display: none;
+        }
+    }
+
+    &-title {
+        display: none;
+        color: white;
+        font-weight: bold;
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 32mrpx;
+            display: flex;
+            align-items: center;
+            padding: 32mrpx 57mrpx;
+
+            &::after {
+                content: "";
+                margin-left: 10mrpx;
+                width: 127mrpx;
+                height: 34mrpx;
+                background-image: url(/images/star_line.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+        }
+    }
+
+    @media (max-width: $mobile-breakpoint) {}
+
     .crumbs {
         padding-top: 28rpx;
         margin-left: 207rpx;

@@ -1,44 +1,21 @@
-{% extends "templates/main.html" %}
-{% block content %}
-<div class="container news">
+{% extends "templates/content_card.html" %}
+{% block content_card_content %}
 
-    <div class="content_card">
+<div class="news-content">
 
-        {% include "parts/crumbs.html" %}
+    <ul class="news-list news-border">
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+        {% include "parts/news_item.html" %}
+    </ul>
 
-        <div class="news-content">
-
-            <ul class="news-list">
-                <li class="news-item">
-                    <a href="">
-                        <p>《大连日报》：市政协委员吕洪良： 城市更新改造应加强无障碍环境建设城市更新改造应加强无障碍环境建设城市更新改造应加强无障碍环境建设</p>
-                        <span class="news-time">2022.01.10</span>
-                    </a>
-                </li>
-                <li class="news-item">
-                    <a href="">
-                        <p>大连新闻传媒微信公众号：两会声音：13位市政协委员大会发言精华</p>
-                        <span class="news-time">2022.01.10</span>
-                    </a>
-                </li>
-                <li class="news-item">
-                    <a href="">
-                        <p>《大连日报》：市政协委员吕洪良： 城市更新改造应加强无障碍环境建设</p>
-                        <span class="news-time">2022.01.10</span>
-                    </a>
-                </li>
-                <li class="news-item">
-                    <a href="">
-                        <p>大连新闻传媒微信公众号：两会声音：13位市政协委员大会发言精华</p>
-                        <span class="news-time">2022.01.10</span>
-                    </a>
-                </li>
-            </ul>
-
-            {% include "parts/pagination.html" %}
-        </div>
-
-    </div>
-
+    {% include "parts/pagination.html" %}
 </div>
+
 {% endblock %}

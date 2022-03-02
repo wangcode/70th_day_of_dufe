@@ -1,8 +1,24 @@
 .xqdt {
+
+    &-flower {
+        @media (max-width: $mobile-breakpoint) {
+            display: none;
+        }
+    }
+
     &-content {
         margin: 0 -15rpx;
         display: flex;
         flex-wrap: wrap;
+        margin-bottom: 35rpx;
+
+        @media (max-width: $mobile-breakpoint) {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin: 0;
+            padding: 25mrpx 30mrpx 40mrpx;
+        }
+
     }
 
     &-card {
@@ -14,22 +30,48 @@
         margin: 15rpx;
         height: 350rpx;
 
+        @media (max-width: $mobile-breakpoint) {
+            height: auto;
+            flex: 0 0 auto;
+            border-radius: 20mrpx;
+            margin-bottom: 30mrpx;
+        }
+
         &-heading {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 10rpx 25rpx 0rpx 25rpx;
+            margin: 10rpx 25rpx 0 25rpx;
+            background-image: url(/images/news_card_divider.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: contain;
+            padding: 0 8rpx;
+            padding-bottom: 10rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                margin: 10mrpx 22mrpx 10mrpx;
+                padding-bottom: 12mrpx;
+            }
 
 
             &-extends {
                 a {
                     font-size: 16rpx;
+
+                    @media (max-width: $mobile-breakpoint) {
+                        font-size: 22mrpx;
+                    }
                 }
             }
         }
 
         &-body {
-            padding: 0 15rpx;
+            margin: 6rpx 25rpx 0 15rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                margin: 10mrpx 30mrpx 20mrpx 30mrpx;
+            }
         }
 
     }
@@ -38,6 +80,10 @@
         position: relative;
         height: 100%;
         width: 100%;
+
+        @media (max-width: $mobile-breakpoint) {
+            height: 388mrpx;
+        }
 
         &-title {
             box-sizing: border-box;

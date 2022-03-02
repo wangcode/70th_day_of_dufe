@@ -1,0 +1,19 @@
+{% extends "templates/main.html" %}
+{% block content %}
+<div class="container news">
+
+    <div class="content_card">
+
+        <div class="content_card-crumbs">
+            {% include "parts/crumbs.html" %}
+        </div>
+
+        <div class="content_card-title">
+            校庆动态
+        </div>
+
+        {% block content_card_content %}{% endblock %}
+    </div>
+
+</div>
+{% endblock %}

@@ -30,6 +30,8 @@
         &-menu {
             width: 42mrpx;
             height: 48mrpx;
+            position: relative;
+            z-index: 100;
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -54,12 +56,14 @@
         display: flex;
         width: 1200rpx;
         margin: 0 auto;
-        visibility: visible;
+        // visibility: visible;
 
         @media (max-width: $mobile-breakpoint) {
-            visibility: hidden;
+            display: none;
+            // visibility: hidden;
             flex-direction: column;
             position: absolute;
+            z-index: 10;
             width: 100vw;
             height: 100vh;
             top: 0;

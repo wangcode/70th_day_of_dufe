@@ -1,20 +1,12 @@
-{% extends "templates/main.html" %}
-{% block content %}
-<div class="container news">
+{% extends "templates/content_card.html" %}
+{% block content_card_content %}
 
-    <div class="content_card">
+<div class="news-content">
 
-        {% include "parts/crumbs.html" %}
+    <h1 class="news-title">东北财经大学多项辅导员工作成果在省级评选中获奖</h1>
 
-        <div class="news-content">
-
-            <h1 class="news-title">东北财经大学多项辅导员工作成果在省级评选中获奖</h1>
-
-            <div class="news-divider">2022年01月28日</div>
-
-        </div>
-
-    </div>
+    <div class="news-divider">2022年01月28日</div>
 
 </div>
+
 {% endblock %}

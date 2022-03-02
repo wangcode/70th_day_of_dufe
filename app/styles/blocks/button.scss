@@ -14,6 +14,12 @@
         align-items: center;
         justify-content: space-around;
 
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 22mrpx;
+            // font-size: 24mrpx;
+            // height: 48mrpx;
+        }
+
         &::after {
             content: "";
             display: block;
@@ -24,7 +30,24 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
+
+            @media (max-width: $mobile-breakpoint) {
+                width: 26mrpx;
+                height: 5mrpx;
+                margin-left: 12mrpx;
+                // font-size: 24mrpx;
+                // height: 48mrpx;
+            }
         }
 
     }
+
+    &-link {
+        padding: 0 10rpx;
+        line-height: 1;
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
 }

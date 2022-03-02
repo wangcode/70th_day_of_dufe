@@ -14,7 +14,7 @@
         margin-left: -25rpx;
     }
 
-    &-border a {
+    &-border &-item {
         border-bottom: 1px dashed #e1e0e0;
     }
 
@@ -34,15 +34,20 @@
         height: 48rpx;
         font-size: 16rpx;
         color: #333333;
-        // line-height: 48rpx;
         list-style: none;
         display: flex;
         align-items: center;
         overflow: hidden;
 
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 24mrpx;
+            height: 48mrpx;
+        }
+
         a {
             display: flex;
             flex: 1;
+            min-width: 0;
 
             &:hover {
                 span {
@@ -53,23 +58,37 @@
 
         p {
             flex: 1;
+            padding-right: 10rpx;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+
+            @media (max-width: $mobile-breakpoint) {
+                padding-right: 20mrpx;
+            }
         }
 
         span {
             color: #ACAAA0;
+            font-size: inherit
         }
 
         &::before {
             content: "";
+            flex: 0 0 5rpx;
             width: 5rpx;
             height: 5rpx;
             border-radius: 50%;
             background-color: #d8d8d8;
             margin-right: 20rpx;
             display: block;
+
+            @media (max-width: $mobile-breakpoint) {
+                flex: 0 0 5mrpx;
+                width: 5mrpx;
+                height: 5mrpx;
+                margin-right: 14mrpx;
+            }
         }
 
     }
