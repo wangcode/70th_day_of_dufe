@@ -1,8 +1,8 @@
 .tabs {
     margin: 0px 200px;
     background-image:
-        url(/images/dist/tabs_bg_left.png),
-        url(/images/dist/tabs_bg_right.png);
+        url(/images/tabs_bg_left.png),
+        url(/images/tabs_bg_right.png);
     background-position: center left, center right;
     background-size: contain, contain;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
         &:hover {
             font-size: 24px;
             color: white;
-            background-image: url(/images/dist/tab_item_bg.png);
+            background-image: url(/images/tab_item_bg.png);
             background-repeat: no-repeat;
             background-size: contain;
         }

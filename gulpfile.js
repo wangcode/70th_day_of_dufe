@@ -127,26 +127,27 @@ function styles() {
 }
 
 function images() {
-  return src(['app/images/src/**/*'])
+  return src(['app/images/**/*'])
     // .pipe(changed('app/images/dist'))
     // .pipe(imagemin())
-    .pipe(dest('dist/images/dist'))
+    .pipe(dest('dist/images'))
     .pipe(browserSync.stream())
 }
 
 function buildcopy() {
-  // return src([
-  //     '{app/js,app/css}/*.min.*',
-  //     'app/images/**/*.*',
-  //     '!app/images/src/**/*',
-  //     'app/fonts/**/*'
-  //   ], {
-  //     base: 'app/'
-  //   })
-  //   .pipe(dest('dist'))
+  return src([
+      '{app/js,app/css}/*.min.*',
+      'app/images/**/*.*',
+      '!app/images/src/**/*',
+      'app/fonts/**/*'
+    ], {
+      base: 'app/'
+    })
+    .pipe(dest('dist'))
 }
 
 async function html() {
+  console.log('Build HTML')
   return src('app/*.html')
     .pipe(nunjucksRender({
       path: ['app']
@@ -187,6 +188,9 @@ function startwatch() {
   watch('app/images/src/**/*', {
     usePolling: true
   }, images)
+  watch('app/**/*.html', {
+    usePolling: true
+  }, html)
   watch(`app/**/*.{${fileswatch}}`, {
     usePolling: true
   }).on('change', browserSync.reload)
@@ -199,6 +203,6 @@ export {
   deploy
 }
 export let assets = series(scripts, styles, images, html)
-export let build = series(cleandist, images, scripts, styles, buildcopy, html)
+export let build = series(cleandist, images, scripts, styles, html)
 
 export default series(scripts, styles, images, html, parallel(browsersync, startwatch))
