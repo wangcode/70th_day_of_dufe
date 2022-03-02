@@ -94,7 +94,7 @@ function scripts() {
 }
 
 function styles() {
-  return src([`app/styles/sass/*.*`, `!app/styles/sass/_*.*`])
+  return src([`app/styles/*.*`, `!app/styles/_*.*`])
     .pipe(sassglob())
     .pipe(sass({
       'include css': true
@@ -147,7 +147,6 @@ function buildcopy() {
 }
 
 async function html() {
-  console.log('Build HTML')
   return src('app/*.html')
     .pipe(nunjucksRender({
       path: ['app']
@@ -179,21 +178,21 @@ function deploy() {
 }
 
 function startwatch() {
-  watch(`app/styles/sass/**/*`, {
+  watch(`app/styles/**/*`, {
     usePolling: true
   }, styles)
   watch(['app/js/**/*.js', '!app/js/**/*.min.js'], {
     usePolling: true
   }, scripts)
-  watch('app/images/src/**/*', {
+  watch('app/images/**/*', {
     usePolling: true
   }, images)
   watch('app/**/*.html', {
     usePolling: true
   }, html)
-  watch(`app/**/*.{${fileswatch}}`, {
-    usePolling: true
-  }).on('change', browserSync.reload)
+  // watch(`app/**/*.{${fileswatch}}`, {
+  //   usePolling: true
+  // }).on('change', browserSync.reload)
 }
 
 export {
