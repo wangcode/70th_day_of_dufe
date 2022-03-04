@@ -1,32 +1,36 @@
-{% extends "templates/main.html" %}
+{% extends "templates/base.html" %}
 {% set title = "Home" %}
 
 {% block content %}
 <div class="home">
 
-    <div class="menu">
-        <div class="big_box">big</div>
-        <div class="small_box xqdt">
-            <div class="box_title">校庆动态</div>
+    <div class="home-menu">
+        <div class="home-box-biglogo">big</div>
+        <div class="home-box xqdt">
+            <div class="home-box-title">校庆动态</div>
         </div>
-        <div class="small_box hdyl">
-            <div class="box_title">活动一览</div>
+        <div class="home-box hdyl">
+            <div class="home-box-title">活动一览</div>
         </div>
-        <div class="small_box dsj">
-            <div class="box_title">大事记</div>
+        <div class="home-box dsj">
+            <div class="home-box-title">大事记</div>
         </div>
-        <div class="big_box">big</div>
-        <div class="small_box yxdc">
-            <div class="box_title">影像东财</div>
+        <div class="home-box xqbs">
+            <div class="home-box-title">校庆标识</div>
         </div>
-        <div class="small_box hkmx">
-            <div class="box_title">回馈母校</div>
+        <div class="home-box yxdc">
+            <div class="home-box-title">影像东财</div>
         </div>
-        <div class="small_box yxq">
-            <div class="box_title">云校庆</div>
+        <div class="home-box hkmx">
+            <div class="home-box-title">回馈母校</div>
+        </div>
+        <div class="home-box yxq">
+            <div class="home-box-title">云校庆</div>
         </div>
     </div>
-    <div class="side_box">side</div>
+    <div class="home-right">
+        <img src="/images/home/stone.jpg" alt="">
+    </div>
 
 </div>
 {% endblock %}

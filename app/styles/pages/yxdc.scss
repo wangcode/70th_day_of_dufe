@@ -1,0 +1,13 @@
+.yxdc {}
+
+
+.yxdc-list {
+    padding-bottom: 80rpx;
+
+    &-heading {
+
+        display: flex;
+        justify-content: space-between;
+        padding: 15rpx 30rpx;
+    }
+}

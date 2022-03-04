@@ -1,0 +1,34 @@
+{% extends "templates/content_card.html" %}
+{% block content_card_content %}
+
+<div class="yxdc-list">
+
+    <div>
+        <div class="yxdc-list-heading">
+            <div class="heading">
+                <div class="heading-icon heading-icon-camera"></div>
+                <div class="heading-titles">
+                    <div class="heading-title">校园风光</div>
+                </div>
+            </div>
+            <a class="button button-more" href="/news_list.html">更多</a>
+        </div>
+        {% include "parts/gallery.html" %}
+    </div>
+
+    <div>
+        <div class="yxdc-list-heading">
+            <div class="heading">
+                <div class="heading-icon heading-icon-camera"></div>
+                <div class="heading-titles">
+                    <div class="heading-title">人文风貌</div>
+                </div>
+            </div>
+            <a class="button button-more" href="/news_list.html">更多</a>
+        </div>
+        {% include "parts/gallery.html" %}
+    </div>
+
+</div>
+
+{% endblock %}

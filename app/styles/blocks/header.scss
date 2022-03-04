@@ -96,11 +96,11 @@
                 margin: 0;
                 width: 100%;
                 font-size: 36mrpx;
-                padding-bottom: 1rpx;
+                padding-bottom: 1px;
                 background: linear-gradient(to right,
                         white,
                         transparent) left bottom transparent no-repeat;
-                background-size: 100% 1rpx;
+                background-size: 100% 1px;
                 text-align: left;
             }
 
@@ -119,7 +119,10 @@
                 // border-bottom: 6rpx solid #dfdfdf;
                 // background-color: black;
                 @media (max-width: $mobile-breakpoint) {
-                    background-image: none;
+                    background: linear-gradient(to right,
+                            white,
+                            transparent) left bottom transparent no-repeat;
+                    background-size: 100% 1px;
                 }
             }
 
