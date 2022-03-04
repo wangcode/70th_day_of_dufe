@@ -16,8 +16,10 @@
 
         @media (max-width: $mobile-breakpoint) {
             font-size: 22mrpx;
-            // font-size: 24mrpx;
-            // height: 48mrpx;
+            padding: 0 20mrpx;
+            height: 44mrpx;
+            line-height: 44mrpx;
+            border-radius: 22mrpx;
         }
 
         &::after {
@@ -35,8 +37,6 @@
                 width: 26mrpx;
                 height: 5mrpx;
                 margin-left: 12mrpx;
-                // font-size: 24mrpx;
-                // height: 48mrpx;
             }
         }
 

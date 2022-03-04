@@ -14,44 +14,11 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="header-mobile">
-            <div>
-                <img class="header-mobile-logo" src="/images/header_logo_mobile.png" />
-            </div>
-            <div>
-                <img class="header-mobile-menu" src="/images/header_menu_icon.png" />
-            </div>
-        </div>
-        <div class="header-wrap">
-            <div>
-                <img class="header-logo" src="/images/logo.png" alt="">
-            </div>
-            <div class="header-menu">
-                <a class="header-menu-item current" href="index.html">首页</a>
-                <a class="header-menu-item" href="xqdt.html">校庆动态</a>
-                <a class="header-menu-item" href="hdyl.html">活动一览</a>
-                <a class="header-menu-item" href="dsj.html">大事记</a>
-                <a class="header-menu-item" href="yxdc.html">影像东财</a>
-                <a class="header-menu-item" href="xqbs.html">校庆标识</a>
-                <a class="header-menu-item" href="hkmx.html">回馈母校</a>
-                <a class="header-menu-item" href="yxq_yzb.html">云校庆</a>
-            </div>
-        </div>
-    </div>
+    {% include "parts/header.html" %}
 
     {% block content %}{% endblock %}
 
-    <div class="footer">
-        <div class="footer-year">1952</div>
-        <div class="footer-copyright">
-            <img class="footer-logo" src="/images/footer_logo.png" alt="">
-            <p class="text-sm">70th Anniversary of Dongbei University of Finance & Economics</p>
-            <p class="text-base">版权所有 &#169 2014-2015</p>
-            <p class="text-lg">辽宁省大连市沙河口区东北财经大学</p>
-        </div>
-        <div class="footer-year">2022</div>
-    </div>
+    {% include "parts/footer.html" %}
 
     <script src="js/main.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" rel="stylesheet">

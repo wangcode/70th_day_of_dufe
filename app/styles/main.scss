@@ -48,3 +48,9 @@ a {
 .flex {
     display: flex;
 }
+
+.mobile_hidden {
+    @media (max-width: $mobile-breakpoint) {
+        display: none;
+    }
+}

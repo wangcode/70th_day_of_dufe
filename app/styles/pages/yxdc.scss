@@ -4,10 +4,18 @@
 .yxdc-list {
     padding-bottom: 80rpx;
 
+    @media (max-width: $mobile-breakpoint) {
+        padding: 0 20mrpx
+    }
+
     &-heading {
 
         display: flex;
         justify-content: space-between;
         padding: 15rpx 30rpx;
+
+        @media (max-width: $mobile-breakpoint) {
+            padding: 30mrpx 28mrpx;
+        }
     }
 }

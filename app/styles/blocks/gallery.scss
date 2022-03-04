@@ -4,11 +4,20 @@
     flex-wrap: wrap;
     margin: 0 -22rpx;
 
+    @media (max-width: $mobile-breakpoint) {
+        margin: 0 -15mrpx;
+    }
+
     &-photo {
         width: 25%;
         margin-bottom: 15rpx;
         padding: 0 22rpx;
         box-sizing: border-box;
+
+        @media (max-width: $mobile-breakpoint) {
+            width: 50%;
+            padding: 0 15mrpx;
+        }
     }
 
     &-title {

@@ -28,6 +28,7 @@
         }
 
         &-menu {
+            padding: 6mrpx 0;
             width: 42mrpx;
             height: 48mrpx;
             position: relative;
@@ -52,23 +53,29 @@
         }
     }
 
+    .open {
+        display: flex;
+        opacity: 1;
+        height: 100vh;
+    }
+
     &-wrap {
         display: flex;
         width: 1200rpx;
         margin: 0 auto;
-        // visibility: visible;
 
         @media (max-width: $mobile-breakpoint) {
-            display: none;
-            // visibility: hidden;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
             flex-direction: column;
             position: absolute;
             z-index: 10;
             width: 100vw;
-            height: 100vh;
             top: 0;
             left: 0;
             background-color: rgba(#AB0202, 0.93);
+            transition: .3s ease-in-out;
         }
     }
 
@@ -89,7 +96,6 @@
             font-size: 20rpx;
             width: 110rpx;
             text-align: center;
-            // text-decoration: none;
 
             @media (max-width: $mobile-breakpoint) {
                 line-height: $mobile-header-height;
@@ -97,10 +103,11 @@
                 width: 100%;
                 font-size: 36mrpx;
                 padding-bottom: 1px;
-                background: linear-gradient(to right,
-                        white,
-                        transparent) left bottom transparent no-repeat;
+                background-image:
+                    linear-gradient(to right, white, rgba(#AB0202, 1));
+                background-repeat: no-repeat;
                 background-size: 100% 1px;
+                background-position: 0 100%;
                 text-align: left;
             }
 
@@ -116,12 +123,8 @@
                 background-size: contain;
                 color: #FABC05;
 
-                // border-bottom: 6rpx solid #dfdfdf;
-                // background-color: black;
                 @media (max-width: $mobile-breakpoint) {
-                    background: linear-gradient(to right,
-                            white,
-                            transparent) left bottom transparent no-repeat;
+                    background-image: linear-gradient(to right, white, rgba(#AB0202, 1));
                     background-size: 100% 1px;
                 }
             }

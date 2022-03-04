@@ -31,6 +31,7 @@
         height: 350rpx;
 
         @media (max-width: $mobile-breakpoint) {
+            margin: 0;
             height: auto;
             flex: 0 0 auto;
             border-radius: 20mrpx;
@@ -100,6 +101,12 @@
             font-size: 16rpx;
             padding: 0 30rpx;
             justify-content: space-between;
+        }
+
+        &-pagination {
+            &-active {
+                background-color: #FFDE06 !important;
+            }
         }
 
     }
