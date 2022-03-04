@@ -151,7 +151,7 @@ function buildcopy() {
 async function html() {
   return src('app/*.html')
     .pipe(nunjucksRender({
-      path: ['app']
+      path: ['app/templates']
     }))
     .pipe(dest('dist/'))
     .pipe(browserSync.stream())
