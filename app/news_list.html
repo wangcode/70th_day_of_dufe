@@ -1,20 +1,25 @@
 {% extends "content_card.html" %}
 {% block content_card_content %}
 
-<div class="news-content">
+<div class="newspage-list">
 
-    <ul class="news-list news-border">
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-        {% include "parts/news_item.html" %}
-    </ul>
+    <div class="newspage-list-content">
+        <ul>
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+            {% include "parts/news_item.html" %}
+        </ul>
+    </div>
 
+</div>
+
+<div class="newspage-pagination">
     {% include "parts/pagination.html" %}
 </div>
 

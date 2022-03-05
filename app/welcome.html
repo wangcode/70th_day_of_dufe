@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="welcome">
+
+    <div class="welcome-head">
+        <img src="/images/logo.png" alt="">
+    </div>
+
+    <div class="welcome-swiper swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="https://source.unsplash.com/1920x1080/?newyear" />
+            </div>
+            <div class="swiper-slide">
+                <img src="https://source.unsplash.com/1920x1080/?school" />
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome-fireworks"></div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+<script>
+
+</script>
+{% endblock %}

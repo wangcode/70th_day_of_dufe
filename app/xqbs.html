@@ -5,13 +5,14 @@
 <div class="xqbs">
     <div class="container">
 
-        <div class="xqbs-spacer">
+        <div class="xqbs-spacer mobile_hidden">
             {% include "parts/spacer_flower.html" %}
         </div>
 
         <div class="xqbs-content">
             <div class="xqbs-70th">
-                <div>
+                <img src="/images/xqbs_70th.png" alt="">
+                <div class="xqbs-70th-content">
                     <div class="xqbs-70th-logo">
                         <div class="xqbs-70th-title">校庆logo</div>
                         <img src="/images/70th.png" alt="">
@@ -23,14 +24,42 @@
                 <!-- <img src="/images/xqbs_70th.png" alt=""> -->
             </div>
             <div class="xqbs-right">
-                <div class="xqbs-postcard">1</div>
-                <div class="">
-                    <div></div>
-                    <div></div>
+                <div class="xqbs-postcard">
+                    <div class="xqbs-postcard-title">首<br />日<br />封</div>
+                    <div class="xqbs-postcard-swiper">
+                        <div class="xqbs-postcard-swiper-el swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://source.unsplash.com/576x315/?car" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://source.unsplash.com/576x315/?airplane" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="xqbs-postcard-swiper-pagination">
+                            <div class="xqbs-postcard-swiper-pagination-el"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="xqbs-cards">
+                    <div class="xqbs-cards-item">
+                        <img src="/images/xqbs/jxw.jpg" alt="">
+                    </div>
+                    <div class="xqbs-cards-item">
+                        <img src="/images/xqbs/xqwc.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
+{% endblock %}
+
+{% block script %}
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+<script>
+
+</script>
 {% endblock %}

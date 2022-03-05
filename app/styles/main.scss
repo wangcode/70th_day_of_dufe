@@ -38,6 +38,7 @@ a {
     box-sizing: border-box;
     width: 1200rpx;
     margin: 0 auto;
+    // min-height: 100vh;
 
     @media (max-width: $mobile-breakpoint) {
         width: 100%;

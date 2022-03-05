@@ -27,7 +27,7 @@
         justify-content: center;
         align-items: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         background-position: center;
         position: relative;
 
@@ -46,7 +46,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background: rgba($color: #08c, $alpha: 0.5);
+            // background: rgba($color: #08c, $alpha: 0.5);
             z-index: 1;
             transition: transform .3s ease-in-out;
             transform: scaleY(1);
@@ -127,8 +127,11 @@
     }
 
     .xqdt {
-        background-color: rgba($color: #08c, $alpha: 0.6);
         background-image: url(/images/home/xqdt.jpg);
+
+        &::after {
+            background-color: rgba($color: #08c, $alpha: 0.6);
+        }
 
         @media (max-width: $mobile-breakpoint) {
             background-color: transparent;

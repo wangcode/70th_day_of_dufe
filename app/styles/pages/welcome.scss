@@ -1,0 +1,23 @@
+.welcome {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    font-size: 0;
+
+    &-head {
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        left: 192rpx;
+    }
+
+    &-fireworks {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+    }
+
+}

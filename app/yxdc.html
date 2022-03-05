@@ -1,2 +1,32 @@
 {% extends "main.html" %}
 {% set title = "影像东财" %}
+
+{% block content %}
+<div class="yxdc">
+    <div class="container">
+
+        <div class="yxdc-spacer mobile_hidden">
+            {% include "parts/spacer_flower.html" %}
+        </div>
+
+        <div class="yxdc-content">
+
+            <div>
+                <div class="yxdc-list-heading">
+                    <div class="heading">
+                        <div class="heading-icon heading-icon-camera"></div>
+                        <div class="heading-titles">
+                            <div class="heading-title">校庆宣传片</div>
+                        </div>
+                    </div>
+                    <a class="button button-more" href="/news_list.html">更多</a>
+                </div>
+            </div>
+
+            <div></div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}

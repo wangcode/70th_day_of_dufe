@@ -68,7 +68,8 @@
         }
 
         &-body {
-            margin: 6rpx 25rpx 0 15rpx;
+            // margin: 6rpx 25rpx 0 15rpx;
+            padding: 15rpx 25rpx 15rpx 15rpx;
 
             @media (max-width: $mobile-breakpoint) {
                 margin: 10mrpx 30mrpx 20mrpx 30mrpx;
@@ -106,6 +107,82 @@
         &-pagination {
             &-active {
                 background-color: #FFDE06 !important;
+            }
+        }
+
+    }
+
+    &-news {
+
+        padding-left: 25rpx;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: -25rpx;
+
+        li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            height: 43rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                height: 48mrpx;
+            }
+
+            &::before {
+                content: "";
+                flex: 0 0 5rpx;
+                width: 5rpx;
+                height: 5rpx;
+                border-radius: 50%;
+                background-color: #d8d8d8;
+                margin-right: 20rpx;
+                display: block;
+
+                @media (max-width: $mobile-breakpoint) {
+                    flex: 0 0 5mrpx;
+                    width: 5mrpx;
+                    height: 5mrpx;
+                    margin-right: 14mrpx;
+                }
+            }
+
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            border-bottom: 1px solid transparent;
+            font-size: 16rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 24mrpx;
+            }
+
+            &:hover {
+                border-color: $primary-color;
+
+                span {
+                    color: $primary-color;
+                }
+            }
+
+            p {
+                flex: 1;
+                padding-right: 10rpx;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+
+                @media (max-width: $mobile-breakpoint) {
+                    padding-right: 20mrpx;
+                }
+            }
+
+            span {
+                color: #ACAAA0;
+                font-size: inherit;
             }
         }
 

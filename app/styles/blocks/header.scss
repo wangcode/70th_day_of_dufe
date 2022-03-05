@@ -2,7 +2,6 @@
 
     $pc-header-height: 100rpx;
     $mobile-header-height: 100mrpx;
-
     height: $pc-header-height;
     width: 100vw;
     background-image: url(/images/header_bg.jpg);
@@ -120,7 +119,7 @@
 
                 background-image: url(/images/header_menu_hover_bg.png);
                 background-repeat: no-repeat;
-                background-size: contain;
+                background-size: cover;
                 color: #FABC05;
 
                 @media (max-width: $mobile-breakpoint) {

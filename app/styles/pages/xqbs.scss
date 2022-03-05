@@ -1,4 +1,9 @@
 .xqbs {
+
+    @media (max-width: $mobile-breakpoint) {
+        padding: 0 30mrpx;
+    }
+
     &-spacer {
         padding-top: 20rpx;
         padding-bottom: 43rpx;
@@ -7,17 +12,37 @@
     &-content {
         display: flex;
         margin-bottom: 30rpx;
+
+        @media (max-width: $mobile-breakpoint) {
+            flex-direction: column;
+        }
     }
 
     &-70th {
+        position: relative;
         flex: 0 0 420rpx;
         height: 660rpx;
-        // width: 420rpx;
+        font-size: 0;
         margin-right: 30rpx;
+        border-radius: 10rpx;
         box-shadow: 0px 2px 4px 0px rgba(196, 195, 195, 0.50);
-        background-image: url(/images/xqbs_70th.png);
-        background-size: contain;
 
+        @media (max-width: $mobile-breakpoint) {
+            border-radius: 10mrpx;
+            margin: 0;
+            margin-top: 100mrpx;
+            width: 100%;
+            flex: 1;
+            margin-bottom: 30mrpx;
+        }
+
+        &-content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
 
         img {
             width: 100%;
@@ -29,10 +54,33 @@
             text-align: center;
             color: $primary-color;
             margin-bottom: 10rpx;
+            background-image: url(/images/title_bg_square.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @media (max-width: $mobile-breakpoint) {
+                height: 100mrpx;
+                padding: 0;
+                font-size: 32mrpx;
+                margin-top: -100mrpx;
+                line-height: 100mrpx;
+                background-size: 60%;
+            }
+
         }
 
         &-logo {
             padding: 0 88rpx;
+            text-align: center;
+
+            @media (max-width: $mobile-breakpoint) {
+                img {
+                    width: 403mrpx;
+                    height: 350mrpx;
+                }
+
+            }
         }
 
         &-desc {
@@ -41,18 +89,101 @@
             line-height: 28rpx;
             padding: 0 60rpx;
             padding-top: 50rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 28mrpx;
+                line-height: 48mrpx;
+            }
         }
 
     }
 
     &-right {
-        width: 100%;
+        flex: 1 0 auto;
+        // width: 100%;
     }
 
     &-postcard {
-        background-color: #08c;
         width: 100%;
         height: 315rpx;
         margin-bottom: 30rpx;
+        display: flex;
+        box-shadow: 0px 2px 8px 2px rgba(211, 211, 211, 0.30);
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-bottom: 30mrpx;
+            flex: 1;
+            height: 297mrpx;
+        }
+
+        &-title {
+            flex: 0 0 150rpx;
+            background-image: url(/images/xqbs_postcard.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            font-size: 32rpx;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 40rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                flex: 0 0 142mrpx;
+                font-size: 32mrpx;
+                line-height: 40mrpx;
+            }
+        }
+
+        &-swiper {
+            flex: 1 0 600rpx;
+            overflow: hidden;
+            display: flex;
+
+            @media (max-width: $mobile-breakpoint) {
+                flex: 1;
+                font-size: 32mrpx;
+            }
+
+            &-pagination {
+                flex: 0 0 24rpx;
+                height: 100%;
+                background-color: #D90D0D;
+
+                @media (max-width: $mobile-breakpoint) {
+                    flex: 0 0 24mrpx;
+                }
+            }
+        }
+
+
     }
+
+    &-cards {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-bottom: 56mrpx;
+        }
+
+        &-item {
+            width: 360rpx;
+            height: 315rpx;
+            border-radius: 5rpx;
+            overflow: hidden;
+            box-shadow: 0px 2px 8px 2px rgba(211, 211, 211, 0.30);
+
+            @media (max-width: $mobile-breakpoint) {
+                width: 331mrpx;
+                height: 289mrpx;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
 }
