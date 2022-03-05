@@ -5,6 +5,18 @@
         padding-bottom: 43rpx;
     }
 
+    &-content {
+        display: flex;
+
+        &-spacer {
+            flex: 0 0 30rpx;
+        }
+
+        &-item {
+            flex: 1;
+        }
+    }
+
 }
 
 

@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+{% set title = "发送祝福" %}
+
+{% block content %}
+<div class="yxq-yzf">
+
+    <div class="yxq-yzf-form">
+        <div class="yxq-yzf-form-bg">
+            <img src="/images/yxq/yzf_form_head.png" alt="">
+        </div>
+        <div class="yxq-yzf-form-content">
+            <div class="yxq-yzf-form-input">
+                <textarea placeholder="请输入祝福语" name="" id="" cols="30" rows="8"></textarea>
+                <input placeholder="请输入姓名" type="text">
+            </div>
+            <div class="yxq-yzf-form-captcha">
+
+                <div class="yxq-yzf-form-input">
+                    <input placeholder="验证码" type="text">
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <a href="">换一张</a>
+                </div>
+            </div>
+            <div class="yxq-yzf-form-button">
+                发送祝福
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

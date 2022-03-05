@@ -10,8 +10,21 @@
     align-items: center;
     height: 165rpx;
 
+    @media (max-width: $mobile-breakpoint) {
+        background-image: url(/images/ticket_bg_mobile.png);
+        background-size: contain;
+        height: 214mrpx;
+        justify-content: space-between;
+        padding-right: 30mrpx;
+        border-radius: 10mrpx;
+    }
+
     &-info {
         padding-left: 70rpx;
+
+        @media (max-width: $mobile-breakpoint) {
+            padding-left: 70mrpx;
+        }
     }
 
     &-title {
@@ -26,17 +39,35 @@
         padding-left: 21rpx;
         margin-left: -21rpx;
 
+        @media (max-width: $mobile-breakpoint) {
+            padding: 0;
+            margin: 0;
+            padding-top: 20mrpx;
+            font-size: 24mrpx;
+            background-image: none;
+        }
+
     }
 
     &-divider {
-        border-bottom: 1rpx solid #979797;
+        border-bottom: 1px solid #979797;
         margin: 15rpx 0;
         width: 210rpx;
+
+        @media(max-width: $mobile-breakpoint) {
+            border-bottom: 1px dashed #979797;
+            width: 300mrpx;
+            margin: 15mrpx 0;
+        }
     }
 
     &-desc {
         font-size: 14rpx;
         color: #999999;
+
+        @media(max-width: $mobile-breakpoint) {
+            font-size: 21mrpx;
+        }
     }
 
     &-scan {
@@ -46,6 +77,10 @@
         flex: 1;
         justify-content: flex-end;
         margin-right: 120rpx;
+
+        @media(max-width: $mobile-breakpoint) {
+            display: none;
+        }
     }
 
     &-tip {
@@ -62,5 +97,32 @@
     &-qrcode {
         width: 77rpx;
         height: 77rpx;
+    }
+
+    &-link {
+        display: none;
+
+
+        @media(max-width: $mobile-breakpoint) {
+            display: flex;
+            font-size: 18mrpx;
+            color: #BFBFBF;
+            align-items: center;
+            cursor: pointer;
+
+            &:after {
+                content: "";
+                width: 30mrpx;
+                height: 30mrpx;
+                border-radius: 50%;
+                background-color: #dfdfdf;
+                margin-left: 10mrpx;
+                background-image: url(/images/icon_arrow_right.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 30%;
+
+            }
+        }
     }
 }

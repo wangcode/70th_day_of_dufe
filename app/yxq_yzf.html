@@ -1,54 +1,46 @@
-{% extends "main.html" %}
+{% extends "yxq_base.html" %}
 {% set title = "云校庆-云祝福" %}
+{% set currentTab = "yzf" %}
 
 {% block content %}
-<div class="yxq">
-    <div class="container">
 
-        <div class="yxq-spacer">
-            {% include "parts/spacer_flower.html" %}
+<div class="yxq-yzf-block">
+
+</div>
+
+<div>
+    <div class="yxq-yzf-heading">
+        <div class="heading">
+            <div class="heading-icon heading-icon-gift"></div>
+            <div class="heading-titles">
+                <div class="heading-title">来自友好院校的祝福</div>
+                <div class="heading-subtitle">按名称首字排序</div>
+            </div>
         </div>
-
-        <div class="yxq-tab">
-            {% include "parts/tabs.html" %}
-        </div>
-
         <div>
-            <div class="yxq-yzf-heading">
-                <div class="heading">
-                    <div class="heading-icon heading-icon-gift"></div>
-                    <div class="heading-titles">
-                        <div class="heading-title">来自友好院校的祝福</div>
-                        <div class="heading-subtitle">按名称首字排序</div>
-                    </div>
-                </div>
-                <div>
-                    <a href="" class="button button-more">更多</a>
-                </div>
-            </div>
-            <div class="yxq-yzf-gallery">
-                {% include "parts/gallery.html" %}
-            </div>
-
-            <div class="yxq-yzf-heading">
-                <div class="heading">
-                    <div class="heading-icon heading-icon-gift"></div>
-                    <div class="heading-titles">
-                        <div class="heading-title">来自校友会的祝福</div>
-                        <div class="heading-subtitle">按名称首字排序</div>
-                    </div>
-                </div>
-                <div>
-                    <a href="" class="button button-more">更多</a>
-                </div>
-            </div>
-            <div class="yxq-yzf-gallery">
-                {% include "parts/gallery.html" %}
-            </div>
-
+            <a href="" class="button button-more">更多</a>
         </div>
-
     </div>
+    <div class="yxq-yzf-gallery">
+        {% include "parts/gallery.html" %}
+    </div>
+
+    <div class="yxq-yzf-heading">
+        <div class="heading">
+            <div class="heading-icon heading-icon-gift"></div>
+            <div class="heading-titles">
+                <div class="heading-title">来自校友会的祝福</div>
+                <div class="heading-subtitle">按名称首字排序</div>
+            </div>
+        </div>
+        <div>
+            <a href="" class="button button-more">更多</a>
+        </div>
+    </div>
+    <div class="yxq-yzf-gallery">
+        {% include "parts/gallery.html" %}
+    </div>
+
 </div>
 
 {% endblock %}

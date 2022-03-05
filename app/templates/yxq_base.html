@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <meta name="description" content="Startup HTML template OptimizedHTML 5">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="images/favicon.png">
+    <meta property="og:image" content="images/preview.jpg">
+    <link rel="stylesheet" href="css/app.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    {% include "parts/header.html" %}
+
+    <div class="yxq">
+        <div class="container">
+
+            <div class="yxq-spacer mobile_hidden">
+                {% include "parts/spacer_flower.html" %}
+            </div>
+
+            <div class="yxq-tab">
+                {% include "parts/tabs.html" %}
+            </div>
+
+            <div class="yxq-content">
+
+                {% block content %}{% endblock %}
+
+            </div>
+
+
+        </div>
+    </div>
+
+    {% include "parts/footer.html" %}
+
+    <script src="js/main.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    {% block script %}{% endblock %}
+</body>
+
+</html>

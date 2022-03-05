@@ -1,13 +1,33 @@
 .tabs {
     margin: 0 200rpx;
-    background-image:
-        url(/images/tabs_bg_left.png),
-        url(/images/tabs_bg_right.png);
-    background-position: center left, center right;
-    background-size: contain, contain;
-    background-repeat: no-repeat;
+    // background-image:
+    //     url(/images/tabs_bg_left.png),
+    //     url(/images/tabs_bg_right.png);
+    // background-position: center left, center right;
+    // background-size: contain, contain;
+    // background-repeat: no-repeat;
     display: flex;
     justify-content: center;
+
+
+    @media (max-width: $mobile-breakpoint) {
+        margin: 0;
+    }
+
+    &-wrap {
+
+        background-image: url(/images/tabs_bg_left.png),
+            url(/images/tabs_bg_right.png);
+        background-position: center left,
+            center right;
+        background-size: contain,
+            contain;
+        background-repeat: no-repeat;
+
+        @media (max-width: $mobile-breakpoint) {
+            background-size: 20%, 20%;
+        }
+    }
 
     &-item {
         margin: 0 5rpx;
@@ -19,6 +39,13 @@
         border-radius: 8rpx;
         color: #999999;
 
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 24mrpx;
+            width: 124mrpx;
+            height: 52mrpx;
+            line-height: 52mrpx;
+        }
+
         &.current,
         &:hover {
             font-size: 24rpx;
@@ -26,6 +53,10 @@
             background-image: url(/images/tab_item_bg.png);
             background-repeat: no-repeat;
             background-size: contain;
+
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 28mrpx;
+            }
         }
     }
 }

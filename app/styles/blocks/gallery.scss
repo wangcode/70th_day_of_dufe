@@ -25,5 +25,9 @@
         font-size: 14rpx;
         color: #333333;
         text-align: center;
+
+        @media (max-width: $mobile-breakpoint) {
+            font-size: 24mrpx;
+        }
     }
 }

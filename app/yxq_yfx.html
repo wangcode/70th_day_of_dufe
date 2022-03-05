@@ -1,45 +1,22 @@
-{% extends "main.html" %}
+{% extends "yxq_base.html" %}
 {% set title = "云校庆-云返校" %}
+{% set currentTab = "yfx" %}
 
 {% block content %}
-<div class="yxq">
-    <div class="container">
-
-        <div class="yxq-spacer">
-            {% include "parts/spacer_flower.html" %}
-        </div>
-
-        <div class="yxq-tab">
-            {% include "parts/tabs.html" %}
-        </div>
-
-        <div class="yxq-block">
-            <div class="yxq-qrcodes">
-                <div class="photo">
-                    <div class="yxq-qrcodes-title">人民日报客户端</div>
-                    <img class="yxq-qrcodes-qrcode"
-                        src="https://qr.api.cli.im/newqr/create?data=1&level=H&transparent=false&bgcolor=%23FFFFFF&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=500&kid=cliim&key=0e4acf6d032caaa0e6054e7eea845094"
-                        alt="">
-                </div>
-            </div>
-            <div class="yxq-block-video">
-
-            </div>
-        </div>
-
-
-        <div class="yxq-ticket">
-            {% include "parts/ticket.html" %}
-        </div>
-        <div class="yxq-ticket">
-            {% include "parts/ticket.html" %}
-        </div>
-        <div class="yxq-ticket">
-            {% include "parts/ticket.html" %}
-        </div>
-
-    </div>
+<div class="yxq-block yxq-yfx-block">
+    <div class="yxq-yfx-block-mobile"><img src="/images/yxq/yfx_mobile.png" alt=""></div>
+    <div class="yxq-yfx-block-pc"><img src="/images/yxq/yfx.png" alt=""></div>
 </div>
 
+
+<div class="yxq-ticket">
+    {% include "parts/ticket.html" %}
+</div>
+<div class="yxq-ticket">
+    {% include "parts/ticket.html" %}
+</div>
+<div class="yxq-ticket">
+    {% include "parts/ticket.html" %}
+</div>
 
 {% endblock %}

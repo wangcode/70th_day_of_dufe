@@ -1,34 +1,22 @@
-{% extends "main.html" %}
+{% extends "yxq_base.html" %}
 {% set title = "云校庆-云活动" %}
+{% set currentTab = "yhd" %}
 
 {% block content %}
 
-<div class="yxq">
-    <div class="container">
 
-        <div class="yxq-spacer">
-            {% include "parts/spacer_flower.html" %}
-        </div>
+<div class="yxq-yhd-tickets">
 
-        <div class="yxq-tab">
-            {% include "parts/tabs.html" %}
-        </div>
-
-        <div class="yxq-yhd-tickets">
-
-            <div class="yxq-ticket">
-                {% include "parts/ticket.html" %}
-            </div>
-            <div class="yxq-ticket">
-                {% include "parts/ticket.html" %}
-            </div>
-            <div class="yxq-ticket">
-                {% include "parts/ticket.html" %}
-            </div>
-
-        </div>
-
-
+    <div class="yxq-ticket">
+        {% include "parts/ticket.html" %}
     </div>
+    <div class="yxq-ticket">
+        {% include "parts/ticket.html" %}
+    </div>
+    <div class="yxq-ticket">
+        {% include "parts/ticket.html" %}
+    </div>
+
 </div>
+
 {% endblock %}
