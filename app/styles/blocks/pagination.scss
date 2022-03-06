@@ -3,6 +3,16 @@
     justify-content: center;
     align-items: center;
 
+    &-left {
+        background-image: url(/images/icon_arrow_left.png);
+        background-size: 35%;
+    }
+
+    &-right {
+        background-image: url(/images/icon_arrow_right.png);
+        background-size: 35%;
+    }
+
     &-item {
         width: 22rpx;
         height: 22rpx;
@@ -16,6 +26,8 @@
         transition: .3s ease-in;
         color: #B4B4B4;
         margin-right: 25rpx;
+        background-repeat: no-repeat;
+        background-position: center;
 
         @media (max-width: $mobile-breakpoint) {
             width: 32mrpx;
