@@ -97,6 +97,7 @@
             width: 110rpx;
             text-align: center;
 
+
             @media (max-width: $mobile-breakpoint) {
                 line-height: $mobile-header-height;
                 margin: 0;
@@ -129,6 +130,9 @@
                 }
             }
 
+            a {
+                display: block;
+            }
 
 
         }
