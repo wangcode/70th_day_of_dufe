@@ -30,8 +30,8 @@
             padding: 6mrpx 0;
             width: 42mrpx;
             height: 48mrpx;
-            position: relative;
-            z-index: 100;
+            // position: relative;
+            // z-index: 100;
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -68,7 +68,7 @@
             opacity: 0;
             overflow: hidden;
             flex-direction: column;
-            position: absolute;
+            position: fixed;
             z-index: 10;
             width: 100vw;
             top: 0;
@@ -76,6 +76,18 @@
             background-color: rgba(#AB0202, 0.93);
             transition: .3s ease-in-out;
         }
+
+        &-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            &-menu {
+                padding-top: 29mrpx;
+                padding-right: 30mrpx;
+            }
+        }
+
     }
 
     &-menu {

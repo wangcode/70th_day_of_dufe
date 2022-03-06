@@ -59,3 +59,15 @@ a {
         display: none;
     }
 }
+
+.slick-slide {
+    border: 0 !important;
+
+    & a {
+        display: block !important;
+    }
+}
+
+.noscroll {
+    overflow: hidden;
+}

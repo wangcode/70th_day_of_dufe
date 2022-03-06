@@ -103,8 +103,7 @@
     }
 
     &-right {
-        flex: 1 0 auto;
-        // width: 100%;
+        flex: 1;
     }
 
     &-postcard {
@@ -140,9 +139,24 @@
         }
 
         &-swiper {
-            flex: 1 0 600rpx;
+            flex: 0 0 600rpx;
             overflow: hidden;
             display: flex;
+            height: 100%;
+
+            &-el {
+                width: 576rpx;
+
+                @media (max-width: $mobile-breakpoint) {
+                    height: 297mrpx;
+                    width: 525mrpx;
+                }
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
 
             @media (max-width: $mobile-breakpoint) {
                 flex: 1;
@@ -156,6 +170,41 @@
 
                 @media (max-width: $mobile-breakpoint) {
                     flex: 0 0 24mrpx;
+                }
+
+                ul {
+                    padding: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    margin: 0;
+                }
+
+                li {
+                    list-style: none;
+                    height: 10rpx;
+                    width: 10rpx;
+                    border-radius: 50%;
+                    background-color: white;
+                    margin: 5rpx 0;
+
+                    @media (max-width: $mobile-breakpoint) {
+                        width: 8mrpx;
+                        height: 8mrpx;
+                        margin: 6mrpx;
+                    }
+
+                    button {
+                        display: none;
+                    }
+
+                    &.slick-active {
+                        height: 23rpx;
+                        border-radius: 8rpx;
+                        background-color: #FFDE06 !important;
+                    }
                 }
             }
         }

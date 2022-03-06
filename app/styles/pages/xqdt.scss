@@ -83,6 +83,11 @@
         height: 100%;
         width: 100%;
 
+        &-el {
+            height: 100%;
+            width: 100%;
+        }
+
         @media (max-width: $mobile-breakpoint) {
             height: 388mrpx;
         }

@@ -64,16 +64,26 @@
             height: 290rpx;
             color: white;
             font-size: 45rpx;
-            writing-mode: vertical-lr;
+            // writing-mode: vertical-lr;
             text-align: center;
             position: relative;
             z-index: 1;
+            display: flex;
+            align-items: center;
 
             @media (max-width: $mobile-breakpoint) {
                 writing-mode: inherit;
                 display: flex;
                 align-items: center;
                 font-size: 36mrpx;
+            }
+
+            &-text {
+                width: 60rpx;
+
+                @media (max-width: $mobile-breakpoint) {
+                    width: auto;
+                }
             }
         }
 

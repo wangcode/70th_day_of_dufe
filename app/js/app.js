@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Header
     $(".header-mobile-menu").on("click", function () {
         $(".header-wrap").toggleClass("open");
+        $("body").toggleClass("noscroll")
     })
     // Header
 

@@ -25,18 +25,15 @@
                 <div class="xqbs-postcard">
                     <div class="xqbs-postcard-title">首<br />日<br />封</div>
                     <div class="xqbs-postcard-swiper">
-                        <div class="xqbs-postcard-swiper-el swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="https://source.unsplash.com/576x315/?car" />
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://source.unsplash.com/576x315/?airplane" />
-                                </div>
-                            </div>
+                        <div class="xqbs-postcard-swiper-el">
+                            <a href="#1">
+                                <img src="https://source.unsplash.com/576x615/?car" />
+                            </a>
+                            <a href="#1">
+                                <img src="https://source.unsplash.com/576x315/?airplane" />
+                            </a>
                         </div>
                         <div class="xqbs-postcard-swiper-pagination">
-                            <div class="xqbs-postcard-swiper-pagination-el"></div>
                         </div>
                     </div>
                 </div>
@@ -56,8 +53,20 @@
 {% endblock %}
 
 {% block script %}
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 <script>
-
+    var swiperEl = $('.xqbs-postcard-swiper-el')
+    swiperEl.slick({
+        // autoplay: true,
+        vertical: true,
+        verticalSwiping: true,
+        arrows: false,
+        dots: true,
+        appendDots: $(".xqbs-postcard-swiper-pagination")
+    });
+    // swiperEl.on('afterChange', function (slick, currentSlide, nextSlide) {
+    //     var swiperLink = $(".xqdt-swiper-el a")[nextSlide];
+    //     $(".xqdt-swiper-title > a").text(swiperLink.title)
+    //     $(".xqdt-swiper-title > a").attr("href", swiperLink.href)
+    // });
 </script>
 {% endblock %}
