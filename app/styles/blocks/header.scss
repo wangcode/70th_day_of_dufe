@@ -96,7 +96,7 @@
             font-size: 20rpx;
             width: 110rpx;
             text-align: center;
-
+            flex: 1;
 
             @media (max-width: $mobile-breakpoint) {
                 line-height: $mobile-header-height;
@@ -129,11 +129,6 @@
                     background-size: 100% 1px;
                 }
             }
-
-            a {
-                display: block;
-            }
-
 
         }
     }
