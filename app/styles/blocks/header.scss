@@ -82,6 +82,7 @@
     &-menu {
         display: flex;
         height: $pc-header-height;
+        flex: 1;
 
         @media (max-width: $mobile-breakpoint) {
             flex-direction: column;
