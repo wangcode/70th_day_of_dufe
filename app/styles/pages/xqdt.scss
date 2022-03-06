@@ -178,7 +178,7 @@
             min-width: 0;
             border-bottom: 1px solid transparent;
             font-size: 16rpx;
-            width: 100%;
+            flex: 1;
 
             @media (max-width: $mobile-breakpoint) {
                 font-size: 24mrpx;
