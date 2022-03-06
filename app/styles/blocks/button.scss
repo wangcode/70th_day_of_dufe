@@ -42,6 +42,23 @@
 
     }
 
+    &-image {
+        background-image: url(/images/button_bg.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        color: white;
+
+        @media (max-width: $mobile-breakpoint) {
+            margin-top: 30mrpx;
+            height: 130mrpx;
+            font-size: 28mrpx;
+            line-height: 115mrpx;
+            padding-bottom: 10mrpx;
+        }
+    }
+
     &-link {
         padding: 0 10rpx;
         line-height: 1;

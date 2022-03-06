@@ -26,14 +26,70 @@
         margin-right: 30rpx;
         border-radius: 10rpx;
         box-shadow: 0px 2px 4px 0px rgba(196, 195, 195, 0.50);
+        background-image: url(/images/xqbs_70th.png);
+        background-repeat: no-repeat;
+        background-size: contain;
 
         @media (max-width: $mobile-breakpoint) {
             border-radius: 10mrpx;
             margin: 0;
-            margin-top: 100mrpx;
+            // margin-top: 100mrpx;
             width: 100%;
             flex: 1;
             margin-bottom: 30mrpx;
+        }
+
+        &-top {
+            height: 299rpx;
+            text-align: center;
+
+            @media (max-width: $mobile-breakpoint) {
+                height: 490mrpx;
+            }
+
+            &-title {
+                margin: 30rpx 55rpx 10rpx;
+                font-size: 32rpx;
+                text-align: center;
+                color: $primary-color;
+                background-image: url(/images/title_bg_square.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                @media (max-width: $mobile-breakpoint) {
+                    height: 100mrpx;
+                    padding: 0;
+                    font-size: 32mrpx;
+                    margin-top: -100mrpx;
+                    line-height: 100mrpx;
+                    background-size: 60%;
+                    margin: 0;
+                }
+            }
+
+            &-logo {
+                // @media (max-width: $mobile-breakpoint) {
+                //     img {
+                //         width: 403mrpx;
+                //         height: 350mrpx;
+                //     }
+                // }
+            }
+        }
+
+        &-bottom {
+            height: 362rpx;
+            color: white;
+            font-size: 20rpx;
+            line-height: 28rpx;
+            padding: 50rpx 60rpx 0;
+
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 28mrpx;
+                line-height: 48mrpx;
+                height: 595mrpx;
+            }
         }
 
         &-content {
@@ -42,58 +98,6 @@
             height: 100%;
             top: 0;
             left: 0;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        &-title {
-            padding-top: 30rpx;
-            font-size: 32rpx;
-            text-align: center;
-            color: $primary-color;
-            margin-bottom: 10rpx;
-            background-image: url(/images/title_bg_square.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-
-            @media (max-width: $mobile-breakpoint) {
-                height: 100mrpx;
-                padding: 0;
-                font-size: 32mrpx;
-                margin-top: -100mrpx;
-                line-height: 100mrpx;
-                background-size: 60%;
-            }
-
-        }
-
-        &-logo {
-            padding: 0 88rpx;
-            text-align: center;
-
-            @media (max-width: $mobile-breakpoint) {
-                img {
-                    width: 403mrpx;
-                    height: 350mrpx;
-                }
-
-            }
-        }
-
-        &-desc {
-            color: white;
-            font-size: 20rpx;
-            line-height: 28rpx;
-            padding: 0 60rpx;
-            padding-top: 50rpx;
-
-            @media (max-width: $mobile-breakpoint) {
-                font-size: 28mrpx;
-                line-height: 48mrpx;
-            }
         }
 
     }
