@@ -1,4 +1,4 @@
-.welcome {
+.landing {
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -9,6 +9,11 @@
         top: 0;
         z-index: 10;
         left: 192rpx;
+    }
+
+    &-swiper {
+        width: 100vw;
+        height: 100vh;
     }
 
     &-fireworks {
