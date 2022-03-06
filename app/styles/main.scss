@@ -6,6 +6,9 @@
 @import 'components/**/*';
 @import 'pages/**/*';
 
+@import "slick-carousel/slick/slick";
+@import 'normalize';
+
 * {
     box-sizing: border-box;
 }

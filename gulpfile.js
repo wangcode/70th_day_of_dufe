@@ -9,7 +9,6 @@ const {
 } = pkg
 
 import browserSync from 'browser-sync'
-import bssi from 'browsersync-ssi'
 import webpackStream from 'webpack-stream'
 import webpack from 'webpack'
 import TerserPlugin from 'terser-webpack-plugin'
@@ -52,13 +51,13 @@ function scripts() {
         performance: {
           hints: false
         },
-        plugins: [
-          new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery'
-          }), // jQuery (npm i jquery)
-        ],
+        // plugins: [
+        //   new webpack.ProvidePlugin({
+        //     $: 'jquery',
+        //     jQuery: 'jquery',
+        //     'window.jQuery': 'jquery'
+        //   }), // jQuery (npm i jquery)
+        // ],
         module: {
           rules: [{
             test: /\.m?js$/,
@@ -98,7 +97,8 @@ function styles() {
   return src([`app/styles/*.*`, `!app/styles/_*.*`])
     .pipe(sassglob())
     .pipe(sass({
-      'include css': true
+      'include css': true,
+      includePaths: ["node_modules"]
     }))
     .pipe(postCss([
       pxtoviewport({

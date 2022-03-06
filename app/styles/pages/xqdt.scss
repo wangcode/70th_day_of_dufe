@@ -105,8 +105,26 @@
         }
 
         &-pagination {
-            &-active {
-                background-color: #FFDE06 !important;
+            ul {
+                padding: 0;
+                display: flex;
+            }
+
+            li {
+                list-style: none;
+                height: 10rpx;
+                width: 10rpx;
+                border-radius: 50%;
+                background-color: white;
+                margin-left: 12rpx;
+
+                button {
+                    display: none;
+                }
+
+                &.slick-active {
+                    background-color: #FFDE06 !important;
+                }
             }
         }
 
