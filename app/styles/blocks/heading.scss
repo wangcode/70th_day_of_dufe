@@ -11,8 +11,8 @@
         background-size: contain;
 
         @media (max-width: $mobile-breakpoint) {
-            width: 42mrpx;
-            height: 42mrpx;
+            width: 40mrpx;
+            height: 40mrpx;
             margin-right: 14mrpx;
         }
 
@@ -34,6 +34,10 @@
 
         &-video {
             background-image: url(/images/icon_video.png);
+        }
+
+        &-tv {
+            background-image: url(/images/icon_tv.png);
         }
 
 

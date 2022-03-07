@@ -82,14 +82,17 @@
         position: relative;
         height: 100%;
         width: 100%;
+        overflow: hidden;
+
+
+        @media (max-width: $mobile-breakpoint) {
+            height: 388mrpx;
+            border-radius: 20mrpx;
+        }
 
         &-el {
             height: 100%;
             width: 100%;
-        }
-
-        @media (max-width: $mobile-breakpoint) {
-            height: 388mrpx;
         }
 
         &-title {
@@ -107,12 +110,30 @@
             font-size: 16rpx;
             padding: 0 30rpx;
             justify-content: space-between;
+
+            a {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            @media (max-width: $mobile-breakpoint) {
+                height: 95mrpx;
+                font-size: 32mrpx;
+                text-align: center;
+                flex-direction: column;
+                justify-content: space-around;
+                font-weight: bold;
+                padding: 10mrpx 0;
+            }
+
         }
 
         &-pagination {
             ul {
                 padding: 0;
                 display: flex;
+                margin: 0;
             }
 
             li {
@@ -122,6 +143,12 @@
                 border-radius: 50%;
                 background-color: white;
                 margin-left: 12rpx;
+
+                @media (max-width: $mobile-breakpoint) {
+                    width: 10mrpx;
+                    height: 10mrpx;
+                    margin: 0 5mrpx;
+                }
 
                 button {
                     display: none;

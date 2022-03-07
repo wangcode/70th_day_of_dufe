@@ -12,13 +12,13 @@
         <div class="xqdt-content">
 
             <div class="xqdt-card">
-                <div class="swiper xqdt-swiper">
+                <div class="xqdt-swiper">
                     <div class="xqdt-swiper-el">
                         <a href="#1" title="东北财经大学11111">
-                            <img src="https://source.unsplash.com/500x300/?airplane" />
+                            <img src="https://source.unsplash.com/1000x800/?train" />
                         </a>
                         <a href="#2" title="东北财经大学22222">
-                            <img src="https://source.unsplash.com/500x300/?airplane" />
+                            <img src="https://source.unsplash.com/1000x800/?car" />
                         </a>
                     </div>
                     <div class="xqdt-swiper-title">
@@ -27,27 +27,91 @@
                     </div>
                 </div>
             </div>
-            {% include "parts/xqdt_news_card.html" %}
-            {% include "parts/xqdt_news_card.html" %}
-            {% include "parts/xqdt_news_card.html" %}
+            <div class="xqdt-card">
+                <div class="xqdt-card-heading">
+                    <div class="heading">
+                        <div class="heading-icon heading-icon-shield"></div>
+                        <div class="heading-titles">
+                            <div class="heading-title">校庆新闻</div>
+                        </div>
+                    </div>
+                    <div class="xqdt-card-heading-extends">
+                        <a class="button button-more button-link" href="/news_list.html">更多</a>
+                    </div>
+                </div>
+                <div class="xqdt-card-body">
+                    <ul class="xqdt-news">
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                    </ul>
+                </div>
+            </div>
+            <div class="xqdt-card">
+                <div class="xqdt-card-heading">
+                    <div class="heading">
+                        <div class="heading-icon heading-icon-message"></div>
+                        <div class="heading-titles">
+                            <div class="heading-title">通知公告</div>
+                        </div>
+                    </div>
+                    <div class="xqdt-card-heading-extends">
+                        <a class="button button-more button-link" href="/news_list.html">更多</a>
+                    </div>
+                </div>
+                <div class="xqdt-card-body">
+                    <ul class="xqdt-news">
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                    </ul>
+                </div>
+            </div>
+            <div class="xqdt-card">
+                <div class="xqdt-card-heading">
+                    <div class="heading">
+                        <div class="heading-icon heading-icon-tv"></div>
+                        <div class="heading-titles">
+                            <div class="heading-title">媒体东财</div>
+                        </div>
+                    </div>
+                    <div class="xqdt-card-heading-extends">
+                        <a class="button button-more button-link" href="/news_list.html">更多</a>
+                    </div>
+                </div>
+                <div class="xqdt-card-body">
+                    <ul class="xqdt-news">
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                        {% include "parts/news_item.html" %}
+                    </ul>
+                </div>
+            </div>
         </div>
-
     </div>
-</div>
-{% endblock %}
-{% block script %}
-<script>
-    var swiperEl = $('.xqdt-swiper-el')
-    swiperEl.slick({
-        autoplay: true,
-        arrows: false,
-        dots: true,
-        appendDots: $(".xqdt-swiper-pagination")
-    });
-    swiperEl.on('afterChange', function (slick, currentSlide, nextSlide) {
-        var swiperLink = $(".xqdt-swiper-el a")[nextSlide];
-        $(".xqdt-swiper-title > a").text(swiperLink.title)
-        $(".xqdt-swiper-title > a").attr("href", swiperLink.href)
-    });
-</script>
-{% endblock %}
+    {% endblock %}
+    {% block script %}
+    <script>
+        var swiperEl = $('.xqdt-swiper-el')
+        swiperEl.slick({
+            autoplay: true,
+            arrows: false,
+            dots: true,
+            appendDots: $(".xqdt-swiper-pagination")
+        });
+        swiperEl.on('afterChange', function (slick, currentSlide, nextSlide) {
+            var swiperLink = $(".xqdt-swiper-el a")[nextSlide];
+            $(".xqdt-swiper-title > a").text(swiperLink.title)
+            $(".xqdt-swiper-title > a").attr("href", swiperLink.href)
+        });
+    </script>
+    {% endblock %}
