@@ -85,14 +85,33 @@
                     width: auto;
                 }
             }
+
+            &-toys {
+                width: 420rpx;
+                height: 240rpx;
+                position: relative;
+                z-index: 1;
+            }
         }
 
         &-biglogo {
+
             height: 50vh;
             flex: 0 0 600rpx;
+            background-image: url(/images/home/logo.png);
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
 
             @media (max-width: $mobile-breakpoint) {
                 display: none;
+            }
+
+            &-logo {
+                width: 212rpx;
+                height: 242rpx;
             }
         }
 
@@ -139,8 +158,8 @@
     .xqdt {
         background-image: url(/images/home/xqdt.jpg);
 
-        &::after {
-            background-color: rgba($color: #08c, $alpha: 0.6);
+        &::before {
+            background-color: rgba($color: #3452F3, $alpha: 0.5);
         }
 
         @media (max-width: $mobile-breakpoint) {
@@ -151,7 +170,10 @@
 
     .hdyl {
         background-image: url(/images/home/hdyl.jpg);
-        background-color: #ffffff;
+
+        &::before {
+            background-color: rgba($color: #EF6930, $alpha: 0.5);
+        }
 
         @media (max-width: $mobile-breakpoint) {
             background-color: transparent;
@@ -161,7 +183,10 @@
 
     .dsj {
         background-image: url(/images/home/dsj.jpg);
-        background-color: #ffffff;
+
+        &::before {
+            background-color: rgba($color: #9175F5, $alpha: 0.5);
+        }
 
         @media (max-width: $mobile-breakpoint) {
             background-color: transparent;
@@ -173,7 +198,10 @@
         height: 50vh;
         flex: 0 0 600rpx;
         background-image: url(/images/home/xqbs.jpg);
-        background-color: #ffffff;
+
+        &::before {
+            background-color: rgba($color: #9d0806, $alpha: 0.83);
+        }
 
         @media (max-width: $mobile-breakpoint) {
             flex: 1;
@@ -185,7 +213,10 @@
 
     .yxdc {
         background-image: url(/images/home/yxdc.jpg);
-        background-color: #ffffff;
+
+        &::before {
+            background-color: rgba($color: #FC7A13, $alpha: 0.5);
+        }
 
         @media (max-width: $mobile-breakpoint) {
             background-color: transparent;
@@ -195,7 +226,10 @@
 
     .hkmx {
         background-image: url(/images/home/hkmx.jpg);
-        background-color: #ffffff;
+
+        &::before {
+            background-color: rgba($color: #34AEF3, $alpha: 0.5);
+        }
 
         @media (max-width: $mobile-breakpoint) {
             background-color: transparent;
@@ -205,7 +239,10 @@
 
     .yxq {
         background-image: url(/images/home/yxq.jpg);
-        background-color: #ffffff;
+
+        &::before {
+            background-color: rgba($color: #F8C334, $alpha: 0.5);
+        }
 
         @media (max-width: $mobile-breakpoint) {
             background-color: transparent;
