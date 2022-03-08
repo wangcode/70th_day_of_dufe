@@ -55,9 +55,15 @@ a {
     display: flex;
 }
 
-.mobile_hidden {
+.hide_in_mobilen {
     @media (max-width: $mobile-breakpoint) {
         display: none;
+    }
+}
+.hide_in_pc {
+    display: none;
+    @media (max-width: $mobile-breakpoint) {
+        display: block;
     }
 }
 
@@ -71,4 +77,10 @@ a {
 
 .noscroll {
     overflow: hidden;
+}
+
+.swiper-img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
