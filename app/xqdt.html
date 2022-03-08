@@ -15,10 +15,12 @@
                 <div class="xqdt-swiper">
                     <div class="xqdt-swiper-el">
                         <a href="#1" title="东北财经大学11111">
-                            <div class="swiper-img" style="background-image: url(https://source.unsplash.com/1000x800/?train)"></div>
+                            <div class="swiper-img"
+                                style="background-image: url(https://source.unsplash.com/1000x800/?train)"></div>
                         </a>
                         <a href="#1" title="东北财经大学11111">
-                            <div class="swiper-img" style="background-image: url(https://source.unsplash.com/1000x800/?car)"></div>
+                            <div class="swiper-img"
+                                style="background-image: url(https://source.unsplash.com/1000x800/?car)"></div>
                         </a>
                     </div>
                     <div class="xqdt-swiper-title">
@@ -98,20 +100,22 @@
             </div>
         </div>
     </div>
-    {% endblock %}
-    {% block script %}
-    <script>
-        var swiperEl = $('.xqdt-swiper-el')
-        swiperEl.slick({
-            autoplay: true,
-            arrows: false,
-            dots: true,
-            appendDots: $(".xqdt-swiper-pagination")
-        });
-        swiperEl.on('afterChange', function (slick, currentSlide, nextSlide) {
-            var swiperLink = $(".xqdt-swiper-el a")[nextSlide];
-            $(".xqdt-swiper-title > a").text(swiperLink.title)
-            $(".xqdt-swiper-title > a").attr("href", swiperLink.href)
-        });
-    </script>
-    {% endblock %}
+</div>
+
+{% endblock %}
+{% block script %}
+<script>
+    var swiperEl = $('.xqdt-swiper-el')
+    swiperEl.slick({
+        autoplay: true,
+        arrows: false,
+        dots: true,
+        appendDots: $(".xqdt-swiper-pagination")
+    });
+    swiperEl.on('afterChange', function (slick, currentSlide, nextSlide) {
+        var swiperLink = $(".xqdt-swiper-el a")[nextSlide];
+        $(".xqdt-swiper-title > a").text(swiperLink.title)
+        $(".xqdt-swiper-title > a").attr("href", swiperLink.href)
+    });
+</script>
+{% endblock %}

@@ -20,7 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="yxdc-video">
                     <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" controls></video>
                 </div>
             </div>
@@ -38,7 +38,39 @@
                     <a class="button button-more" href="/yxdc_list.html">更多</a>
                 </div>
                 <div>
-                    images
+                    <div class="yxdc-gallery hide_in_mobile">
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?car"
+                                    alt=""></a></div>
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?pen"
+                                    alt=""></a></div>
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?said"
+                                    alt=""></a></div>
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?happy"
+                                    alt=""></a></div>
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?travel"
+                                    alt=""></a></div>
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?women"
+                                    alt=""></a></div>
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?china"
+                                    alt=""></a></div>
+                        <div class="yxdc-gallery-item"><a href=""><img src="https://source.unsplash.com/500x500/?food"
+                                    alt=""></a></div>
+                    </div>
+                    <div class="yxdc-swiper hide_in_pc">
+                        <div class="yxdc-swiper-el">
+                            <a href="#1" title="东北财经大学11111">
+                                <div class="swiper-img"
+                                    style="background-image: url(https://source.unsplash.com/1000x800/?train)">
+                                </div>
+                            </a>
+                            <a href="#1" title="东北财经大学11111">
+                                <div class="swiper-img"
+                                    style="background-image: url(https://source.unsplash.com/1000x800/?car)">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="yxdc-swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
 
@@ -46,4 +78,28 @@
 
     </div>
 </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    var swiperEl = $('.yxdc-swiper-el')
+    swiperEl.slick({
+        autoplay: true,
+        arrows: false,
+        dots: true,
+        appendDots: $(".yxdc-swiper-pagination")
+    });
+
+    // var gallery = $(".yxdc-gallery")
+    // var images = $(".yxdc-gallery img")
+    // gallery.css("position", "relative")
+    // images.each(function (index, item) {
+    //     var img = $(item)
+    //     img.css("position", "absolute")
+    // })
+
+    // images[0].style.left = 0
+    // images[0].style.top = 0
+    // images[0].style.width = "33%"
+</script>
 {% endblock %}

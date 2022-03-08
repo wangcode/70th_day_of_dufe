@@ -55,13 +55,15 @@ a {
     display: flex;
 }
 
-.hide_in_mobilen {
+.hide_in_mobile {
     @media (max-width: $mobile-breakpoint) {
         display: none;
     }
 }
+
 .hide_in_pc {
     display: none;
+
     @media (max-width: $mobile-breakpoint) {
         display: block;
     }
@@ -79,11 +81,12 @@ a {
     overflow: hidden;
 }
 
-.swiper-img{
+.swiper-img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-.slick-vertical .slick-slide{
+
+.slick-vertical .slick-slide {
     border: 0 !important;
 }

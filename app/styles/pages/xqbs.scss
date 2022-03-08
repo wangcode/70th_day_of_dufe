@@ -33,7 +33,7 @@
         @media (max-width: $mobile-breakpoint) {
             border-radius: 10mrpx;
             margin: 0;
-            // margin-top: 100mrpx;
+            margin-top: 100mrpx;
             width: 100%;
             flex: 1;
             margin-bottom: 30mrpx;
@@ -42,13 +42,14 @@
         &-top {
             height: 299rpx;
             text-align: center;
+            padding-top: 30rpx;
 
             @media (max-width: $mobile-breakpoint) {
-                height: 490mrpx;
+                height: 590mrpx;
+                padding: 0;
             }
 
             &-title {
-                margin: 30rpx 55rpx 10rpx;
                 font-size: 32rpx;
                 text-align: center;
                 color: $primary-color;
@@ -64,17 +65,28 @@
                     margin-top: -100mrpx;
                     line-height: 100mrpx;
                     background-size: 60%;
-                    margin: 0;
+                    margin-bottom: 0;
                 }
             }
 
             &-logo {
-                // @media (max-width: $mobile-breakpoint) {
-                //     img {
-                //         width: 403mrpx;
-                //         height: 350mrpx;
-                //     }
-                // }
+                padding-top: 20rpx;
+
+                img {
+                    width: 244rpx;
+                    height: 212rpx;
+                }
+
+                @media (max-width: $mobile-breakpoint) {
+                    height: 350mrpx;
+                    margin-top: 100mrpx;
+
+                    img {
+                        width: 403mrpx;
+                        height: 350mrpx;
+                    }
+
+                }
             }
         }
 
@@ -89,6 +101,8 @@
                 font-size: 28mrpx;
                 line-height: 48mrpx;
                 height: 595mrpx;
+                padding: 100mrpx 60mrpx 0;
+
             }
         }
 
@@ -112,6 +126,7 @@
         margin-bottom: 30rpx;
         display: flex;
         box-shadow: 0px 2px 8px 2px rgba(211, 211, 211, 0.30);
+        font-size: 0;
 
         @media (max-width: $mobile-breakpoint) {
             margin-bottom: 30mrpx;
@@ -156,6 +171,7 @@
             .swiper-img {
                 width: 100%;
                 height: 315rpx;
+
                 @media (max-width: $mobile-breakpoint) {
                     height: 297mrpx;
                 }
