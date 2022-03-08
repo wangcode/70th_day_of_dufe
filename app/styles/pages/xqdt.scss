@@ -84,10 +84,20 @@
         width: 100%;
         overflow: hidden;
 
+        .swiper-img {
+            width: 100%;
+            height: 350rpx;
+            // height: 388mrpx;
+        }
+
 
         @media (max-width: $mobile-breakpoint) {
             height: 388mrpx;
             border-radius: 20mrpx;
+            .swiper-img {
+                width: 100%;
+                height: 388mrpx;
+            }
         }
 
         &-el {
