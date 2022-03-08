@@ -288,6 +288,13 @@
 
         &-captcha {
             display: flex;
+            &-image{
+                display: flex;
+                align-items: center;
+                img{
+                    margin-right: 20mrpx;
+                }
+            }
         }
 
         &-input {
