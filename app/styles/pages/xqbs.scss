@@ -155,7 +155,10 @@
 
             .swiper-img {
                 width: 100%;
-                height: 100%;
+                height: 315rpx;
+                @media (max-width: $mobile-breakpoint) {
+                    height: 297mrpx;
+                }
             }
 
             @media (max-width: $mobile-breakpoint) {
