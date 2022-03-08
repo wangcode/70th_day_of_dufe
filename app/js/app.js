@@ -3,10 +3,10 @@
 // } from 'fireworks-js';
 import jquery from 'jquery';
 import "slick-carousel";
-import {
-    Fireworks
-} from "fireworks-js";
-window.Fireworks = Fireworks
+// import {
+//     Fireworks
+// } from "fireworks-js";
+// window.Fireworks = Fireworks
 
 window.$ = jquery;
 window.jQuery = jquery;

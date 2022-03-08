@@ -27,6 +27,7 @@
 {% endblock %}
 
 {% block script %}
+<script src="https://unpkg.com/fireworks-js@latest/dist/fireworks.js"></script>
 <script src="/js/packages/vegas/vegas.min.js"></script>
 <script>
     $(".landing-swiper").vegas({
@@ -59,14 +60,14 @@
             min: 20,
             max: 100
         },
-        // rocketsPoint: {
-        //     min: 100,
-        //     max: 72
-        // },
-        // opacity: 0.3,
-        // acceleration: 1.5,
-        // friction: 0.98,
-        // gravity: 1.5,
+        rocketsPoint: {
+            min: 100,
+            max: 72
+        },
+        opacity: 0.3,
+        acceleration: 1.5,
+        friction: 0.98,
+        gravity: 1.5,
         particles: 90,
         trace: 1,
         traceSpeed: 10000,
