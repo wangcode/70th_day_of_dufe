@@ -52,38 +52,48 @@
 
     const container = document.querySelector('.landing-fireworks')
     const fireworks = new Fireworks(container, {
-        hue: {
-            min: 65,
-            max: 237
+        "hue": {
+            "min": 109,
+            "max": 252
         },
-        delay: {
-            min: 20,
-            max: 100
+        "delay": {
+            "min": 9,
+            "max": 79
         },
-        rocketsPoint: {
-            min: 100,
-            max: 72
+        "rocketsPoint": {
+            "min": 41,
+            "max": 75
         },
-        opacity: 0.3,
-        acceleration: 1.5,
-        friction: 0.98,
-        gravity: 1.5,
-        particles: 90,
-        trace: 1,
-        traceSpeed: 10000,
-        explosion: 6,
-        intensity: 30,
-        flickering: 50,
-        lineWidth: {
-            explosion: {
-                min: 1,
-                max: 5.8
+        "opacity": 0.4,
+        "acceleration": 1.4,
+        "friction": 0.97,
+        "gravity": 0.8,
+        "particles": 130,
+        "trace": 1,
+        "traceSpeed": 67,
+        "explosion": 4,
+        "intensity": 42.66147455867082,
+        "flickering": 52,
+        "lineStyle": "round",
+        "lineWidth": {
+            "explosion": {
+                "min": 1.5,
+                "max": 3.4000000000000004
             },
-            trace: {
-                min: 0,
-                max: 0.1
+            "trace": {
+                "min": 0,
+                "max": 0.1
             }
-        }
+        },
+        "autoresize": true,
+        "brightness": {
+            "min": 49,
+            "max": 92,
+            "decay": {
+                "min": 0.005,
+                "max": 0.012
+            }
+        },
     })
     fireworks.start()
 </script>
