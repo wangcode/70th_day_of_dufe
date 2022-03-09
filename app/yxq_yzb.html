@@ -54,10 +54,19 @@
         </div>
     </div>
     <div class="yxq-yzb-video">
-
+        <video poster="https://source.unsplash.com/1920x1080/?airplane"
+            src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
     </div>
 </div>
 
+<div class="yxq-block yxq-block-empty yxq-yzb-block">
+    <div class="yxq-block-image">
+        <img class="hide_in_pc" src="/images/yxq/yzb_mobile.png" alt="">
+        <img class="hide_in_mobile" src="/images/yxq/yzb.png" alt="">
+    </div>
+</div>
+
+
 <div class="yxq-ticket">
     {% include "parts/ticket.html" %}
 </div>
@@ -67,5 +76,19 @@
 <div class="yxq-ticket">
     {% include "parts/ticket.html" %}
 </div>
+
+{% endblock %}
+
+{% block script %}
+
+<script>
+    var $video = $(".yxq-yzb-video video");
+    $video.on("click", function () {
+        this.play()
+    });
+    $video.on("play", function () {
+        $video.attr("controls", "")
+    });
+</script>
 
 {% endblock %}

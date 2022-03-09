@@ -40,15 +40,16 @@
 
     &-gallery {
         height: 314rpx;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+        width: 300rpx;
+        // display: grid;
+        // grid-template-columns: 1fr 2fr;
 
         // grid-template-rows: 2fr 3fr 2fr;
-        &-item {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
+        // &-item {
+        //     width: 100%;
+        //     height: 100%;
+        //     overflow: hidden;
+        // }
     }
 
     &-swiper {

@@ -1,4 +1,5 @@
 .ticket {
+    @extend .boxshadow-md;
     background-color: rgba($color: #ffffff, $alpha: 0.86);
     box-shadow: 0px 2px 4px 0px rgba(199, 199, 199, 0.50);
     width: 100%;
