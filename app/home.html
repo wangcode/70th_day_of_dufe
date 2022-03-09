@@ -2,65 +2,58 @@
 {% set title = "Home" %}
 
 {% block content %}
+
 <div class="home">
+
+
+    <div class="hide_in_pc">
+        {% include "parts/header.html" %}
+    </div>
+
 
     <div class="home-menu">
         <div class="home-box-biglogo">
             <img class="home-box-biglogo-logo" src="/images/logo.png" alt="" />
         </div>
-        <div class="home-box xqdt">
+        <a class="home-box xqdt" href="/xqdt.html">
             <div class="home-box-title">
-                <a href="/xqdt.html">
-                    <div class="home-box-title-text">校庆动态</div>
-                </a>
+                <div class="home-box-title-text">校庆动态</div>
             </div>
-        </div>
-        <div class="home-box hdyl">
+        </a>
+        <a class="home-box hdyl" href="/hdyl.html">
             <div class="home-box-title">
-                <a href="/hdyl.html">
-                    <div class="home-box-title-text">活动一览</div>
-                </a>
+                <div class="home-box-title-text">活动一览</div>
             </div>
-        </div>
-        <div class="home-box dsj">
+        </a>
+        <a class="home-box dsj" href="/dsj.html">
             <div class="home-box-title">
-                <a href="/dsj.html">
-                    <div class="home-box-title-text">大事记</div>
-                </a>
+                <div class="home-box-title-text">大事记</div>
             </div>
-        </div>
-        <div class="home-box xqbs">
+        </a>
+        <a class="home-box xqbs" href="/xqbs.html">
             <div class="home-box-title">
-                <a href="/xqbs.html">
-                    <div class="home-box-title-text">校庆标识</div>
-                </a>
+                <div class="home-box-title-text">校庆标识</div>
             </div>
-            <img class="home-box-title-toys" src="/images/home/toys.png" alt="">
-        </div>
-        <div class="home-box yxdc">
+            <img class="home-box-title-toys hide_in_mobile" src="/images/home/toys.png" alt="">
+        </a>
+        <a class="home-box yxdc" href="/yxdc.html">
             <div class="home-box-title">
-                <a href="/yxdc.html">
-                    <div class="home-box-title-text">影像东财</div>
-                </a>
+                <div class="home-box-title-text">影像东财</div>
             </div>
-        </div>
-        <div class="home-box hkmx">
+        </a>
+        <a class="home-box hkmx" href="/hkmx.html">
             <div class="home-box-title">
-                <a href="/hkmx.html">
-                    <div class="home-box-title-text">回馈母校</div>
-                </a>
+                <div class="home-box-title-text">回馈母校</div>
             </div>
-        </div>
-        <div class="home-box yxq">
+        </a>
+        <a class="home-box yxq" href="/yxq.html">
             <div class="home-box-title">
-                <a href="/yxq.html">
-                    <div class="home-box-title-text">云校庆</div>
-                </a>
+                <div class="home-box-title-text">云校庆</div>
             </div>
-        </div>
+        </a>
     </div>
     <div class="home-right">
-        <img src="/images/home/stone.jpg" alt="">
+        <!-- <img src="/images/home/stone.jpg" alt=""> -->
     </div>
 
 </div>

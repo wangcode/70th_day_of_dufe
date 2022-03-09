@@ -5,13 +5,23 @@
 
 <div class="landing">
 
-    <div class="landing-head">
-        <img src="/images/logo.png" alt="">
+    <a href="">
+        <img class="landing-logo" src="/images/logo.png" alt="">
+    </a>
+
+    <div class="landing-title-wrap">
+        <div class="landing-title">
+            <img src="/images/landing/title.png" alt="">
+            <div class="landing-title-enter">
+                <a>点击进入</a>
+            </div>
+        </div>
     </div>
+
 
     <div class="landing-swiper"></div>
 
-    <div class="landing-fireworks"></div>
+    <!-- <div class="landing-fireworks"></div> -->
 
 </div>
 
@@ -22,16 +32,30 @@
 <script src="/js/packages/vegas/vegas.min.js"></script>
 <script>
     $(".landing-swiper").vegas({
-        slides: [
-            {src: "https://source.unsplash.com/1920x1080/?fireworks"},
-            {src: "https://source.unsplash.com/1920x1080/?flim"},
-            {src: "https://source.unsplash.com/1920x1080/?airplane"},
-            {src: "https://source.unsplash.com/1920x1080/?train"}
+        slides: [{
+                src: "https://source.unsplash.com/1920x1080/?fireworks"
+            },
+            {
+                src: "https://source.unsplash.com/1920x1080/?flim"
+            },
+            {
+                src: "https://source.unsplash.com/1920x1080/?airplane"
+            },
+            {
+                src: "https://source.unsplash.com/1920x1080/?train"
+            }
         ],
         timer: false,
         delay: 5000,
         shuffle: false,
-        animation: ['kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight']
+        animation: ['kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
+        walk: function (index) {
+            if (index === 0) {
+                $(".landing-title img").css("opacity", "0");
+            } else {
+                $(".landing-title img").css("opacity", "1");
+            }
+        }
     });
 
     const container = document.querySelector('.landing-fireworks')

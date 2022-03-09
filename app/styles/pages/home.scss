@@ -35,7 +35,7 @@
             height: auto;
             flex: 1;
             justify-content: flex-end;
-            padding: 0 95mrpx;
+            padding: 0;
         }
 
         &::before {
@@ -46,7 +46,6 @@
             right: 0;
             bottom: 0;
             left: 0;
-            // background: rgba($color: #08c, $alpha: 0.5);
             z-index: 1;
             transition: transform .3s ease-in-out;
             transform: scaleY(1);
@@ -64,7 +63,6 @@
             height: 290rpx;
             color: white;
             font-size: 45rpx;
-            // writing-mode: vertical-lr;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -76,6 +74,7 @@
                 display: flex;
                 align-items: center;
                 font-size: 36mrpx;
+                padding: 0 25mrpx;
             }
 
             &-text {
@@ -83,6 +82,8 @@
 
                 @media (max-width: $mobile-breakpoint) {
                     width: auto;
+                    width: 300mrpx;
+                    text-align: center;
                 }
             }
 
@@ -96,9 +97,10 @@
 
         &-biglogo {
 
+            background-image: linear-gradient(to bottom, #E02F01, #940502);
+
             height: 50vh;
             flex: 0 0 600rpx;
-            background-image: url(/images/home/logo.png);
             background-size: 100% 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -136,12 +138,15 @@
     &-right {
         flex: 0 0 420rpx;
         height: 100vh;
+        background-image: url(/images/home/stone.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
 
         @media (max-width: $mobile-breakpoint) {
+            background-image: url(/images/home/stone_mobile.jpg);
+            flex: 0 0 220mrpx;
             order: 1;
-            // flex: 1.33333333;
-            // height: auto;
-            height: 220mrpx;
         }
 
         img {
@@ -163,7 +168,6 @@
         }
 
         @media (max-width: $mobile-breakpoint) {
-            background-color: transparent;
             background-image: url(/images/home/xqdt_mobile.jpg);
         }
     }
@@ -176,7 +180,6 @@
         }
 
         @media (max-width: $mobile-breakpoint) {
-            background-color: transparent;
             background-image: url(/images/home/hdyl_mobile.jpg);
         }
     }
@@ -189,7 +192,6 @@
         }
 
         @media (max-width: $mobile-breakpoint) {
-            background-color: transparent;
             background-image: url(/images/home/dsj_mobile.jpg);
         }
     }
@@ -206,8 +208,8 @@
         @media (max-width: $mobile-breakpoint) {
             flex: 1;
             height: auto;
-            background-color: transparent;
             background-image: url(/images/home/xqbs_mobile.jpg);
+            padding: 0;
         }
     }
 
@@ -219,7 +221,6 @@
         }
 
         @media (max-width: $mobile-breakpoint) {
-            background-color: transparent;
             background-image: url(/images/home/yxdc_mobile.jpg);
         }
     }
@@ -232,7 +233,6 @@
         }
 
         @media (max-width: $mobile-breakpoint) {
-            background-color: transparent;
             background-image: url(/images/home/hkmx_mobile.jpg);
         }
     }
@@ -245,7 +245,6 @@
         }
 
         @media (max-width: $mobile-breakpoint) {
-            background-color: transparent;
             background-image: url(/images/home/yxq_mobile.jpg);
         }
     }
