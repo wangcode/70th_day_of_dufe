@@ -13,6 +13,7 @@
 
     <div class="home-menu">
         <div class="home-box-biglogo">
+            <div class="home-fireworks"></div>
             <img class="home-box-biglogo-logo" src="/images/logo.png" alt="" />
         </div>
         <a class="home-box xqdt" href="/xqdt.html">
@@ -60,5 +61,35 @@
 {% endblock %}
 
 {% block script %}
+<script src="/js/packages/fireworks/fireworks.min.js"></script>
+<script>
+    var fireworks = new Fireworks(document.querySelector(".home-fireworks"), {
+        // "hue": {
+        //     "min": 50,
+        //     "max": 350
+        // },
+        // "delay": {
+        //     "min": 20,
+        //     "max": 40
+        // },
+        // "rocketsPoint": {
+        //     "min": 41,
+        //     "max": 85
+        // },
+        "lineWidth": {
+            "trace": {
+                "min": 0,
+                "max": 0.1
+            }
+        },
+        "intensity": 22,
+        "autoresize": true,
+        "brightness": {
+            "min": 100,
+            "max": 100,
+        },
+    })
+    fireworks.start()
+</script>
 
 {% endblock %}

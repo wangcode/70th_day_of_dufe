@@ -5,7 +5,16 @@
 
     @media (max-width: $mobile-breakpoint) {
         height: 100vh;
+        height: -webkit-fill-available;
         flex-direction: column;
+    }
+
+    &-fireworks {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
     }
 
     &-menu {
@@ -74,7 +83,7 @@
                 display: flex;
                 align-items: center;
                 font-size: 36mrpx;
-                padding: 0 25mrpx;
+                padding: 0 50mrpx;
             }
 
             &-text {
@@ -82,8 +91,12 @@
 
                 @media (max-width: $mobile-breakpoint) {
                     width: auto;
-                    width: 300mrpx;
+                    width: 260mrpx;
                     text-align: center;
+                    background-image: url(/images/home/title_bg.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
                 }
             }
 
@@ -96,16 +109,15 @@
         }
 
         &-biglogo {
-
-            background-image: linear-gradient(to bottom, #E02F01, #940502);
-
+            background-image: url(/images/home/logo.png), linear-gradient(to bottom, #E02F01, #940502);
+            background-position: bottom center, center;
+            background-repeat: no-repeat;
+            background-size: 70%, 100% 100%;
             height: 50vh;
             flex: 0 0 600rpx;
-            background-size: 100% 100%;
-            background-position: center;
-            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
+            position: relative;
 
             @media (max-width: $mobile-breakpoint) {
                 display: none;
