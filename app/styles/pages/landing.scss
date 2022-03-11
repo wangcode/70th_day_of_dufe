@@ -54,11 +54,26 @@
         top: 0;
         left: 0;
         z-index: 2;
-
+        display: flex;
         @media (max-width: $mobile-breakpoint) {
             min-height: -webkit-fill-available;
             max-height: -webkit-fill-available;
         }
+
+
+        &-left{
+            flex: 1 1 50%;
+            @media (max-width: $mobile-breakpoint) {
+                flex: 1;
+            }
+        }
+        &-right{
+            flex: 1 1 50%;
+            @media (max-width: $mobile-breakpoint) {
+                display: none;
+            }
+        }
+
     }
 
     &-title {
