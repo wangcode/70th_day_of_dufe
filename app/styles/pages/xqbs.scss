@@ -94,13 +94,14 @@
         &-bottom {
             height: 362rpx;
             color: white;
-            font-size: 20rpx;
-            line-height: 28rpx;
+            font-size: 18rpx;
+            line-height: 1.6;
+            letter-spacing: 1px;
             padding: 50rpx 60rpx 0;
 
             @media (max-width: $mobile-breakpoint) {
                 font-size: 28mrpx;
-                line-height: 48mrpx;
+                line-height: 50mrpx;
                 height: 595mrpx;
                 padding: 100mrpx 60mrpx 0;
 

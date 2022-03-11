@@ -5,7 +5,8 @@
     font-size: 0;
 
     @media (max-width: $mobile-breakpoint) {
-        height: -webkit-fill-available;
+        min-height: -webkit-fill-available;
+        max-height: -webkit-fill-available;
     }
 
     &-logo {
@@ -41,7 +42,8 @@
         height: 100vh;
 
         @media (max-width: $mobile-breakpoint) {
-            height: -webkit-fill-available;
+            min-height: -webkit-fill-available;
+            max-height: -webkit-fill-available;
         }
     }
 
@@ -54,7 +56,8 @@
         z-index: 2;
 
         @media (max-width: $mobile-breakpoint) {
-            height: -webkit-fill-available;
+            min-height: -webkit-fill-available;
+            max-height: -webkit-fill-available;
         }
     }
 

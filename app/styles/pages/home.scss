@@ -5,7 +5,8 @@
 
     @media (max-width: $mobile-breakpoint) {
         height: 100vh;
-        height: -webkit-fill-available;
+        min-height: -webkit-fill-available;
+        max-height: -webkit-fill-available;
         flex-direction: column;
     }
 
