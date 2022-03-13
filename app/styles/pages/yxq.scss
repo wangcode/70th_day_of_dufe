@@ -343,6 +343,97 @@
 
     }
 
+    &-share{
+        background-color: white;
+        background-image: url(/images/yxq/share_bg.jpg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center -170mrpx;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 42mrpx;
+
+        &-image{
+            width: 511mrpx;
+            height: 932mrpx;
+        }
+
+        &-desc{
+            background-image: url(/images/yxq/check.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 64mrpx 64mrpx;
+            padding-left: 92mrpx;
+            font-size: 24mrpx;
+            line-height: 36mrpx;
+        }
+        &-btns{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30mrpx 0;
+        }
+        &-divider{
+            margin: 0 40mrpx;
+            width: 1px;
+            height: 84mrpx;
+            background-color: #979797;
+        }
+        &-btn{
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #d8d8d8;
+            border-radius: 25mrpx;
+            width: 165mrpx;
+            height: 154mrpx;
+            font-size: 24mrpx;
+            color: #888888;
+            img{
+                width: 88mrpx;
+                height: 88mrpx;
+            }
+        }
+
+        &-wrap{
+            transition: .2s ease;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            font-size: 30mrpx;
+            color: white;
+            line-height: 1.8;
+            padding: 0 50mrpx;
+            p{
+                padding: 0 50mrpx;
+            }
+        }
+
+        &-browser{
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        &-wx{
+            display: none;
+            &-img{
+                text-align: right;
+                margin-bottom: 60mrpx
+            };
+        }
+
+    }
+
 }
 
 .yxq-yhd {

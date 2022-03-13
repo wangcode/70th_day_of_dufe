@@ -1,0 +1,62 @@
+{% extends "main.html" %}
+{% set title = "发送祝福" %}
+
+{% block content %}
+<div class="yxq-yzf">
+
+    <div class="yxq-yzf-share">
+        <img class="yxq-yzf-share-image" src="/images/yxq/share.png" alt="">
+        <div class="yxq-yzf-share-desc">
+            <div>您是第166位送出祝福的朋友，您的祝福已发送成功，系统审核通过后，将在校庆官网云祝福页面公布。</div>
+        </div>
+        <div class="yxq-yzf-share-btns">
+            <div class="yxq-yzf-share-btn" onclick="share()">
+                <div><img src="/images/yxq/share_wx.png" alt=""></div>
+                <div>朋友圈分享</div>
+            </div>
+            <div class="yxq-yzf-share-divider"></div>
+            <a href="/images/yxq/share.png" download="">
+                <div class="yxq-yzf-share-btn">
+                    <div><img src="/images/yxq/share_download.png" alt=""></div>
+                    <div>保存到相册</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="wrap" class="yxq-yzf-share-wrap" onclick="closeModel()">
+        <div id="browser" class="yxq-yzf-share-browser">
+            <p>好了，现在招呼你的老同学，为东财70周年校庆送祝福吧！</p>
+            <p>长按图片保存到相册，再分享到朋友圈。</p>
+        </div>
+        <div id="weixin" class="yxq-yzf-share-wx">
+            <div class="yxq-yzf-share-wx-img">
+                <img src="/images/yxq/share_wx_line.svg" alt="">
+            </div>
+            <p>好了，现在招呼你的老同学，为东财70周年校庆送祝福吧！</p>
+            <p>点击右上角功能键，分享到您的朋友圈</p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block script %}
+<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script> -->
+<script>
+    var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") !== -1;
+    function share () {
+        $("#wrap").show()
+        if(isWechat){
+            $("#weixin").show()
+        }else{
+            $("#browser").css("display","flex")
+        }
+    }
+    function closeModel() {
+        $("#wrap").hide()
+        $("#browser").hide()
+        $("#weixin").hide()
+    }
+</script>
+{% endblock %}
