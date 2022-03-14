@@ -253,7 +253,8 @@
         height: 267rpx;
         padding: 50rpx 26rpx 0;
         background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 0.45) 15%, #ffffff 96%);
-        overflow-y: scroll;
+        // overflow-y: scroll;
+        overflow: hidden;
 
         @media (max-width: $mobile-breakpoint) {
             height: 290mrpx;
@@ -284,6 +285,45 @@
             @media (max-width: $mobile-breakpoint) {
                 font-size: 21mrpx;
             }
+        }
+
+        &-swiper{
+            height: 100%;
+        }
+    }
+
+    &-mobile{
+        background-image: url(/images/yxq/mobile_qrcode.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 225rpx;
+        height: 304rpx;
+        position: absolute;
+        right: 125rpx;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &-qrcode{
+            margin-top: 50rpx;
+            width: 120rpx;
+            height: 120rpx;
+            border-radius: 8rpx;
+            background-color: white;
+            margin-bottom: 20rpx;
+            border: 10rpx solid white;
+        }
+
+        &-text{
+            background-color: rgba(220, 56, 56, 0.73);
+            border-radius: 8rpx;
+            font-size: 14rpx;
+            color: white;
+            width: 110rpx;
+            text-align: center;
+            padding: 10rpx;
         }
     }
 
