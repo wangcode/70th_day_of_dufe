@@ -161,9 +161,9 @@
         },
     }
     var leftfirework = new Fireworks(document.querySelector('#firework1'), {...fireworkConfig,
-    "boundaries": { visible: true, x: 0, y: 130, width: screen.width/2, height: screen.height }})
+    "boundaries": { visible: false, x: 0, y: 130, width: screen.width/2, height: screen.height }})
     var rightfirework = new Fireworks(document.querySelector('#firework2'), {...fireworkConfig,
-    "boundaries": { visible: true, x: screen.width/2, y: 50, width: screen.width*2, height: screen.height }})
+    "boundaries": { visible: false, x: screen.width/2, y: 50, width: screen.width*2, height: screen.height }})
     leftfirework.start()
     rightfirework.start()
 </script>
