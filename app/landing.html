@@ -30,10 +30,11 @@
 
     <div class="landing-swiper"></div>
 
-    <div class="landing-fireworks">
-        <div class="landing-fireworks-left"></div>
-        <div class="landing-fireworks-right"></div>
+    <div id="firework1" class="landing-fireworks">
+        <!-- <div class="landing-fireworks-left"></div>
+        <div class="landing-fireworks-right"></div> -->
     </div>
+    <div id="firework2" class="landing-fireworks"></div>
 
 </div>
 
@@ -130,7 +131,7 @@
         },
         "opacity": 0.1,
         "acceleration": 1.1,
-        "friction": 0.96,
+        "friction": 0.94,
         "gravity": 0.3,
         "particles": 130,
         "trace": 1,
@@ -142,7 +143,7 @@
         "lineWidth": {
             "explosion": {
                 "min": 2,
-                "max": 7.5
+                "max": 5.5
             },
             "trace": {
                 "min": 0.00000001,
@@ -159,8 +160,10 @@
             }
         },
     }
-    var leftfirework = new Fireworks(document.querySelector('.landing-fireworks-left'), fireworkConfig)
-    var rightfirework = new Fireworks(document.querySelector('.landing-fireworks-right'), fireworkConfig)
+    var leftfirework = new Fireworks(document.querySelector('#firework1'), {...fireworkConfig,
+    "boundaries": { visible: true, x: 0, y: 130, width: screen.width/2, height: screen.height }})
+    var rightfirework = new Fireworks(document.querySelector('#firework2'), {...fireworkConfig,
+    "boundaries": { visible: true, x: screen.width/2, y: 50, width: screen.width*2, height: screen.height }})
     leftfirework.start()
     rightfirework.start()
 </script>
