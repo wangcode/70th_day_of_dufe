@@ -264,7 +264,11 @@
         }
 
         &-item {
-            margin-bottom: 18rpx;
+            padding-bottom: 18rpx;
+
+            @media (max-width: $mobile-breakpoint) {
+                padding-bottom: 20mrpx;
+            }
         }
 
         &-message {
@@ -289,6 +293,7 @@
 
         &-swiper{
             height: 100%;
+            overflow: hidden;
         }
     }
 
@@ -321,7 +326,7 @@
             border-radius: 8rpx;
             font-size: 14rpx;
             color: white;
-            width: 110rpx;
+            width: 120rpx;
             text-align: center;
             padding: 10rpx;
         }

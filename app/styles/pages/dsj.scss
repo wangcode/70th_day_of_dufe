@@ -1,0 +1,89 @@
+.dsj{
+    background-image: url(/images/dsj/bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 950rpx;
+
+
+    &-divider{
+        height: 43rpx;
+        width: 100vw;
+        background-image:
+            linear-gradient(to right, rgba(215, 160, 111, 1), rgba(202, 93, 55, 0.82), rgba(213, 154, 98, 0.94), rgba(216, 119, 68, 1), rgba(222, 113, 25, 0.5));
+        box-shadow: 0px 4px 8px 0px rgba(223, 75, 75, 0.50);
+    }
+
+    &-list{
+        display: flex;
+        align-items: center;
+        height: 950rpx;
+    }
+
+    &-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 30rpx;
+        height: 100%;
+
+        &:nth-child(2n+1) &-text {
+            order: 2;
+        }
+        &:nth-child(2n+1) &-waterdrop{
+            order: 1
+        }
+
+        &-text{
+            background-color: rgba(255, 255, 255, 0.64);
+            padding: 12rpx;
+            border-radius: 20px 20px 0 0;
+            width: 210rpx;
+            font-size: 16rpx;
+            line-height: 28rpx;
+            color: #1D1C1C;
+            margin: 30rpx 0;
+            flex: 1;
+        }
+
+        &-waterdrop{
+            margin: 40rpx 0;
+            position: relative;
+            font-size: 26rpx;
+            color: white;
+            font-weight: bold;
+            width: 140rpx;
+            height: 140rpx;
+            background: rgba(1, 200, 126, 0.87);
+            // border-radius: 0 50% 50% 50%;
+            // border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+            border-radius: 70% 0 60% 60%/60% 0 70% 60%;
+            transform: rotate(-45deg);
+            &-wrap{
+                flex: 1;
+            }
+            &-circle {
+                transform: rotate(45deg);
+                margin: 18rpx;
+                bottom: 0;
+                position: absolute;
+                width: 95rpx;
+                height: 95rpx;
+                background: radial-gradient(#63f489, #07b675);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 0px 20px 10px rgba(95, 95, 95, 0.6);
+            }
+            // &-shadow {
+            //     width: 150px;
+            //     height: 150px;
+            //     background: radial-gradient(#4eb668, #149163);
+            //     border-radius: 50%;
+            //     filter: blur(6px);
+            // }
+
+        }
+    }
+
+}
