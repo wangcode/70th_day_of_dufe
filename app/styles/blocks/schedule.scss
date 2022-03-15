@@ -38,7 +38,8 @@
                 margin-bottom: 3rpx;
 
                 @media (max-width: $mobile-breakpoint) {
-                    font-size: 16mrpx;
+                    font-size: 24mrpx;
+                    margin-bottom: 5mrpx;
                 }
             }
 
@@ -47,7 +48,7 @@
                 color: #FC6A6A;
 
                 @media (max-width: $mobile-breakpoint) {
-                    font-size: 16mrpx;
+                    font-size: 22mrpx;
                 }
             }
         }
@@ -58,7 +59,7 @@
             text-align: center;
 
             @media (max-width: $mobile-breakpoint) {
-                font-size: 18mrpx;
+                font-size: 24mrpx;
             }
         }
     }
