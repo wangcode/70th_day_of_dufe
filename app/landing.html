@@ -43,8 +43,7 @@
 <script>
     var isMobile = screen.width <= 750;
     $(".landing-swiper").vegas({
-        slides: [
-            {
+        slides: [{
                 src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg",
                 animation: "fade",
             },
@@ -55,13 +54,12 @@
                 src: "/images/landing/page3.jpg",
             },
             {
-                src: isMobile ? "/images/landing/page4_mobile.jpg":"/images/landing/page4.jpg",
+                src: isMobile ? "/images/landing/page4_mobile.jpg" : "/images/landing/page4.jpg",
             }
         ],
         timer: false,
         delay: 5000,
         shuffle: false,
-        // anmination: "random",
         animation: ['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
         walk: function (index) {
             if (index === 0) {
@@ -72,7 +70,7 @@
         }
     });
 
-    var fireworkConfig = {
+    var fireworkConfig1 = {
         "hue": {
             "min": 50,
             "max": 350
@@ -115,14 +113,71 @@
                 "max": 0.024
             }
         },
+        "boundaries": {
+            "visible": false,
+            "x": 0,
+            "y": 130,
+            "width": isMobile ? screen.width : screen.width / 2,
+            "height": screen.height
+        }
     }
-    var leftfirework = new Fireworks(document.querySelector('#firework1'), {...fireworkConfig,
-        "boundaries": { visible: false, x: 0, y: 130, width: isMobile?screen.width:screen.width/2, height: screen.height }})
-    leftfirework.start()
-    if(!isMobile) {
-        var rightfirework = new Fireworks(document.querySelector('#firework2'), {...fireworkConfig,
-        "boundaries": { visible: false, x: screen.width/2, y: 50, width: screen.width*2, height: screen.height }})
-        rightfirework.start()
+
+    var firework1 = new Fireworks(document.querySelector('#firework1'), fireworkConfig1)
+    firework1.start()
+    if (!isMobile) {
+        var fireworkConfig2 = {
+            "hue": {
+                "min": 50,
+                "max": 350
+            },
+            "delay": {
+                "min": 9,
+                "max": 40
+            },
+            "rocketsPoint": {
+                "min": 21,
+                "max": 45
+            },
+            "opacity": 0.1,
+            "acceleration": 1.1,
+            "friction": 0.94,
+            "gravity": 0.3,
+            "particles": 130,
+            "trace": 1,
+            "traceSpeed": 100,
+            "explosion": 7,
+            "intensity": 17,
+            "flickering": 28,
+            "lineStyle": "round",
+            "lineWidth": {
+                "explosion": {
+                    "min": 2,
+                    "max": 5.5
+                },
+                "trace": {
+                    "min": 0.00000001,
+                    "max": 0.00000001
+                }
+            },
+            "autoresize": true,
+            "brightness": {
+                "min": 50,
+                "max": 100,
+                "decay": {
+                    "min": 0.012,
+                    "max": 0.024
+                }
+            },
+            "boundaries": {
+                "visible": false,
+                "x": screen.width / 2,
+                "y": 50,
+                "width": screen.width * 2,
+                "height": screen.height
+            }
+        }
+        var firework2 = new Fireworks(document.querySelector('#firework2'), fireworkConfig2)
+        firework2.start()
     }
 </script>
 {% endblock %}
