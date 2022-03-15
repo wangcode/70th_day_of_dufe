@@ -8,15 +8,26 @@
     &-divider{
         height: 43rpx;
         width: 100vw;
+        position: relative;
         background-image:
-            linear-gradient(to right, rgba(215, 160, 111, 1), rgba(202, 93, 55, 0.82), rgba(213, 154, 98, 0.94), rgba(216, 119, 68, 1), rgba(222, 113, 25, 0.5));
-        box-shadow: 0px 4px 8px 0px rgba(223, 75, 75, 0.50);
+            linear-gradient(to right, rgba(198, 194, 190, 0), rgba(200, 196, 195, 0.82), rgba(186, 186, 185, 0.94), rgba(187, 182, 179, 1), rgba(162, 158, 154, 0));
+        &::after{
+            content: "";
+            position: absolute;
+            top: 22rpx;
+            height: 0;
+            width: 100%;
+            border-bottom: 1px dashed;
+            border-image: linear-gradient(53deg, rgba(255, 255, 255, 0.00) 6%, rgba(255, 255, 255, 0.82) 11%, rgba(255, 255, 255, 0.94) 41%, #ffffff 79%, rgba(255, 255, 255, 0.00) 89%) 1 1;
+        }
     }
 
     &-list{
         display: flex;
         align-items: center;
         height: 950rpx;
+        position: relative;
+        overflow: hidden;
     }
 
     &-item{
@@ -33,16 +44,18 @@
             order: 1
         }
 
-        &-text{
-            background-color: rgba(255, 255, 255, 0.64);
-            padding: 12rpx;
-            border-radius: 20px 20px 0 0;
-            width: 210rpx;
-            font-size: 16rpx;
-            line-height: 28rpx;
-            color: #1D1C1C;
-            margin: 30rpx 0;
-            flex: 1;
+        &-desc{
+            &-text{
+                background-color: rgba(255, 255, 255, 0.64);
+                padding: 12rpx;
+                border-radius: 20px 20px 0 0;
+                width: 210rpx;
+                font-size: 16rpx;
+                line-height: 28rpx;
+                color: #1D1C1C;
+                margin: 30rpx 0;
+                flex: 1;
+            }
         }
 
         &-waterdrop{
@@ -51,11 +64,9 @@
             font-size: 26rpx;
             color: white;
             font-weight: bold;
-            width: 140rpx;
-            height: 140rpx;
-            background: rgba(1, 200, 126, 0.87);
-            // border-radius: 0 50% 50% 50%;
-            // border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+            width: 130rpx;
+            height: 130rpx;
+            background: rgba(1, 200, 126, 0.75);
             border-radius: 70% 0 60% 60%/60% 0 70% 60%;
             transform: rotate(-45deg);
             &-wrap{
@@ -83,6 +94,28 @@
             //     filter: blur(6px);
             // }
 
+        }
+    }
+
+    &-swiper{
+        &-btn{
+            width: 36rpx !important;
+            height: 160rpx !important;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            flex: 0 0 36rpx !important;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+
+        &-prev{
+            background-image: url(/images/dsj/left.png) !important;
+        }
+
+        &-next {
+            background-image: url(/images/dsj/right.png) !important;
         }
     }
 

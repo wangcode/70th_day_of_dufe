@@ -103,11 +103,13 @@ function styles() {
     .pipe(postCss([
       pxtoviewport({
         unitToConvert: 'rpx',
+        unitPrecision: 10,
         viewportWidth: 1920,
         viewportUnit: 'vw'
       }),
       pxtoviewport({
         unitToConvert: 'mrpx',
+        unitPrecision: 10,
         viewportWidth: 750,
         viewportUnit: 'vw',
         mediaQuery: true
