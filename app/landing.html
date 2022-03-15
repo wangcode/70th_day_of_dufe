@@ -30,10 +30,7 @@
 
     <div class="landing-swiper"></div>
 
-    <div id="firework1" class="landing-fireworks">
-        <!-- <div class="landing-fireworks-left"></div>
-        <div class="landing-fireworks-right"></div> -->
-    </div>
+    <div id="firework1" class="landing-fireworks"></div>
     <div id="firework2" class="landing-fireworks"></div>
 
 </div>
@@ -46,23 +43,26 @@
 <script>
     var isMobile = screen.width <= 750;
     $(".landing-swiper").vegas({
-        slides: [{
-                src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg"
+        slides: [
+            {
+                src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg",
+                animation: "fade",
             },
             {
-                src: "/images/landing/page2.jpg"
+                src: "/images/landing/page2.jpg",
             },
             {
-                src: "/images/landing/page3.jpg"
+                src: "/images/landing/page3.jpg",
             },
             {
-                src: "/images/landing/page4.jpg"
+                src: "/images/landing/page4.jpg",
             }
         ],
         timer: false,
         delay: 5000,
         shuffle: false,
-        animation: ['kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
+        // anmination: "random",
+        animation: ['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
         walk: function (index) {
             if (index === 0) {
                 $(".landing-title img").css("opacity", "0");
@@ -72,50 +72,6 @@
         }
     });
 
-    // var fireworkConfig = {
-    //     "hue": {
-    //         "min": 20,
-    //         "max": 350
-    //     },
-    //     "delay": {
-    //         "min": 20,
-    //         "max": 60
-    //     },
-    //     "rocketsPoint": {
-    //         "min": 21,
-    //         "max": 45
-    //     },
-    //     "opacity": 0.2,
-    //     "acceleration": 1.5,
-    //     "friction": 0.96,
-    //     "gravity": 0.3,
-    //     "particles": 130,
-    //     "trace": 1,
-    //     "traceSpeed": 1,
-    //     "explosion": 7,
-    //     "intensity": 35,
-    //     "flickering": 28,
-    //     "lineStyle": "round",
-    //     "lineWidth": {
-    //         "explosion": {
-    //             "min": 3,
-    //             "max": 6.5
-    //         },
-    //         "trace": {
-    //             "min": 0,
-    //             "max": 0.00000000001
-    //         }
-    //     },
-    //     "autoresize": true,
-    //     "brightness": {
-    //         "min": 50,
-    //         "max": 100,
-    //         "decay": {
-    //             "min": 0.012,
-    //             "max": 0.024
-    //         }
-    //     },
-    // }
     var fireworkConfig = {
         "hue": {
             "min": 50,
@@ -161,10 +117,12 @@
         },
     }
     var leftfirework = new Fireworks(document.querySelector('#firework1'), {...fireworkConfig,
-    "boundaries": { visible: false, x: 0, y: 130, width: screen.width/2, height: screen.height }})
-    var rightfirework = new Fireworks(document.querySelector('#firework2'), {...fireworkConfig,
-    "boundaries": { visible: false, x: screen.width/2, y: 50, width: screen.width*2, height: screen.height }})
+        "boundaries": { visible: false, x: 0, y: 130, width: isMobile?screen.width:screen.width/2, height: screen.height }})
     leftfirework.start()
-    rightfirework.start()
+    if(!isMobile) {
+        var rightfirework = new Fireworks(document.querySelector('#firework2'), {...fireworkConfig,
+        "boundaries": { visible: false, x: screen.width/2, y: 50, width: screen.width*2, height: screen.height }})
+        rightfirework.start()
+    }
 </script>
 {% endblock %}
