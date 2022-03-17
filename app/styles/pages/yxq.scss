@@ -477,6 +477,43 @@
             };
         }
 
+        &-mobile{
+            background-image: url(/images/yxq/phone_bg.png);
+            width: 511mrpx;
+            height: 933mrpx;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 75mrpx 65mrpx;
+            position: relative;
+
+            &-wrap{
+                border-radius: 20mrpx;
+                overflow: hidden;
+            }
+
+            &-img{
+                width: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: relative;
+                font-size: 0;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &-number{
+                font-size: 36mrpx;
+                color: #CD2D00;
+                font-weight: bold;
+                position: absolute;
+                bottom: 53mrpx;
+                right: 80mrpx;
+                text-shadow: 2px 4px 2px rgba(230, 27, 27, 0.50);
+            }
+        }
+
+
     }
 
 }

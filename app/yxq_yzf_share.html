@@ -5,7 +5,14 @@
 <div class="yxq-yzf">
 
     <div class="yxq-yzf-share">
-        <img class="yxq-yzf-share-image" src="/images/yxq/share.png" alt="">
+        <div class="yxq-yzf-share-mobile">
+            <div class="yxq-yzf-share-mobile-wrap">
+                <div class="yxq-yzf-share-mobile-img" id="capture">
+                    <img src="/images/yxq/share_img.jpg" alt="">
+                    <div class="yxq-yzf-share-mobile-number">166</div>
+                </div>
+            </div>
+        </div>
         <div class="yxq-yzf-share-desc">
             <div>您是第166位送出祝福的朋友，您的祝福已发送成功，系统审核通过后，将在校庆官网云祝福页面公布。</div>
         </div>
@@ -15,7 +22,7 @@
                 <div>朋友圈分享</div>
             </div>
             <div class="yxq-yzf-share-divider"></div>
-            <a href="/images/yxq/share.png" download="">
+            <a id="downloadImg" href="" download="">
                 <div class="yxq-yzf-share-btn">
                     <div><img src="/images/yxq/share_download.png" alt=""></div>
                     <div>保存到相册</div>
@@ -42,7 +49,7 @@
 {% endblock %}
 
 {% block script %}
-<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script> -->
+<script src="/js/packages/html2canvas/html2canvas.min.js"></script>
 <script>
     var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") !== -1;
     function share () {
@@ -58,5 +65,14 @@
         $("#browser").hide()
         $("#weixin").hide()
     }
+
+    const node = document.getElementById('capture')
+    html2canvas(node).then(async (canvas) => {
+        let oImg = new Image();
+        oImg.src = canvas.toDataURL();  // 导出图片
+        $("#downloadImg").attr("href",oImg.src)
+        node.innerHTML = oImg.outerHTML
+    })
+
 </script>
 {% endblock %}
