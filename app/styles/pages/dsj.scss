@@ -13,6 +13,10 @@
         height: calc(100vh - $header-height-mobile - $footer-height-mobile);
         background-size: cover;
         overflow: auto;
+
+        .swiper-slide{
+            height: auto
+        }
     }
 
     &-title{
@@ -68,8 +72,10 @@
         @media (max-width: $mobile-breakpoint) {
             height: auto;
             padding-left: 130mrpx;
+            height: 100%;
         }
     }
+
 
     &-item{
         display: flex;
@@ -84,6 +90,8 @@
             justify-content: flex-start;
             margin-bottom: 50mrpx;
             padding: 0;
+            height: auto;
+            // height: 200mrpx;
         }
 
         // Scale
