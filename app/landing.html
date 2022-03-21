@@ -29,6 +29,7 @@
     </div>
 
     <div class="landing-swiper"></div>
+    <div class="landing-swiper-pagination hide_in_mobile"></div>
 
     <div id="firework1" class="landing-fireworks"></div>
     <div id="firework2" class="landing-fireworks"></div>
@@ -42,26 +43,45 @@
 <script src="/js/packages/vegas/vegas.min.js"></script>
 <script>
     var isMobile = screen.width <= 750;
+    var slides = [
+        {src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg", animation: "fade", transition: "fade"},
+        {src: "/images/landing/page2.jpg"},
+        {src: "/images/landing/page3.jpg"},
+        {src: isMobile ? "/images/landing/page4_mobile.jpg" : "/images/landing/page4.jpg"}
+    ]
+
     $(".landing-swiper").vegas({
-        slides: [{
-                src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg",
-                animation: "fade",
-            },
-            {
-                src: "/images/landing/page2.jpg",
-            },
-            {
-                src: "/images/landing/page3.jpg",
-            },
-            {
-                src: isMobile ? "/images/landing/page4_mobile.jpg" : "/images/landing/page4.jpg",
-            }
-        ],
+        slides: slides,
         timer: false,
         delay: 5000,
         shuffle: false,
-        animation: ['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
+        transition: isMobile?"slideDown2" :"fade",
+        animation: isMobile?[]:['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
+        init: function (options) {
+            if(!isMobile){
+                $.each(options.slides, function (index) {
+                    let dom = '<div class="landing-swiper-pagination-item" data-index="' + index + '"></div>'
+                    if(index===0) {
+                        dom = '<div class="landing-swiper-pagination-item landing-swiper-pagination-active" data-index="' + index + '"></div>'
+                    }
+                    $(".landing-swiper-pagination").append(dom)
+
+                })
+                $('.landing-swiper-pagination').on('click','.landing-swiper-pagination-item', function () {
+                    $(".landing-swiper").vegas('jump', parseInt($(this).attr("data-index")));
+                })
+            }
+        },
         walk: function (index) {
+            if(!isMobile){
+                $(".landing-swiper-pagination > .landing-swiper-pagination-item").each(function (i) {
+                    if(i===index) {
+                        $(this).addClass("landing-swiper-pagination-active")
+                    } else {
+                        $(this).removeClass("landing-swiper-pagination-active")
+                    }
+                })
+            }
             if (index === 0) {
                 $(".landing-title img").css("opacity", "0");
             } else {

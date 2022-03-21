@@ -42,6 +42,26 @@
         width: 100vw;
         height: 100vh;
 
+        &-pagination {
+            position: absolute;
+            z-index: 100;
+            right: 80rpx;
+            top: 50vh;
+            transform: translateY(-50%);
+            &-active{
+                background-color: #FEB507 !important;
+                cursor: unset;
+            }
+            &-item{
+                width: 7rpx;
+                height: 40rpx;
+                background-color: #E4E4E3;
+                margin-bottom: 4rpx;
+                cursor: pointer;
+            }
+        }
+
+
         @media (max-width: $mobile-breakpoint) {
             min-height: -webkit-fill-available;
             max-height: -webkit-fill-available;
