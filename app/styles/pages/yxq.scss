@@ -511,6 +511,21 @@
                 right: 80mrpx;
                 text-shadow: 2px 4px 2px rgba(230, 27, 27, 0.50);
             }
+            &-qrcode{
+                text-align: center;
+                color: white;
+                position: absolute;
+                bottom: 20mrpx;
+                left: 20mrpx;
+                font-size: 18mrpx;
+                img{
+                    width: 75mrpx;
+                    height: 75mrpx;
+                    margin-bottom: 5mrpx;
+                    border-radius: 5mrpx;
+                    overflow: hidden;
+                }
+            }
         }
 
 
