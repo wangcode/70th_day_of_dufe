@@ -79,6 +79,7 @@
         height: 950rpx;
         overflow: hidden;
         position: relative;
+        z-index: 10;
         @media (max-width: $mobile-breakpoint) {
             height: auto;
             padding-left: 130mrpx;
@@ -184,7 +185,7 @@
         }
 
         &-waterdrop{
-            margin: 60rpx 0;
+            margin: 25rpx 0;
             position: relative;
             font-size: 26rpx;
             order: 2;
