@@ -84,9 +84,15 @@
             }
             if (index === 0) {
                 firework1.start()
+                if(!isMobile){
+                    firework2.start()
+                }
                 $(".landing-title img").css("opacity", "0");
             } else {
                 firework1.stop()
+                if(!isMobile){
+                    firework2.stop()
+                }
                 $(".landing-title img").css("opacity", "1");
             }
         }
@@ -98,7 +104,7 @@
             "max": 350
         },
         "delay": {
-            "min": 9,
+            "min": 20,
             "max": 40
         },
         "rocketsPoint": {
@@ -138,68 +144,68 @@
         "boundaries": {
             "visible": false,
             "x": 0,
-            "y": 130,
-            "width": isMobile ? screen.width : screen.width / 2,
+            "y": 0,
+            "width": isMobile ? screen.width : screen.width / 3,
             "height": screen.height
         }
     }
 
     var firework1 = new Fireworks(document.querySelector('#firework1'), fireworkConfig1)
-    firework1.start()
-    // if (!isMobile) {
-    //     var fireworkConfig2 = {
-    //         "hue": {
-    //             "min": 50,
-    //             "max": 350
-    //         },
-    //         "delay": {
-    //             "min": 9,
-    //             "max": 40
-    //         },
-    //         "rocketsPoint": {
-    //             "min": 21,
-    //             "max": 45
-    //         },
-    //         "opacity": 0.1,
-    //         "acceleration": 1.1,
-    //         "friction": 0.94,
-    //         "gravity": 0.3,
-    //         "particles": 130,
-    //         "trace": 1,
-    //         "traceSpeed": 100,
-    //         "explosion": 7,
-    //         "intensity": 17,
-    //         "flickering": 28,
-    //         "lineStyle": "round",
-    //         "lineWidth": {
-    //             "explosion": {
-    //                 "min": 2,
-    //                 "max": 5.5
-    //             },
-    //             "trace": {
-    //                 "min": 0.00000001,
-    //                 "max": 0.00000001
-    //             }
-    //         },
-    //         "autoresize": true,
-    //         "brightness": {
-    //             "min": 50,
-    //             "max": 100,
-    //             "decay": {
-    //                 "min": 0.012,
-    //                 "max": 0.024
-    //             }
-    //         },
-    //         "boundaries": {
-    //             "visible": false,
-    //             "x": screen.width / 2,
-    //             "y": 50,
-    //             "width": screen.width * 2,
-    //             "height": screen.height
-    //         }
-    //     }
-    //     var firework2 = new Fireworks(document.querySelector('#firework2'), fireworkConfig2)
-    //     firework2.start()
-    // }
+    // firework1.start()
+    if (!isMobile) {
+        var fireworkConfig2 = {
+            "hue": {
+                "min": 50,
+                "max": 350
+            },
+            "delay": {
+                "min": 20,
+                "max": 40
+            },
+            "rocketsPoint": {
+                "min": 21,
+                "max": 45
+            },
+            "opacity": 0.1,
+            "acceleration": 1.1,
+            "friction": 0.94,
+            "gravity": 0.3,
+            "particles": 130,
+            "trace": 1,
+            "traceSpeed": 100,
+            "explosion": 7,
+            "intensity": 17,
+            "flickering": 28,
+            "lineStyle": "round",
+            "lineWidth": {
+                "explosion": {
+                    "min": 2,
+                    "max": 5.5
+                },
+                "trace": {
+                    "min": 0.00000001,
+                    "max": 0.00000001
+                }
+            },
+            "autoresize": true,
+            "brightness": {
+                "min": 50,
+                "max": 100,
+                "decay": {
+                    "min": 0.012,
+                    "max": 0.024
+                }
+            },
+            "boundaries": {
+                "visible": false,
+                "x": screen.width / 1.4,
+                "y": 50,
+                "width": screen.width * 2.2,
+                "height": screen.height
+            }
+        }
+        var firework2 = new Fireworks(document.querySelector('#firework2'), fireworkConfig2)
+        // firework2.start()
+    }
 </script>
 {% endblock %}
