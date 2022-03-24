@@ -29,6 +29,12 @@
     </div>
 
     <div class="landing-swiper"></div>
+    <div class="landing-pixi">
+        <div id="water"></div>
+        <div id="cloud"></div>
+        <!-- <div id="nianlun"></div> -->
+        <!-- <div id="guang"></div> -->
+    </div>
     <div class="landing-swiper-pagination hide_in_mobile"></div>
 
     <div id="firework1" class="landing-fireworks"></div>
@@ -41,6 +47,9 @@
 {% block script %}
 <script src="/js/packages/fireworks/fireworks.min.js"></script>
 <script src="/js/packages/vegas/vegas.min.js"></script>
+<script src="/js/packages/pixi/pixi.min.js"></script>
+<!-- <script src="/js/packages/landing/water.js"></script> -->
+<script src="/js/packages/landing/main.js"></script>
 <script>
     var isMobile = screen.width <= 750;
     var slides = [
@@ -56,7 +65,7 @@
         delay: 5000,
         shuffle: false,
         transition: isMobile?"slideDown2" :"fade",
-        animation: isMobile?[]:['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
+        // animation: isMobile?[]:['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
         init: function (options) {
             if(!isMobile){
                 $.each(options.slides, function (index) {
@@ -94,6 +103,15 @@
                     firework2.stop()
                 }
                 $(".landing-title img").css("opacity", "1");
+            }
+            $(".landing-pixi").children().each(function() {
+                $(this).fadeOut()
+            })
+            if(index===1) {
+                $("#water").fadeIn()
+            }
+            if(index===2){
+                $("#cloud").fadeIn()
             }
         }
     });

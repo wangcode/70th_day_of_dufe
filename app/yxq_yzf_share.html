@@ -72,7 +72,7 @@
     }
 
     const node = document.getElementById('capture')
-    html2canvas(node).then(async (canvas) => {
+    html2canvas(node, {backgroundColor: null}).then(async (canvas) => {
         let oImg = new Image();
         oImg.src = canvas.toDataURL();  // 导出图片
         $("#downloadImg").attr("href",oImg.src)
