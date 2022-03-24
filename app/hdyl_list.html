@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% set title = "活动一览" %}
+
+{% block content %}
+<div class="hdyl">
+    <div class="container">
+
+        <div class="hdyl-spacer">
+            {% include "parts/spacer_flower.html" %}
+        </div>
+
+        <div class="hdyl-content">
+
+            <div class="hdyl-schedule">
+                <a href="news_content.html" class="hdyl-schedule-item">
+                    {% include "parts/schedule.html" %}</a>
+                </a>
+                <a href="news_content.html" class="hdyl-schedule-item">
+                    {% include "parts/schedule.html" %}</a>
+                </a>
+                <a href="news_content.html" class="hdyl-schedule-item">
+                    {% include "parts/schedule.html" %}</a>
+                </a>
+                <a href="news_content.html" class="hdyl-schedule-item">
+                    {% include "parts/schedule.html" %}</a>
+                </a>
+                <a href="news_content.html" class="hdyl-schedule-item">
+                    {% include "parts/schedule.html" %}</a>
+                </a>
+                <a href="news_content.html" class="hdyl-schedule-item">
+                    {% include "parts/schedule.html" %}</a>
+                </a>
+            </div>
+
+            <div class="hdyl-pagination">
+                {% include "parts/pagination.html" %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
