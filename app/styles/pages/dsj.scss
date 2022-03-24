@@ -1,4 +1,33 @@
 .dsj{
+
+    @keyframes scaleWaterDrop {
+        0% {
+            transform: scale(0.95);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(0.95);
+        }
+    }
+
+    @keyframes bottomScaleWaterDrop {
+        0% {
+            transform: rotate(180deg) scale(0.95);
+        }
+
+        50% {
+            transform: rotate(180deg) scale(1.05);
+        }
+
+        100% {
+            transform: rotate(180deg) scale(0.95);
+        }
+    }
+
     $item-padding: 320rpx;
 
     background-image: url(/images/dsj/bg.png);
@@ -42,16 +71,6 @@
         background-image: url(/images/dsj/horizontal_line.png);
         background-repeat: no-repeat;
         background-size: cover;
-        // background-image:
-        //     linear-gradient(to right, rgba(198, 194, 190, 0), rgba(200, 196, 195, 0.82), rgba(186, 186, 185, 0.94), rgba(187, 182, 179, 1), rgba(162, 158, 154, 0));
-        // &::after{
-        //     content: "";
-        //     position: absolute;
-        //     top: 22rpx;
-        //     height: 0;
-        //     width: 100%;
-        //     border-bottom: 1px dashed rgba($color: #ffffff, $alpha: 0.7);
-        // }
         @media (max-width: $mobile-breakpoint) {
             width: 30mrpx;
             height: 100%;
@@ -61,17 +80,6 @@
             background-image: url(/images/dsj/vertical_line.png);
             background-repeat: no-repeat;
             background-size: cover;
-            // background-image: linear-gradient(to bottom, rgba(198, 194, 190, 0), rgba(200, 196, 195, 0.82), rgba(186, 186, 185, 0.94), rgba(187, 182, 179, 1), rgba(162, 158, 154, 0));
-            // &::after {
-            //     content: "";
-            //     position: absolute;
-            //     margin: 110mrpx 0;
-            //     top: 0;
-            //     left: 14mrpx;
-            //     height: 100%;
-            //     width: 2mrpx;
-            //     border-right: 1px dashed rgba($color: #ffffff, $alpha: 0.7);
-            // }
         }
     }
 
@@ -116,11 +124,11 @@
         }
 
         .scale &-waterdrop {
-            transform: rotate(90deg) !important;
-
-            // @media (max-width: $mobile-breakpoint) {
-            //     transform: rotateZ(70deg);
-            // }
+            animation: scaleWaterDrop 2s;
+            animation-iteration-count: infinite;
+            @media (max-width: $mobile-breakpoint) {
+                animation: none;
+            }
         }
 
         &-bottom{
@@ -133,17 +141,24 @@
 
         }
         &-bottom &{
+
+            .scale &-waterdrop {
+                animation: bottomScaleWaterDrop 2s;
+                animation-iteration-count: infinite;
+                @media (max-width: $mobile-breakpoint) {
+                    animation: none;
+                }
+            }
+
             &-desc{
                 transform-origin: top;
                 order: 2;
             }
             &-waterdrop{
                 order: 1;
-                // transform: rotate(-225deg);
                 transform: rotate(180deg);
 
                 &-circle {
-                    // transform: rotate(225deg);
                     transform: rotate(180deg);
                 }
             }
@@ -198,12 +213,10 @@
             align-items: flex-end;
             padding-bottom: 28rpx;
             transition: .5s ease-in-out;
-            // background: rgba(1, 200, 126, 0.75);
-            // border-radius: 70% 0 60% 60%/60% 0 70% 60%;
-            // transform: rotate(-45deg);
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
+            cursor: pointer;
 
             @media (max-width: $mobile-breakpoint) {
                 order: 1;
@@ -211,27 +224,16 @@
                 height: 165mrpx;
                 padding-bottom: 25mrpx;
                 margin: 0;
-                // transform: rotate(45deg) !important;
                 transform: rotate(90deg) !important;
             }
             &-wrap{
                 flex: 1;
             }
             &-circle {
-                // transform: rotate(45deg);
-                // margin: 18rpx;
-                // bottom: 0;
-                // position: absolute;
                 width: 95rpx;
                 height: 95rpx;
                 line-height: 95rpx;
                 text-align: center;
-                // // background: radial-gradient(#63f489, #07b675);
-                // border-radius: 50%;
-                // display: flex;
-                // align-items: center;
-                // justify-content: center;
-                // box-shadow: 0px 0px 20px 10px rgba(95, 95, 95, 0.5);
                 @media (max-width: $mobile-breakpoint) {
                     display: flex;
                     justify-content: center;
@@ -239,7 +241,6 @@
                     font-size: 26mrpx;
                     width: 95mrpx;
                     height: 95mrpx;
-                    // margin: 18mrpx;
                     transform: rotate(-90deg) !important;
                 }
             }

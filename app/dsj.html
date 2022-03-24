@@ -30,12 +30,43 @@
 <script src="/js/packages/swiper/swiper.min.js"></script>
 <script>
 
+    var isInit = false;
     function toggleClass(list, index) {
         for (var i = 0; i < list.length; i++) {
             if(i>=index && i<=index+4){
                 $(list[i]).removeClass("scale")
             }else{
                 $(list[i]).addClass("scale")
+            }
+        }
+    }
+
+    function handleWaterDropClick (index) {
+        if(isInit) return;
+        var max = mySwiper.activeIndex+4;
+        var min = mySwiper.activeIndex
+        isInit = true
+        $(mySwiper.slides[mySwiper.clickedIndex]).removeClass("scale");
+        setTimeout(() => {
+            toggleWaterDrop(mySwiper.clickedIndex-1, "left", min, max);
+            toggleWaterDrop(mySwiper.clickedIndex+1, "right", min, max);
+        }, 300);
+    }
+
+    function toggleWaterDrop (index, dir, min, max) {
+        if(index>=min && index<=max) {
+            $(mySwiper.slides[index]).removeClass("scale");
+            if(dir==="left"){
+                console.log(index)
+                setTimeout(() => {
+                    toggleWaterDrop(index-1, "left", min, max)
+                }, 500);
+            }
+            if(dir==="right"){
+                console.log(index)
+                setTimeout(() => {
+                    toggleWaterDrop(index+1, "right", min, max)
+                }, 500);
             }
         }
     }
@@ -52,13 +83,12 @@
         },
         on: {
             init: function () {
-                toggleClass(this.slides, this.activeIndex)
+                // toggleClass(this.slides, this.activeIndex)
             },
             slideChange: function () {
                 toggleClass(this.slides, this.activeIndex);
             }
         }
-
         // autoplay: {
         //     delay: 1500,
         // },
