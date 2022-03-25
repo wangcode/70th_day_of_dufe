@@ -226,15 +226,12 @@ function Cloud(img) {
     }
 }
 function Water(img) {
-    // 创建一个 Pixi应用 需要的一些参数
-    var option = {
+    // 创建一个 Pixi应用
+    var app = new PIXI.Application({
         width: document.body.offsetWidth,
         height: document.body.offsetHeight,
         transparent: true,
-    };
-
-    // 创建一个 Pixi应用
-    var app = new PIXI.Application(option);
+    });
     // 获取渲染器
     var renderer = app.renderer;
     // 图片精灵
@@ -277,7 +274,6 @@ function Water(img) {
         app.stage.addChild(stage);
     }
 
-
     // 置换图精灵的移动速度
     var velocity = .5;
     // raf 是调用 requestAnimationFrame方法的返回值，停止动画效果时需要用到
@@ -307,6 +303,80 @@ function Water(img) {
     }
 }
 
+function Sakura() {
+    var width = window.innerWidth
+    var height = window.innerHeight
+    var app = new PIXI.Application({
+        width: width,
+        height: height,
+        transparent: true,
+    });
+    document.getElementById('sakura').appendChild(app.view);
+
+    function Petal() {
+        this.play = function() {
+            this.x = Math.floor(Math.random() * width);
+            this.y = -10;
+            this.drift = Math.random();
+            this.speed = Math.floor(Math.random() * 5) + 1;
+            this.width = Math.floor(Math.random() * 3) + 3;
+            this.height = this.width + 3;
+            this.theta = Math.floor(Math.random() * 100);
+            this.radius = Math.floor(Math.random() * 10) + 3;
+
+            this.draw();
+        }
+        this.draw = function() {
+            this.petal = new PIXI.Graphics();
+            this.petal.beginFill(0xf4c6f1, 1);
+            this.petal.drawEllipse(0, 0, this.width, this.height);
+            this.petal.endFill();
+
+            this.petal.x = this.x;
+            this.petal.y = this.y;
+
+            app.stage.addChild(this.petal);
+
+            this.fall();
+        }
+        this.fall = function() {
+            this.ticker = new PIXI.ticker.Ticker();
+
+            this.ticker.add(function() {
+                this.x += this.drift;
+                this.y += this.speed;
+                this.theta += 0.1;
+
+                if (this.x > width) this.x = 0;
+                if (this.y > height) this.y = -5;
+
+                this.petal.x = this.x + Math.cos(this.theta) * this.radius;
+                this.petal.y = this.y;
+                this.petal.rotation += 0.1;
+            }.bind(this));
+            this.ticker.start();
+        }
+    }
+
+    var maxPetalNum = 50;
+    let petalNum = 0;
+
+    var addPetalTimer
+
+    this.start = function () {
+        this.addPetalTimer = setInterval(() => {
+            var petal = new Petal();
+            petal.play()
+            petalNum++;
+            if (petalNum > maxPetalNum) clearInterval(this.addPetalTimer);
+        }, 200);
+    };
+    this.stop = function () {
+        clearInterval(this.addPetalTimer)
+    }
+
+}
+
 // var water = new Water('/images/landing/page2.jpg')
 // var guang = new Guang()
 // var cloud = new Cloud()
@@ -314,5 +384,8 @@ function Water(img) {
 
 var water = new Water('/images/landing/page2.jpg')
 water.start()
-var cloud = new Cloud('images/landing/page3.jpg')
-cloud.start()
+// var cloud = new Cloud('images/landing/page3.jpg')
+// cloud.start()
+
+var sakura = new Sakura()
+sakura.start()
