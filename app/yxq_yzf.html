@@ -107,18 +107,8 @@
 
 {% block script %}
 <script src="/js/packages/swiper/js/swiper.min.js"></script>
+<script src="/js/packages/yxq/main.js"></script>
 <script>
-
-    var mySwiper = new Swiper('.yxq-yzf-scrollmessage-swiper', {
-        speed: 400,
-        spaceBetween: 0,
-        slidesPerView: "auto",
-        direction: "vertical",
-        loop: true,
-        autoplay: {
-            delay: 1500,
-        },
-    });
-
+    yzfInit(".yxq-yzf-scrollmessage-swiper")
 </script>
 {% endblock %}

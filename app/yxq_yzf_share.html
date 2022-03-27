@@ -55,29 +55,8 @@
 
 {% block script %}
 <script src="/js/packages/html2canvas/html2canvas.min.js"></script>
+<script src="/js/packages/yxq/main.js"></script>
 <script>
-    var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") !== -1;
-    function share () {
-        $("#wrap").show()
-        if(isWechat){
-            $("#weixin").show()
-        }else{
-            $("#browser").css("display","flex")
-        }
-    }
-    function closeModel() {
-        $("#wrap").hide()
-        $("#browser").hide()
-        $("#weixin").hide()
-    }
-
-    const node = document.getElementById('capture')
-    html2canvas(node, {backgroundColor: null}).then(async (canvas) => {
-        let oImg = new Image();
-        oImg.src = canvas.toDataURL();  // 导出图片
-        $("#downloadImg").attr("href",oImg.src)
-        node.innerHTML = oImg.outerHTML
-    })
-
+    yzfShareInit();
 </script>
 {% endblock %}
