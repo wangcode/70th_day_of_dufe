@@ -42,7 +42,7 @@
     }
 
     function handleWaterDropClick (index) {
-        if(isInit) return;
+        // if(isInit) return;
         var max = mySwiper.activeIndex+4;
         var min = mySwiper.activeIndex
         isInit = true
@@ -77,16 +77,29 @@
         loop: !isMobile,
         freeMode: isMobile,
         slidesPerView: isMobile ? "auto" : 5,
+        allowTouchMove: isMobile,
         navigation: {
           nextEl: '.dsj-swiper-next',
           prevEl: '.dsj-swiper-prev',
         },
         on: {
             init: function () {
-                // toggleClass(this.slides, this.activeIndex)
+                if(isMobile) {
+                    toggleClass(this.slides, this.activeIndex)
+                }
             },
             slideChange: function () {
-                toggleClass(this.slides, this.activeIndex);
+
+                if(isMobile){
+                    toggleClass(this.slides, this.activeIndex)
+                } else{
+                    for (var i = 0; i < this.slides.length; i++) {
+                        if(i>=this.activeIndex && i<=this.activeIndex+4){
+                        }else{
+                            $(this.slides[i]).addClass("scale")
+                        }
+                    }
+                }
             }
         }
         // autoplay: {
