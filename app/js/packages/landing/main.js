@@ -1,153 +1,3 @@
-function NianLun() {
-    //创建应用
-    var option = {
-        width: document.body.offsetWidth,
-        height: document.body.offsetHeight,
-        transparent: true,
-    };
-    var app = new PIXI.Application(option);
-    //将应用放入页面
-    app.renderer = new PIXI.CanvasRenderer(option); //使用canvas
-    document.getElementById('nianlun').appendChild(app.view);
-    var nianlun;
-
-    //绘制方法
-    draw();
-
-    function draw() {
-        var bgImg = createImg('nianlunBg');
-
-        nianlun = createImg('nianlun');
-        nianlun.anchor.set(.5, .5);
-        nianlun.x = 960;
-        nianlun.y = 540;
-        nianlun.alpha = .2;
-        nianlun.scale.set(.5);
-        nianlun.blendMode = 1;
-
-        var container = new PIXI.Container();
-        container.addChild(bgImg, nianlun);
-        app.stage.addChild(container)
-    }
-    //提取的PIXI生成图片公共方法
-    function createImg(name) {
-        return new PIXI.Sprite(loader.resources[name].texture)
-    }
-
-    var raf,
-        alphaDirection = .01,
-        alpha = .3,
-        scaleDirection = .002,
-        scale = .8,
-        rotation = 0;
-
-    function animate() {
-        raf = requestAnimationFrame(animate);
-        if (nianlun) {
-            rotation += .01;
-            nianlun.rotation = rotation;
-
-            if (alpha > .3 || alpha < .1) {
-                alphaDirection = -alphaDirection
-            }
-            alpha += alphaDirection;
-            nianlun.alpha = alpha;
-
-            /*if(scale > 1 || scale < .8){
-                scaleDirection = -scaleDirection
-            }
-            scale += scaleDirection;
-            nianlun.scale = scale;*/
-            nianlun.scale.set(scale)
-        }
-    }
-
-    // 开始动画
-    this.start = function () {
-        cancelAnimationFrame(raf);
-        animate()
-    };
-    // 停止动画
-    this.stop = function () {
-        cancelAnimationFrame(raf)
-    }
-}
-
-function Guang() {
-    //创建应用
-    var option = {
-        width: document.body.offsetWidth,
-        height: document.body.offsetHeight,
-        transparent: true,
-    };
-    var app = new PIXI.Application(option);
-    //将应用放入页面
-    app.renderer = new PIXI.CanvasRenderer(option); //使用canvas
-    document.getElementById('guang').appendChild(app.view);
-    var guang;
-
-    //绘制方法
-    draw();
-
-    function draw() {
-        var bgImg = createImg('guangBg');
-
-        guang = createImg('guang');
-        guang.anchor.set(.5, .5);
-        guang.x = 960;
-        guang.y = 540;
-        guang.alpha = .5;
-        guang.scale.set(.5);
-        guang.blendMode = 1;
-
-        var container = new PIXI.Container();
-        container.addChild(bgImg, guang);
-        app.stage.addChild(container)
-    }
-    //提取的PIXI生成图片公共方法
-    function createImg(name) {
-        return new PIXI.Sprite(loader.resources[name].texture)
-    }
-
-    var raf,
-        alphaDirection = .01,
-        alpha = .3,
-        scaleDirection = .002,
-        scale = .5,
-        rotation = 0;
-
-    function animate() {
-        raf = requestAnimationFrame(animate);
-        if (guang) {
-            rotation += .01;
-            guang.rotation = rotation;
-
-            if (alpha > .6 || alpha < .3) {
-                alphaDirection = -alphaDirection
-            }
-            alpha += alphaDirection;
-            guang.alpha = alpha;
-
-            if (scale > 1 || scale < .5) {
-                scaleDirection = -scaleDirection
-            }
-            scale += scaleDirection;
-            guang.scale = scale;
-            guang.scale.set(scale)
-        }
-    }
-
-    // 开始动画
-    this.start = function () {
-        cancelAnimationFrame(raf);
-        animate()
-    };
-    // 停止动画
-    this.stop = function () {
-        cancelAnimationFrame(raf)
-    }
-}
-
 function Cloud(img) {
     // 创建一个 Pixi应用 需要的一些参数
     var option = {
@@ -377,11 +227,204 @@ function Sakura() {
 
 }
 
-var water = new Water('/images/landing/page2.jpg')
-water.start()
+var isMobile = screen.width <= 750;
 
-var cloud = new Cloud('images/landing/page4.jpg')
-cloud.start()
+var slides = [{
+        src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg",
+        animation: "fade",
+        transition: "fade"
+    },
+    {
+        src: "/images/landing/page2.jpg"
+    },
+    {
+        src: "/images/landing/page3.jpg"
+    },
+    {
+        src: isMobile ? "/images/landing/page4_mobile.jpg" : "/images/landing/page4.jpg"
+    }
+]
+var fireworkConfig1 = {
+    "hue": {
+        "min": 50,
+        "max": 350
+    },
+    "delay": {
+        "min": 20,
+        "max": 40
+    },
+    "rocketsPoint": {
+        "min": 21,
+        "max": 45
+    },
+    "opacity": 0.1,
+    "acceleration": 1.1,
+    "friction": 0.94,
+    "gravity": 0.3,
+    "particles": 130,
+    "trace": 1,
+    "traceSpeed": 100,
+    "explosion": 7,
+    "intensity": 17,
+    "flickering": 28,
+    "lineStyle": "round",
+    "lineWidth": {
+        "explosion": {
+            "min": 2,
+            "max": 5.5
+        },
+        "trace": {
+            "min": 0.00000001,
+            "max": 0.00000001
+        }
+    },
+    "autoresize": true,
+    "brightness": {
+        "min": 50,
+        "max": 100,
+        "decay": {
+            "min": 0.012,
+            "max": 0.024
+        }
+    },
+    "boundaries": {
+        "visible": false,
+        "x": 0,
+        "y": 0,
+        "width": isMobile ? screen.width : screen.width / 3,
+        "height": screen.height
+    }
+}
+var fireworkConfig2 = {
+    "hue": {
+        "min": 50,
+        "max": 350
+    },
+    "delay": {
+        "min": 20,
+        "max": 40
+    },
+    "rocketsPoint": {
+        "min": 21,
+        "max": 45
+    },
+    "opacity": 0.1,
+    "acceleration": 1.1,
+    "friction": 0.94,
+    "gravity": 0.3,
+    "particles": 130,
+    "trace": 1,
+    "traceSpeed": 100,
+    "explosion": 7,
+    "intensity": 17,
+    "flickering": 28,
+    "lineStyle": "round",
+    "lineWidth": {
+        "explosion": {
+            "min": 2,
+            "max": 5.5
+        },
+        "trace": {
+            "min": 0.00000001,
+            "max": 0.00000001
+        }
+    },
+    "autoresize": true,
+    "brightness": {
+        "min": 50,
+        "max": 100,
+        "decay": {
+            "min": 0.012,
+            "max": 0.024
+        }
+    },
+    "boundaries": {
+        "visible": false,
+        "x": screen.width / 1.4,
+        "y": 50,
+        "width": screen.width * 2.2,
+        "height": screen.height
+    }
+}
 
-var sakura = new Sakura()
-sakura.start()
+
+function swiperInit(firework1, firework2) {
+    $(".landing-swiper").vegas({
+        slides: slides,
+        timer: false,
+        delay: 5000,
+        shuffle: false,
+        transition: isMobile ? "slideDown2" : "fade",
+        // animation: isMobile?[]:['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
+        init: function (options) {
+            if (!isMobile) {
+                $.each(options.slides, function (index) {
+                    let dom = '<div class="landing-swiper-pagination-item" data-index="' + index + '"></div>'
+                    if (index === 0) {
+                        dom = '<div class="landing-swiper-pagination-item landing-swiper-pagination-active" data-index="' + index + '"></div>'
+                    }
+                    $(".landing-swiper-pagination").append(dom)
+
+                })
+                $('.landing-swiper-pagination').on('click', '.landing-swiper-pagination-item', function () {
+                    $(".landing-swiper").vegas('jump', parseInt($(this).attr("data-index")));
+                })
+            }
+        },
+        walk: function (index) {
+            if (!isMobile) {
+                $(".landing-swiper-pagination > .landing-swiper-pagination-item").each(function (i) {
+                    if (i === index) {
+                        $(this).addClass("landing-swiper-pagination-active")
+                    } else {
+                        $(this).removeClass("landing-swiper-pagination-active")
+                    }
+                })
+            }
+            if (index === 0) {
+                firework1.start()
+                if (!isMobile) {
+                    firework2.start()
+                }
+                $(".landing-title img").css("opacity", "0");
+            } else {
+                firework1.stop()
+                if (!isMobile) {
+                    firework2.stop()
+                }
+                $(".landing-title img").css("opacity", "1");
+            }
+            $(".landing-pixi").children().each(function () {
+                $(this).fadeOut()
+            })
+            if (index === 1) {
+                $("#water").fadeIn()
+            }
+            if (index === 2) {
+                $("#sakura").fadeIn()
+            }
+            if (index === 3) {
+                $("#cloud").fadeIn()
+            }
+        }
+    });
+}
+
+
+function landingInit() {
+
+    var firework1 = new Fireworks(document.querySelector('#firework1'), fireworkConfig1)
+    var firework2 = new Fireworks(document.querySelector('#firework2'), fireworkConfig2)
+
+    swiperInit(firework1, firework2)
+
+    var water = new Water('/images/landing/page2.jpg')
+    water.start()
+
+    var cloud = new Cloud('images/landing/page4.jpg')
+    cloud.start()
+
+    var sakura = new Sakura()
+    sakura.start()
+}
+
