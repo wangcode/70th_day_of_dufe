@@ -153,8 +153,8 @@ function Cloud(img) {
     var option = {
         width: document.body.offsetWidth,
         height: document.body.offsetHeight,
-        transparent: false,
-        forceCanvas: false,
+        transparent: true,
+        // forceCanvas: false,
     };
 
     // 创建一个 Pixi应用
@@ -177,11 +177,6 @@ function Cloud(img) {
         // 创建一个容器
         stage = new PIXI.Container();
 
-        // 根据图片的 url，创建图片精灵
-        preview = PIXI.Sprite.fromImage(url);
-        // 添加 图片精灵 到舞台
-        stage.addChild(preview);
-
         // 创建置换图精灵
         cloudSprite[0] = PIXI.Sprite.fromImage('images/landing/cloud.png');
         cloudSprite[0].y = 1080 - 323;
@@ -190,6 +185,8 @@ function Cloud(img) {
         cloudSprite[2] = PIXI.Sprite.fromImage('images/landing/cloud3.png');
         cloudSprite[2].y = 400;
         cloudSprite[2].x = -1172;
+        cloudSprite[0] = PIXI.Sprite.fromImage('images/landing/cloud2.png');
+        cloudSprite[0].y = 2000 - 323;
         // 添加 置换图精灵 到舞台
         cloudSprite.forEach(function (item) {
             stage.addChild(item)
@@ -201,7 +198,7 @@ function Cloud(img) {
 
 
     // 置换图精灵的移动速度
-    var velocity = [2, 1, 1.5];
+    var velocity = [1.2, 1.4, 1.6, 1.3];
     // raf 是调用 requestAnimationFrame方法的返回值，停止动画效果时需要用到
     var raf;
 
@@ -278,7 +275,7 @@ function Water(img) {
     }
 
     // 置换图精灵的移动速度
-    var velocity = .5;
+    var velocity = .3;
     // raf 是调用 requestAnimationFrame方法的返回值，停止动画效果时需要用到
     var raf;
 
@@ -321,8 +318,8 @@ function Sakura() {
             this.x = Math.floor(Math.random() * width);
             this.y = -10;
             this.drift = Math.random();
-            this.speed = Math.floor(Math.random() * 5) + 1;
-            this.width = Math.floor(Math.random() * 3) + 3;
+            this.speed = Math.floor(Math.random() * 2.5) + 1;
+            this.width = Math.floor(Math.random() * 4) + 3;
             this.height = this.width + 3;
             this.theta = Math.floor(Math.random() * 100);
             this.radius = Math.floor(Math.random() * 10) + 3;
@@ -355,7 +352,7 @@ function Sakura() {
 
                 this.petal.x = this.x + Math.cos(this.theta) * this.radius;
                 this.petal.y = this.y;
-                this.petal.rotation += 0.1;
+                this.petal.rotation += 0.02;
             }.bind(this));
             this.ticker.start();
         }
@@ -372,7 +369,7 @@ function Sakura() {
             petal.play()
             petalNum++;
             if (petalNum > maxPetalNum) clearInterval(this.addPetalTimer);
-        }, 200);
+        }, 300);
     };
     this.stop = function () {
         clearInterval(this.addPetalTimer)
@@ -380,219 +377,11 @@ function Sakura() {
 
 }
 
-function Particles() {
-
-    var end_panel = document.querySelector("#star");
-    var end_cv = document.getElementById("star-dust");
-    var end_ctx = end_cv.getContext("2d");
-    var end_cvWidth = parseInt(document.body.offsetWidth, 10); // get width without "px"
-    var end_cvHeight = parseInt(document.body.offsetHeight, 10); // get height without "px"
-    var resolution = window.devicePixelRatio || 1;
-    var sprites = [];
-    var toRad = Math.PI / 180;
-    var fx_tl;
-
-    // resize for retina
-    resizeCv();
-
-    function start_fx() {
-        // particles
-        init_fx(
-            "circle", // texture
-            1777, // total sprites
-            50, 50, 50, 50, // width-+, height-+
-            0, 1600, 0, 1600, // start position x-+, y-+
-            4, 12, 0, 360, // velocity-+, angle-+
-            .1, 2.5, .2, .8, // scale start-+, end-+
-            360, 0, 0, // rotation start, end-+
-            1.7, 24, // duration-+
-            .1, 2, // fade in, out duration
-            0.1, // gravity
-            12, // delay+ inbetween sprites
-            -1, // repeat sprite animation (-1 = infinite)
-            0 // delay timeline
-        );
-    }
-    $(document).mousemove(function (e) {
-        var x = e.pageX;
-        var y = e.pageY;
-        var scrollPosition = $(window).scrollTop()
-        createMagicDust(x, y - scrollPosition, 5)
-    });
-
-    function init_fx(textureSpr, totalSpr, minWidth, maxWidth, minHeight, maxHeight, xMin, xMax, yMin, yMax, veloMin, veloMax, angleMin, angleMax, startScaleMin, startScaleMax, endScaleMin, endScaleMax, rotStart, rotEndMin, rotEndMax, minDur, maxDur, fadeInDur, fadeOutDur, gravitySpr, delaySpr, repeatSpr, delayTl) {
-        // generate sprites
-        for (var i = 0; i < totalSpr; i++) {
-            var widthSpr = randomInt(minWidth, maxWidth);
-            var heightSpr = randomInt(minHeight, maxHeight);
-            // define texture
-            var texture = createShape(textureSpr, i);
-            sprites.push(createSprite());
-        }
-
-        createMagicDust = (x, y, n) => {
-            for (var i = 0; i < n; i++) {
-                var texture = createShape(textureSpr, Math.floor(Math.random() * 10));
-                sprites.push(createSprite(x, y, 2));
-            }
-        };
-
-        // start rendering animation
-        gsap.ticker.add(renderCv);
-        // gsap.registerPlugin(Physics2DPlugin);
-        function createSprite(x, y, t) {
-            var width = (texture.naturalWidth || texture.width || 0) / resolution;
-            var height = (texture.naturalHeight || texture.height || 0) / resolution;
-            var duration = t || randomNr(minDur, maxDur);
-            // limit angle if needed
-            var angleNr;
-            if (angleMin == -90 && angleMax == -270) {
-                angleNr = Math.random() < 0.5 ? 90 : 270; // only up or down
-            } else if (angleMin == -0 && angleMax == -180) {
-                angleNr = Math.random() < 0.5 ? 0 : 180; // only left or right
-            } else {
-                angleNr = randomNr(angleMin, angleMax);
-            }
-            // create a new timeline for the sprite
-            fx_tl = gsap.timeline({
-                delay: t ? 0 : randomNr(delaySpr),
-                repeat: t ? 0 : repeatSpr,
-                repeatDelay: randomNr(1)
-            });
-            // sprite object default properites
-            var sprite = {
-                animation: fx_tl,
-                texture: texture,
-                width: width,
-                height: height,
-                alpha: 0,
-                rotation: randomNr(rotStart),
-                scale: randomNr(startScaleMin, startScaleMax),
-                originX: t ? .2 : 0.5,
-                originY: t ? .3 : 0.5,
-                x: x || randomNr(xMin, xMax),
-                y: y || randomNr(yMin, yMax),
-            };
-
-            // animate to
-            fx_tl.add("start", delayTl)
-                .to(sprite, t ? 0.3 : fadeInDur, {
-                    alpha: 1,
-                    ease: Power0.easeIn
-                }, "start")
-                .to(sprite, duration, {
-                    rotation: 180 * randomNr(rotEndMin, rotEndMax),
-                    scale: randomNr(endScaleMin, endScaleMax),
-                    // physics2D: {
-                    //     velocity: randomNr(veloMin, veloMax),
-                    //     angle: angleNr,
-                    //     gravity: gravitySpr,
-                    // }
-                }, "start")
-                // fade out
-                .to(sprite, t ? 1.5 : fadeOutDur, {
-                    alpha: 0,
-                    delay: t ? 1.5 : duration - fadeOutDur
-                }, 0);
-
-            return sprite;
-        }
-
-        function createShape(textureSpr, i) {
-            // Create offscreen canvas
-            var canvas = document.createElement("canvas");
-            var context = canvas.getContext("2d");
-            canvas.width = widthSpr * resolution;
-            canvas.height = heightSpr * resolution;
-            var radius = widthSpr / 2;
-            var gradient = context.createRadialGradient(radius, radius, 0, radius, radius, radius);
-            if (i % 3 === 0) {
-                gradient.addColorStop(0, "rgba(177,255,252,0.75)");
-                gradient.addColorStop(0.15, "rgba(177,255,252,0.1)");
-            } else if (i % 5 === 0) {
-                gradient.addColorStop(0, "rgba(202,76,255,0.6)");
-                gradient.addColorStop(0.1, "rgba(202,76,255,0.1)");
-            } else {
-                gradient.addColorStop(0, "rgba(102,219,214,0.6)");
-                gradient.addColorStop(0.1, "rgba(102,219,214,0.1)");
-            }
-            gradient.addColorStop(0.65, "rgba(0,0,0,0)");
-            context.fillStyle = gradient;
-            context.fillRect(0, 0, widthSpr, heightSpr);
-            return canvas;
-        }
-    }
-
-    function renderCv() {
-        end_ctx.clearRect(0, 0, end_cvWidth, end_cvHeight);
-        for (var i = 0; i < sprites.length; i++) {
-            var sprite = sprites[i];
-            // Skip rendering sprite if it has no alpha
-            if (!sprite.alpha) {
-                continue;
-            }
-            end_ctx.save();
-            var offsetX = sprite.originX * sprite.width;
-            var offsetY = sprite.originY * sprite.height;
-            end_ctx.translate(sprite.x + offsetX, sprite.y + offsetY);
-            end_ctx.rotate(sprite.rotation * toRad);
-            end_ctx.scale(sprite.scale, sprite.scale);
-            end_ctx.globalAlpha = sprite.alpha;
-            end_ctx.drawImage(sprite.texture, -offsetX, -offsetY);
-            end_ctx.restore();
-        }
-    }
-
-    function resizeCv() {
-        end_cv.width = end_cvWidth * resolution;
-        end_cv.height = end_cvHeight * resolution;
-        end_cv.style.width = end_cvWidth + "px";
-        end_cv.style.height = end_cvHeight + "px";
-        end_ctx.scale(resolution, resolution);
-    }
-
-    function randomNr(min, max) {
-        if (max === undefined) {
-            max = min;
-            min = 0;
-        }
-        if (min > max) {
-            var tmp = min;
-            min = max;
-            max = tmp;
-        }
-        return min + (max - min) * Math.random();
-    }
-
-    function randomInt(min, max) {
-        if (max === undefined) {
-            max = min;
-            min = 0;
-        }
-        if (min > max) {
-            var tmp = min;
-            min = max;
-            max = tmp;
-        }
-        return Math.floor(min + (max - min + 1) * Math.random());
-    }
-    start_fx();
-}
-
-
-
-// start_fx();
-// var water = new Water('/images/landing/page2.jpg')
-// var guang = new Guang()
-// var cloud = new Cloud()
-// var nianlundian = new NianLun()
-
 var water = new Water('/images/landing/page2.jpg')
 water.start()
-// var cloud = new Cloud('images/landing/page3.jpg')
-// cloud.start()
+
+var cloud = new Cloud('images/landing/page4.jpg')
+cloud.start()
 
 var sakura = new Sakura()
 sakura.start()
-
-Particles()
