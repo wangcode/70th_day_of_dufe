@@ -1,0 +1,29 @@
+{% extends "content_card.html" %}
+
+{% set listtitle = "全部祝福" %}
+
+{% block content_card_content %}
+
+<div class="newspage-list-yzf">
+
+    <div class="newspage-list-content">
+        <ul>
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+            {% include "parts/news_yzf_item.html" %}
+        </ul>
+    </div>
+
+</div>
+
+<div class="newspage-pagination">
+    {% include "parts/pagination.html" %}
+</div>
+
+{% endblock %}

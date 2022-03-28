@@ -140,7 +140,7 @@
     padding-bottom: 80rpx;
 
     @media (max-width: $mobile-breakpoint) {
-        padding: 0 20mrpx
+        padding: 0 20mrpx 20mrpx;
     }
 
     &-heading {

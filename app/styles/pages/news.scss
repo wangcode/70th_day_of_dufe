@@ -107,6 +107,45 @@
         }
     }
 
+    &-list-yzf {
+        @extend .newspage-list;
+
+        ul{
+            li{
+                a{
+                    flex-direction: column;
+                    align-items: flex-end;
+                    height: auto;
+                    padding: 20rpx 0;
+                    @media (max-width: $mobile-breakpoint) {
+                        display: flex;
+                        padding: 0;
+                        padding-bottom: 10mrpx;
+                    }
+                    p{
+                        color: $primary-color;
+                        line-height: 30rpx;
+                        text-overflow: inherit;
+                        white-space: inherit;
+                        margin-bottom: 10rpx;
+                        @media (max-width: $mobile-breakpoint) {
+                            font-size: 24mrpx;
+                            line-height: 2;
+                        }
+                    }
+                    span{
+                        margin-left: 20rpx;
+                        color: #333333;
+                        @media (max-width: $mobile-breakpoint) {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
     &-content {
         padding-top: 37rpx;
         padding-bottom: 80rpx;
