@@ -32,11 +32,10 @@ function Cloud(img) {
         cloudSprite[0].y = 1080 - 323;
         cloudSprite[1] = PIXI.Sprite.fromImage('images/landing/cloud2.png');
         cloudSprite[1].y = 80;
+        cloudSprite[1].x = -2200;
         cloudSprite[2] = PIXI.Sprite.fromImage('images/landing/cloud3.png');
         cloudSprite[2].y = 400;
         cloudSprite[2].x = -1172;
-        cloudSprite[0] = PIXI.Sprite.fromImage('images/landing/cloud2.png');
-        cloudSprite[0].y = 2000 - 323;
         // 添加 置换图精灵 到舞台
         cloudSprite.forEach(function (item) {
             stage.addChild(item)
@@ -48,7 +47,7 @@ function Cloud(img) {
 
 
     // 置换图精灵的移动速度
-    var velocity = [1.2, 1.4, 1.6, 1.3];
+    var velocity = [1.8, 1.2, 1.3];
     // raf 是调用 requestAnimationFrame方法的返回值，停止动画效果时需要用到
     var raf;
 
@@ -229,21 +228,6 @@ function Sakura() {
 
 var isMobile = screen.width <= 750;
 
-var slides = [{
-        src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg",
-        animation: "fade",
-        transition: "fade"
-    },
-    {
-        src: "/images/landing/page2.jpg"
-    },
-    {
-        src: "/images/landing/page3.jpg"
-    },
-    {
-        src: isMobile ? "/images/landing/page4_mobile.jpg" : "/images/landing/page4.jpg"
-    }
-]
 var fireworkConfig1 = {
     "hue": {
         "min": 50,
@@ -348,7 +332,7 @@ var fireworkConfig2 = {
 }
 
 
-function swiperInit(firework1, firework2) {
+function swiperInit(slides, firework1, firework2) {
     $(".landing-swiper").vegas({
         slides: slides,
         timer: false,
@@ -411,17 +395,17 @@ function swiperInit(firework1, firework2) {
 }
 
 
-function landingInit() {
+function landingInit(slides) {
 
     var firework1 = new Fireworks(document.querySelector('#firework1'), fireworkConfig1)
     var firework2 = new Fireworks(document.querySelector('#firework2'), fireworkConfig2)
 
-    swiperInit(firework1, firework2)
+    swiperInit(slides, firework1, firework2)
 
-    var water = new Water('/images/landing/page2.jpg')
+    var water = new Water(slides[1].src)
     water.start()
 
-    var cloud = new Cloud('images/landing/page4.jpg')
+    var cloud = new Cloud()
     cloud.start()
 
     var sakura = new Sakura()
