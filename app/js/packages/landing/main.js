@@ -19,7 +19,7 @@ function Cloud(baseurl) {
     var stage;
     var playground = document.getElementById('cloud');
 
-    function setScene(url) {
+    function setScene() {
         // renderer.view 是 Pixi 创建的一个canvas
         // 把 Pixi 创建的 canvas 添加到页面上
         playground.appendChild(renderer.view);
@@ -61,7 +61,7 @@ function Cloud(baseurl) {
             }
         })
     }
-    setScene(img);
+    setScene();
 
     this.start = function () {
         // 开始动画
@@ -74,7 +74,7 @@ function Cloud(baseurl) {
     }
 }
 
-function Water(img) {
+function Water(img, baseurl) {
     // 创建一个 Pixi应用
     var app = new PIXI.Application({
         width: document.body.offsetWidth,
@@ -105,7 +105,7 @@ function Water(img) {
         preview = PIXI.Sprite.fromImage(url);
 
         // 创建置换图精灵，在创建置换滤镜时会用到这个精灵
-        displacementSprite = PIXI.Sprite.fromImage('/images/landing/water.jpg');
+        displacementSprite = PIXI.Sprite.fromImage(baseurl+'/images/landing/water.jpg');
 
         // 设置置换图精灵为平铺模式
         displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
@@ -402,7 +402,7 @@ function landingInit(slides, baseUrl) {
 
     swiperInit(slides, firework1, firework2)
 
-    var water = new Water(slides[1].src)
+    var water = new Water(slides[1].src, baseUrl)
     water.start()
 
     var cloud = new Cloud(baseUrl)
