@@ -6,12 +6,12 @@ function toggleWaterDrop(index, dir, min, max) {
     if (index >= min && index <= max) {
         $(dsjSwiper.slides[index]).removeClass("scale");
         if (dir === "left") {
-            setTimeout(() => {
+            setTimeout(function() {
                 toggleWaterDrop(index - 1, "left", min, max)
             }, 500);
         }
         if (dir === "right") {
-            setTimeout(() => {
+            setTimeout(function() {
                 toggleWaterDrop(index + 1, "right", min, max)
             }, 500);
         }
@@ -24,7 +24,7 @@ function handleWaterDropClick(index) {
     var min = dsjSwiper.activeIndex
     isInit = true
     $(dsjSwiper.slides[dsjSwiper.clickedIndex]).removeClass("scale");
-    setTimeout(() => {
+    setTimeout(function() {
         toggleWaterDrop(dsjSwiper.clickedIndex - 1, "left", min, max);
         toggleWaterDrop(dsjSwiper.clickedIndex + 1, "right", min, max);
     }, 300);

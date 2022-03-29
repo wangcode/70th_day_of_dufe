@@ -223,7 +223,7 @@
         height: 354rpx;
         background-image: url(/images/yxq/yzf.png);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         position: relative;
         margin-bottom: 27rpx;
 
@@ -253,10 +253,10 @@
         height: 267rpx;
         padding: 0 26rpx 0;
         background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 0.45) 15%, #ffffff 96%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: flex-end;
         overflow: hidden;
 
         @media (max-width: $mobile-breakpoint) {
@@ -276,9 +276,12 @@
 
         &-more{
             padding: 20rpx 0 15rpx 0;
-            width: 110rpx;
+            // width: 110rpx;
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
             @media (max-width: $mobile-breakpoint) {
-                width: 125mrpx;
+                // width: 125mrpx;
                 padding: 10mrpx 0 15mrpx 0;
             }
         }

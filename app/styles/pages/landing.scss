@@ -48,6 +48,16 @@
             right: 80rpx;
             top: 50vh;
             transform: translateY(-50%);
+
+            @media (max-width: $mobile-breakpoint) {
+                display: flex;
+                bottom: 200mrpx;
+                top: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                justify-content: center;
+            }
+
             &-active{
                 background-color: #FEB507 !important;
                 cursor: unset;
@@ -58,6 +68,12 @@
                 background-color: #E4E4E3;
                 margin-bottom: 4rpx;
                 cursor: pointer;
+                @media (max-width: $mobile-breakpoint) {
+                    width: 40mrpx;
+                    height: 7mrpx;
+                    margin: 4mrpx;
+
+                }
             }
         }
 

@@ -36,7 +36,7 @@
         <div id="cloud"></div>
     </div>
 
-    <div class="landing-swiper-pagination hide_in_mobile"></div>
+    <div class="landing-swiper-pagination"></div>
 
     <div id="firework1" class="landing-fireworks"></div>
     <div id="firework2" class="landing-fireworks"></div>
@@ -49,15 +49,16 @@
 <script src="/js/packages/fireworks/fireworks.min.js"></script>
 <script src="/js/packages/vegas/vegas.min.js"></script>
 <script src="/js/packages/pixi/pixi.min.js"></script>
+<!-- <script src="/js/packages/swiper/swiper.min.js"></script> -->
 <script src="/js/packages/landing/main.js"></script>
 <script>
     var slides = [
         {src: isMobile ? "/images/landing/page1_mobile.jpg" : "/images/landing/page1.jpg", animation: "fade", transition: "fade"},
-        {src: "/images/landing/page2.jpg"},
-        {src: "/images/landing/page3.jpg"},
+        {src: isMobile ? "/images/landing/page2_mobile.jpg" : "/images/landing/page2.jpg"},
+        {src: isMobile ? "/images/landing/page3_mobile.jpg" : "/images/landing/page3.jpg"},
         {src: isMobile ? "/images/landing/page4_mobile.jpg" : "/images/landing/page4.jpg"}
     ]
 
-    landingInit(slides, "/")
+    landingInit(slides, "")
 </script>
 {% endblock %}

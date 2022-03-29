@@ -208,12 +208,12 @@ function Sakura() {
     }
 
     var maxPetalNum = 50;
-    let petalNum = 0;
+    var petalNum = 0;
 
     var addPetalTimer
 
     this.start = function () {
-        this.addPetalTimer = setInterval(() => {
+        this.addPetalTimer = setInterval(function() {
             var petal = new Petal();
             petal.play()
             petalNum++;
@@ -339,24 +339,21 @@ function swiperInit(slides, firework1, firework2) {
         delay: 5000,
         shuffle: false,
         transition: isMobile ? "slideDown2" : "fade",
-        // animation: isMobile?[]:['kenburnsDown', 'kenburnsLeft', 'kenburnsRight'],
         init: function (options) {
-            if (!isMobile) {
-                $.each(options.slides, function (index) {
-                    let dom = '<div class="landing-swiper-pagination-item" data-index="' + index + '"></div>'
-                    if (index === 0) {
-                        dom = '<div class="landing-swiper-pagination-item landing-swiper-pagination-active" data-index="' + index + '"></div>'
-                    }
-                    $(".landing-swiper-pagination").append(dom)
+            $.each(options.slides, function (index) {
+                var dom = '<div class="landing-swiper-pagination-item" data-index="' + index + '"></div>'
+                if (index === 0) {
+                    dom = '<div class="landing-swiper-pagination-item landing-swiper-pagination-active" data-index="' + index + '"></div>'
+                }
+                $(".landing-swiper-pagination").append(dom)
 
-                })
-                $('.landing-swiper-pagination').on('click', '.landing-swiper-pagination-item', function () {
-                    $(".landing-swiper").vegas('jump', parseInt($(this).attr("data-index")));
-                })
-            }
+            })
+            $('.landing-swiper-pagination').on('click', '.landing-swiper-pagination-item', function () {
+                $(".landing-swiper").vegas('jump', parseInt($(this).attr("data-index")));
+            })
         },
         walk: function (index) {
-            if (!isMobile) {
+            // if (!isMobile) {
                 $(".landing-swiper-pagination > .landing-swiper-pagination-item").each(function (i) {
                     if (i === index) {
                         $(this).addClass("landing-swiper-pagination-active")
@@ -364,7 +361,7 @@ function swiperInit(slides, firework1, firework2) {
                         $(this).removeClass("landing-swiper-pagination-active")
                     }
                 })
-            }
+            // }
             if (index === 0) {
                 firework1.start()
                 if (!isMobile) {
