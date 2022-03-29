@@ -1,4 +1,4 @@
-function Cloud(img) {
+function Cloud(baseurl) {
     // 创建一个 Pixi应用 需要的一些参数
     var option = {
         width: document.body.offsetWidth,
@@ -28,12 +28,12 @@ function Cloud(img) {
         stage = new PIXI.Container();
 
         // 创建置换图精灵
-        cloudSprite[0] = PIXI.Sprite.fromImage('images/landing/cloud.png');
+        cloudSprite[0] = PIXI.Sprite.fromImage(baseurl+'/images/landing/cloud.png');
         cloudSprite[0].y = 1080 - 323;
-        cloudSprite[1] = PIXI.Sprite.fromImage('images/landing/cloud2.png');
+        cloudSprite[1] = PIXI.Sprite.fromImage(baseurl+'/images/landing/cloud2.png');
         cloudSprite[1].y = 80;
         cloudSprite[1].x = -2200;
-        cloudSprite[2] = PIXI.Sprite.fromImage('images/landing/cloud3.png');
+        cloudSprite[2] = PIXI.Sprite.fromImage(baseurl+'/images/landing/cloud3.png');
         cloudSprite[2].y = 400;
         cloudSprite[2].x = -1172;
         // 添加 置换图精灵 到舞台
@@ -395,7 +395,7 @@ function swiperInit(slides, firework1, firework2) {
 }
 
 
-function landingInit(slides) {
+function landingInit(slides, baseUrl) {
 
     var firework1 = new Fireworks(document.querySelector('#firework1'), fireworkConfig1)
     var firework2 = new Fireworks(document.querySelector('#firework2'), fireworkConfig2)
@@ -405,7 +405,7 @@ function landingInit(slides) {
     var water = new Water(slides[1].src)
     water.start()
 
-    var cloud = new Cloud()
+    var cloud = new Cloud(baseUrl)
     cloud.start()
 
     var sakura = new Sakura()
