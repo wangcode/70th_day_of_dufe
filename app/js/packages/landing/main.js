@@ -1,3 +1,36 @@
+PIXI.Sprite.prototype.setSize = function (width, height, type) {
+    console.log(this.texture, this.texture.orig)
+    var texture = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        },
+        targetRatio = width / height,
+        textureRatio = window.innerWidth / window.inner,
+        scale,
+        pos = new PIXI.Point(0, 0);
+
+    if (type == 'cover') {
+        if (targetRatio > textureRatio) {
+            scale = width / texture.width;
+            pos.y = -((texture.height * scale) - height) / 2
+        } else {
+            scale = height / texture.height;
+            pos.x = -((texture.width * scale) - width) / 2
+        }
+    } else {
+        if (targetRatio > textureRatio) {
+            scale = height / texture.height;
+            pos.x = -((texture.width * scale) - width) / 2
+        } else {
+            scale = width / texture.width;
+            pos.y = -((texture.height * scale) - height) / 2
+        }
+    }
+
+    this.scale.set(scale);
+    this.position = pos;
+}
+
 function Cloud(baseurl) {
     // 创建一个 Pixi应用 需要的一些参数
     var option = {
@@ -28,14 +61,14 @@ function Cloud(baseurl) {
         stage = new PIXI.Container();
 
         // 创建置换图精灵
-        cloudSprite[0] = PIXI.Sprite.fromImage(baseurl+'/images/landing/cloud.png');
-        cloudSprite[0].y = 1080 - 323;
-        cloudSprite[1] = PIXI.Sprite.fromImage(baseurl+'/images/landing/cloud2.png');
-        cloudSprite[1].y = 80;
-        cloudSprite[1].x = -2200;
-        cloudSprite[2] = PIXI.Sprite.fromImage(baseurl+'/images/landing/cloud3.png');
-        cloudSprite[2].y = 400;
-        cloudSprite[2].x = -1172;
+        cloudSprite[0] = PIXI.Sprite.from(baseurl+'/images/landing/cloud.png');
+        cloudSprite[0].y = window.innerHeight - 323;
+        cloudSprite[1] = PIXI.Sprite.from(baseurl+'/images/landing/cloud2.png');
+        cloudSprite[1].y = window.innerHeight / 4;
+        cloudSprite[1].x = -(window.innerWidth / 3);
+        cloudSprite[2] = PIXI.Sprite.from(baseurl+'/images/landing/cloud3.png');
+        cloudSprite[2].y = window.innerHeight / 1.5;
+        cloudSprite[2].x = -(window.innerWidth / 2);
         // 添加 置换图精灵 到舞台
         cloudSprite.forEach(function (item) {
             stage.addChild(item)
@@ -73,14 +106,11 @@ function Cloud(baseurl) {
         cancelAnimationFrame(raf)
     }
 }
-
 function Water(img, baseurl) {
     // 创建一个 Pixi应用
     var app = new PIXI.Application({
         width: document.body.offsetWidth,
         height: document.body.offsetHeight,
-        // width: 1920,
-        // height: 1080,
         transparent: true,
     });
     // 获取渲染器
@@ -95,36 +125,26 @@ function Water(img, baseurl) {
     var stage;
     var playground = document.getElementById("water");
 
-    function setScene(url) {
-        // renderer.view 是 Pixi 创建的一个canvas
-        // 把 Pixi 创建的 canvas 添加到页面上
+    function setupImg(imgTexture) {
+        img = PIXI.Sprite.from(imgTexture.texture)
+        img.setSize(renderer.width, renderer.height, "cover")
+        stage.addChild(img);
+    }
+
+    function setScene() {
         playground.appendChild(renderer.view);
-
-        // 创建一个容器
         stage = new PIXI.Container();
-
-        // 根据图片的 url，创建图片精灵
-        preview = PIXI.Sprite.fromImage(url);
-
-        // preview.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
-
         // 创建置换图精灵，在创建置换滤镜时会用到这个精灵
-        displacementSprite = PIXI.Sprite.fromImage(baseurl+'/images/landing/water.jpg');
-
+        displacementSprite = PIXI.Sprite.from(baseurl + '/images/landing/water.jpg');
         // 设置置换图精灵为平铺模式
         displacementSprite.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
-
         // 创建一个置换滤镜
         displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-
-        // 添加 图片精灵 到舞台
-        stage.addChild(preview);
-
         // 添加 置换图精灵 到舞台
         stage.addChild(displacementSprite);
-
         // 把 stage 添加到根容器上
         app.stage.addChild(stage);
+        stage.filters = [displacementFilter];
     }
 
     // 置换图精灵的移动速度
@@ -141,10 +161,17 @@ function Water(img, baseurl) {
             velocity = -velocity
         }
     }
-    setScene(img);
+    setScene()
+    PIXI.Loader.shared
+        .add("img", img)
+        .load(function (loader, res) {
+            setupImg(res.img)
+            // console.log(PIXI.Sprite.from(PIXI.Loader.shared.resources[img].texture))
+            // setScene(res.img);
+        });
 
     // 设置舞台的滤镜
-    stage.filters = [displacementFilter];
+    // stage.filters = [displacementFilter];
     this.start = function () {
         // 开始动画
         cancelAnimationFrame(raf);
@@ -193,7 +220,7 @@ function Sakura() {
             this.fall();
         }
         this.fall = function () {
-            this.ticker = new PIXI.ticker.Ticker();
+            this.ticker = new PIXI.Ticker();
 
             this.ticker.add(function () {
                 this.x += this.drift;
@@ -217,15 +244,15 @@ function Sakura() {
     var addPetalTimer
 
     this.start = function () {
-        this.addPetalTimer = setInterval(function() {
+        addPetalTimer = setInterval(function() {
             var petal = new Petal();
             petal.play()
             petalNum++;
-            if (petalNum > maxPetalNum) clearInterval(this.addPetalTimer);
+            if (petalNum > maxPetalNum) clearInterval(addPetalTimer);
         }, 300);
     };
     this.stop = function () {
-        clearInterval(this.addPetalTimer)
+        clearInterval(addPetalTimer)
     }
 
 }
