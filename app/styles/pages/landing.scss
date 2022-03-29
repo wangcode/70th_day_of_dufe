@@ -3,6 +3,7 @@
     width: 100vw;
     height: 100vh;
     font-size: 0;
+    overflow: hidden;
     background-color: #d40005;
 
     @media (max-width: $mobile-breakpoint) {
@@ -44,7 +45,7 @@
 
         &-pagination {
             position: absolute;
-            z-index: 100;
+            z-index: 10;
             right: 80rpx;
             top: 50vh;
             transform: translateY(-50%);

@@ -79,6 +79,8 @@ function Water(img, baseurl) {
     var app = new PIXI.Application({
         width: document.body.offsetWidth,
         height: document.body.offsetHeight,
+        // width: 1920,
+        // height: 1080,
         transparent: true,
     });
     // 获取渲染器
@@ -103,6 +105,8 @@ function Water(img, baseurl) {
 
         // 根据图片的 url，创建图片精灵
         preview = PIXI.Sprite.fromImage(url);
+
+        // preview.texture.baseTexture.wrapMode = PIXI.WRAP_MODES.REPEAT;
 
         // 创建置换图精灵，在创建置换滤镜时会用到这个精灵
         displacementSprite = PIXI.Sprite.fromImage(baseurl+'/images/landing/water.jpg');
