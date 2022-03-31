@@ -15,29 +15,31 @@ function yzfInit(selector) {
 function yzfShareInit() {
     var isWechat = navigator.userAgent.toLowerCase().indexOf("micromessenger") !== -1;
 
-    this.share = function() {
-        $("#wrap").show()
-        if (isWechat) {
-            $("#weixin").show()
-        } else {
-            $("#browser").css("display", "flex")
-        }
-    }
-
-    this.closeModel = function() {
+    $("#wrap").on("click", function () {
         $("#wrap").hide()
-        $("#browser").hide()
-        $("#weixin").hide()
-    }
-
-    const node = document.getElementById('capture')
-    html2canvas(node, {
-        backgroundColor: null
-    }).then(async (canvas) => {
-        let oImg = new Image();
-        oImg.src = canvas.toDataURL(); // 导出图片
-        $("#downloadImg").attr("href", oImg.src)
-        node.innerHTML = oImg.outerHTML
     })
 
+    $("#picture").on("click", function(e) {
+        $("#picture").hide()
+    })
+
+    this.share = function () {
+        if (isWechat) {
+            $("#wrap").show()
+        } else {
+            $("body").addClass("captureScreen")
+            $("#picture").show()
+            const node = document.getElementById('capture')
+            html2canvas(node, {
+                backgroundColor: null
+            }).then(async (canvas) => {
+                let oImg = new Image();
+                oImg.src = canvas.toDataURL(); // 导出图片
+                $("#downloadImg").attr("href", oImg.src)
+                node.innerHTML = oImg.outerHTML
+                $(".yxq-yzf-share-picture-loading").fadeOut()
+                $("body").removeClass("captureScreen")
+            })
+        }
+    }
 }

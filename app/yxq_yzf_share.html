@@ -7,13 +7,8 @@
     <div class="yxq-yzf-share">
         <div class="yxq-yzf-share-mobile">
             <div class="yxq-yzf-share-mobile-wrap">
-                <div class="yxq-yzf-share-mobile-img" id="capture">
-                    <img src="/images/yxq/share_img.jpg" alt="">
-                    <div class="yxq-yzf-share-mobile-qrcode">
-                        <img src="https://qr.api.cli.im/newqr/create?data=asdf&level=H&transparent=false&bgcolor=%23FFFFFF&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&logoshape=no&size=500&kid=cliim&key=03e8dd15284fe97c6965f0e7f22e4825"
-                            alt="">
-                        <div>扫码送祝福</div>
-                    </div>
+                <div class="yxq-yzf-share-mobile-img">
+                    <img src="/images/yxq/share_img.png" alt="">
                     <div class="yxq-yzf-share-mobile-number">166</div>
                 </div>
             </div>
@@ -26,28 +21,26 @@
                 <div><img src="/images/yxq/share_wx.png" alt=""></div>
                 <div>朋友圈分享</div>
             </div>
-            <div class="yxq-yzf-share-divider"></div>
-            <a id="downloadImg" href="" download="">
-                <div class="yxq-yzf-share-btn">
-                    <div><img src="/images/yxq/share_download.png" alt=""></div>
-                    <div>保存到相册</div>
-                </div>
-            </a>
         </div>
     </div>
 
-    <div id="wrap" class="yxq-yzf-share-wrap" onclick="closeModel()">
-        <div id="browser" class="yxq-yzf-share-browser">
-            <p>好了，现在招呼你的老同学，为东财70周年校庆送祝福吧！</p>
-            <p>长按图片保存到相册，再分享到朋友圈。</p>
+    <div id="wrap" class="yxq-yzf-share-wrap">
+        <div class="yxq-yzf-share-wx-img">
+            <img src="/images/yxq/share_wx_line.svg" alt="">
         </div>
-        <div id="weixin" class="yxq-yzf-share-wx">
-            <div class="yxq-yzf-share-wx-img">
-                <img src="/images/yxq/share_wx_line.svg" alt="">
+        <p>好了，现在招呼你的老同学，为东财70周年校庆送祝福吧！</p>
+        <p>点击右上角功能键，分享到您的朋友圈</p>
+    </div>
+
+    <div id="picture" class="yxq-yzf-share-wrap">
+        <div class="yxq-yzf-share-picture">
+            <div class="yxq-yzf-share-picture-loading">图片打印中...</div>
+            <div class="yxq-yzf-share-mobile-img" style="border-radius: 0" id="capture">
+                <img src="/images/yxq/share_img.png" alt="">
+                <div class="yxq-yzf-share-mobile-number-lg">166</div>
             </div>
-            <p>好了，现在招呼你的老同学，为东财70周年校庆送祝福吧！</p>
-            <p>点击右上角功能键，分享到您的朋友圈</p>
         </div>
+        <p>长按图片保存到相册，再分享到朋友圈</p>
     </div>
 
 </div>
