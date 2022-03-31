@@ -1,11 +1,10 @@
 PIXI.Sprite.prototype.setSize = function (width, height, type) {
-    console.log(this.texture, this.texture.orig)
     var texture = {
-            width: window.innerWidth,
-            height: window.innerHeight
+            width: this.texture.width,
+            height: this.texture.height
         },
         targetRatio = width / height,
-        textureRatio = window.innerWidth / window.inner,
+        textureRatio = this.texture.width / this.texture.height,
         scale,
         pos = new PIXI.Point(0, 0);
 
