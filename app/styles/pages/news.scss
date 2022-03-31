@@ -112,10 +112,15 @@
 
         ul{
             li{
+                align-items: flex-start;
+                margin: 20rpx 0;
+                &::before{
+                    margin-top: 10rpx;
+                }
                 a{
                     display: block !important;
                     height: auto;
-                    padding: 20rpx 0;
+                    padding-bottom: 20rpx;
                     @media (max-width: $mobile-breakpoint) {
                         padding: 0;
                         padding-bottom: 10mrpx;

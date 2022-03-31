@@ -76,7 +76,7 @@
             height: 100%;
             top: 0;
             margin: 0;
-            left: 180mrpx;
+            left: 73mrpx;
             background-image: url(/images/dsj/vertical_line.png);
             background-repeat: no-repeat;
             background-size: cover;
@@ -90,7 +90,7 @@
         z-index: 10;
         @media (max-width: $mobile-breakpoint) {
             height: auto;
-            padding-left: 130mrpx;
+            padding-left: 25mrpx;
             height: 100%;
             padding-top: 110mrpx;
         }
@@ -192,7 +192,7 @@
                     border-radius:20mrpx 20mrpx 0 0;
                     font-size: 24mrpx;
                     line-height: 38mrpx;
-                    width: 280mrpx;
+                    width: 380mrpx;
                     padding: 20mrpx 16mrpx;
                     max-height: 100%;
                 }
