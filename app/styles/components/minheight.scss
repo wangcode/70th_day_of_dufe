@@ -1,0 +1,20 @@
+.minH{
+    &-sm{
+        min-height: 400rpx;
+        @media (max-width: $mobile-breakpoint) {
+            min-height: 400mrpx;
+        }
+    }
+    &-md{
+        min-height: 600rpx;
+        @media (max-width: $mobile-breakpoint) {
+            min-height: 600mrpx;
+        }
+    }
+    &-lg{
+        min-height: 800rpx;
+        @media (max-width: $mobile-breakpoint) {
+            min-height: 800mrpx;
+        }
+    }
+}
