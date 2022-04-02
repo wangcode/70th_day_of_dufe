@@ -24,9 +24,9 @@ function yzfShareInit() {
     })
 
     this.share = function () {
-        if (isWechat) {
-            $("#wrap").show()
-        } else {
+        // if (isWechat) {
+        //     $("#wrap").show()
+        // } else {
             $("body").addClass("captureScreen")
             $("#picture").show()
             const node = document.getElementById('capture')
@@ -40,6 +40,6 @@ function yzfShareInit() {
                 $(".yxq-yzf-share-picture-loading").fadeOut()
                 $("body").removeClass("captureScreen")
             })
-        }
+        // }
     }
 }
