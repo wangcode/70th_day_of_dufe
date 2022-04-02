@@ -116,6 +116,9 @@
                 margin: 20rpx 0;
                 &::before{
                     margin-top: 10rpx;
+                    @media (max-width: $mobile-breakpoint) {
+                        margin-top: 20mrpx;
+                    }
                 }
                 a{
                     display: block !important;
@@ -125,6 +128,13 @@
                         padding: 0;
                         padding-bottom: 10mrpx;
                     }
+
+                    &:hover{
+                        span{
+                            color: #333;
+                        }
+                    }
+
                     div{
                         text-align: right;
                     }
