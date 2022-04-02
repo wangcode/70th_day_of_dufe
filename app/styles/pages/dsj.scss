@@ -116,7 +116,7 @@
 
         // Scale
         .scale &-desc {
-            transform: scaleY(0);
+            // transform: scaleY(0);
             opacity: 0;
             @media (max-width: $mobile-breakpoint) {
                 transform: rotateZ(70deg);

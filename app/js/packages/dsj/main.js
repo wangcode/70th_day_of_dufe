@@ -69,8 +69,12 @@ function dsjInit(num) {
                     toggleClass(this.slides, this.activeIndex)
                 } else {
                     for (var i = 0; i < this.slides.length; i++) {
-                        if(i< this.activeIndex || i > this.activeIndex + showNum - 1){
+                        var dsjitem = $(this.slides[i]).children()[0]
+                        if (i < this.activeIndex || i > this.activeIndex + showNum - 1) {
+                            $(dsjitem).hide()
                             $(this.slides[i]).addClass("scale")
+                        } else {
+                            $(dsjitem).fadeIn()
                         }
                     }
                 }
