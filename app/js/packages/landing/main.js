@@ -219,7 +219,7 @@ function Sakura() {
             this.fall();
         }
         this.fall = function () {
-            this.ticker = new PIXI.Ticker();
+            this.ticker = new PIXI.ticker.Ticker();
 
             this.ticker.add(function () {
                 this.x += this.drift;
@@ -381,6 +381,7 @@ function swiperInit(slides, firework1, firework2) {
             $('.landing-swiper-pagination').on('click', '.landing-swiper-pagination-item', function () {
                 $(".landing-swiper").vegas('jump', parseInt($(this).attr("data-index")));
             })
+
         },
         walk: function (index) {
             // if (!isMobile) {
@@ -392,6 +393,7 @@ function swiperInit(slides, firework1, firework2) {
                     }
                 })
             // }
+            $(".landing-title-wrap").show()
             if (index === 0) {
                 firework1.start()
                 if (!isMobile) {
@@ -408,9 +410,9 @@ function swiperInit(slides, firework1, firework2) {
             $(".landing-pixi").children().each(function () {
                 $(this).fadeOut()
             })
-            if (index === 1) {
-                $("#water").fadeIn()
-            }
+            // if (index === 1) {
+            //     $("#water").fadeIn()
+            // }
             if (index === 2) {
                 $("#sakura").fadeIn()
             }
@@ -429,8 +431,8 @@ function landingInit(slides, baseUrl) {
 
     swiperInit(slides, firework1, firework2)
 
-    var water = new Water(slides[1].src, baseUrl)
-    water.start()
+    // var water = new Water(slides[1].src, baseUrl)
+    // water.start()
 
     var cloud = new Cloud(baseUrl)
     cloud.start()
