@@ -3,7 +3,7 @@
     $mobile-header-height: 100mrpx;
     height: $pc-header-height;
     width: 100%;
-    background-image: url(/images/header_bg.jpg);
+    background-image: var(--header-bg-pc);
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -11,7 +11,7 @@
     @media (max-width: $mobile-breakpoint) {
         padding: 23mrpx 30mrpx;
         height: $mobile-header-height;
-        background-image: linear-gradient(to bottom, #cb0202, #8a0000);
+        background-image: var(--header-bg-mobile);
     }
 
     &-mobile {
@@ -72,7 +72,7 @@
             width: 100vw;
             top: 0;
             left: 0;
-            background-color: rgba(#AB0202, 0.93);
+            background-color: var(--header-mobile-wrap-bg);
             transition: .3s ease-in-out;
         }
 
@@ -119,13 +119,13 @@
             &:hover,
             &.current {
 
-                background-image: url(/images/header_menu_hover_bg.png);
+                background-image: var(--header-pc-hover-bg);
                 background-repeat: no-repeat;
                 background-size: cover;
                 color: #FABC05;
 
                 @media (max-width: $mobile-breakpoint) {
-                    background-image: linear-gradient(to right, white, rgba(#AB0202, 1));
+                    background-image: var(--header-mobile-hover-bg);
                     background-size: 100% 1px;
                 }
             }

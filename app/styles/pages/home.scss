@@ -141,7 +141,7 @@
         }
 
         &:hover &-title {
-            color: $primary-color;
+            color: var(--primary-color);;
             background-color: rgba($color: #ffffff, $alpha: 0.7);
 
             @media (max-width: $mobile-breakpoint) {

@@ -51,7 +51,7 @@
 
     &-title {
         font-size: 18rpx;
-        color: $primary-color;
+        color: var(--primary-color);;
 
         @media (max-width: $mobile-breakpoint) {
             font-size: 28mrpx;

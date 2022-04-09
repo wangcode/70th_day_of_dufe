@@ -50,7 +50,7 @@
 
     &-title{
         font-size: 32mrpx;
-        color: $primary-color;
+        color: var(--primary-color);;
         font-weight: bold;
         padding: 37mrpx 40mrpx;
         background-image: url(/images/tabs_bg_right.png);

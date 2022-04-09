@@ -1,8 +1,11 @@
 import jquery from 'jquery';
 import "slick-carousel";
+import cssVars from 'css-vars-ponyfill';
 
 window.$ = jquery;
 window.jQuery = jquery;
+
+cssVars({});
 
 
 

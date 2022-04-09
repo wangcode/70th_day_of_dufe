@@ -72,7 +72,7 @@
 
                     &:hover {
                         span {
-                            color: $primary-color;
+                            color: var(--primary-color);;
                         }
                     }
                 }
@@ -139,7 +139,7 @@
                         text-align: right;
                     }
                     p{
-                        color: $primary-color;
+                        color: var(--primary-color);;
                         line-height: 30rpx;
                         text-overflow: inherit;
                         white-space: inherit;

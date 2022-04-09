@@ -1,5 +1,4 @@
 .xqdt {
-
     &-flower {
         @media (max-width: $mobile-breakpoint) {
             display: none;
@@ -228,10 +227,10 @@
             }
 
             &:hover {
-                border-color: $primary-color;
+                border-color: var(--primary-color);;
 
                 span {
-                    color: $primary-color;
+                    color: var(--primary-color);;
                 }
             }
 

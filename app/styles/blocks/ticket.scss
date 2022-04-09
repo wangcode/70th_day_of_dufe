@@ -29,7 +29,7 @@
     }
 
     &-title {
-        color: $primary-color;
+        color: var(--primary-color);;
         font-size: 18rpx;
         background-image: url(/images/ticket_title.png);
         background-repeat: no-repeat;
