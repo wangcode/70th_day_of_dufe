@@ -44,7 +44,7 @@
         &:hover,
         &.current {
             color: white;
-            background-color: #922000;
+            background-color: var(--primary-color);
         }
     }
 }

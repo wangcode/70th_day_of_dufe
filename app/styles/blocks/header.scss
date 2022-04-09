@@ -104,8 +104,7 @@
                 width: 100%;
                 font-size: 36mrpx;
                 padding-bottom: 1px;
-                background-image:
-                    linear-gradient(to right, white, rgba(#AB0202, 1));
+                background-image: var(--header-mobile-hover-bg);
                 background-repeat: no-repeat;
                 background-size: 100% 1px;
                 background-position: 0 100%;
@@ -122,7 +121,7 @@
                 background-image: var(--header-pc-hover-bg);
                 background-repeat: no-repeat;
                 background-size: cover;
-                color: #FABC05;
+                color: var(--second-color);
 
                 @media (max-width: $mobile-breakpoint) {
                     background-image: var(--header-mobile-hover-bg);

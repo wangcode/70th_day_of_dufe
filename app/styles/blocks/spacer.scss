@@ -2,7 +2,8 @@
     &-flower {
         width: 225rpx;
         height: 62rpx;
-        background-image: url(/images/flower.png);
+        // background-image: url(/images/flower.png);
+        background-image: var(--spacer-bg);
         background-repeat: no-repeat;
         background-size: contain;
         margin: 0 200rpx;
